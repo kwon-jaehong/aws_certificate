@@ -1,0 +1,260 @@
+문제내용-영어,문제내용-한글,보기,진짜답,내제출답,비고
+"A company is planning to run a global marketing application in the AWS Cloud. The application will feature videos that can be viewed by users. The company must ensure that all users can view these videos with low latency.
+Which AWS service should the company use to meet this requirement?","회사는 AWS 클라우드에서 글로벌 마케팅 애플리케이션을 실행할 계획입니다. 이 애플리케이션은 사용자가 볼 수 있는 동영상을 제공합니다. 회사는 모든 사용자가 짧은 대기 시간으로 이러한 비디오를 볼 수 있도록 해야 합니다.
+회사에서 이 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?","A. AWS Auto Scaling
+B. Amazon Kinesis Video Streams
+C. Elastic Load Balancing
+D. Amazon CloudFront",d,d,
+Which pillar of the AWS Well-Architected Framework refers to the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand?,AWS Well-Architected 프레임워크의 핵심 요소는 인프라 또는 서비스 중단으로부터 복구하고 수요를 충족하기 위해 컴퓨팅 리소스를 동적으로 확보하는 시스템의 기능을 의미합니까?,"A. Security
+B. Reliability
+C. Performance efficiency
+D. Cost optimization",b,b,
+Which of the following are benefits of migrating to the AWS Cloud? (Choose two.),다음 중 AWS 클라우드로 마이그레이션할 때의 이점은 무엇입니까? (두 가지를 선택하세요.),"A. Operational resilience
+B. Discounts for products on Amazon.com
+C. Business agility
+D. Business excellence
+E. Increased staff retention","a,c","a,c",
+"A company is planning to replace its physical on-premises compute servers with AWS serverless compute services. The company wants to be able to take advantage of advanced technologies quickly after the migration.
+Which pillar of the AWS Well-Architected Framework does this plan represent?","회사에서 물리적 온프레미스 컴퓨팅 서버를 AWS 서버리스 컴퓨팅 서비스로 교체할 계획입니다. 회사는 마이그레이션 후 신속하게 고급 기술을 활용할 수 있기를 원합니다.
+이 계획이 나타내는 AWS Well-Architected 프레임워크의 기둥은 무엇입니까?","A. Security
+B. Performance efficiency
+C. Operational excellence
+D. Reliability",b,b,
+"A large company has multiple departments. Each department has its own AWS account. Each department has purchased Amazon EC2 Reserved Instances.
+Some departments do not use all the Reserved Instances that they purchased, and other departments need more Reserved Instances than they purchased.
+The company needs to manage the AWS accounts for all the departments so that the departments can share the Reserved Instances.
+Which AWS service or tool should the company use to meet these requirements?","대기업에는 여러 부서가 있습니다. 각 부서에는 자체 AWS 계정이 있습니다. 각 부서는 Amazon EC2 예약 인스턴스를 구매했습니다.
+일부 부서에서는 구매한 예약 인스턴스를 모두 사용하지 않고 다른 부서에서는 구매한 것보다 더 많은 예약 인스턴스가 필요합니다.
+부서가 예약 인스턴스를 공유할 수 있도록 회사는 모든 부서의 AWS 계정을 관리해야 합니다.
+회사에서 이러한 요구 사항을 충족하려면 어떤 AWS 서비스 또는 도구를 사용해야 합니까?","A. AWS Systems Manager
+B. Cost Explorer
+C. AWS Trusted Advisor
+D. AWS Organizations",d,d,
+"Which component of the AWS global infrastructure is made up of one or more discrete data centers that have redundant power, networking, and connectivity?","보조 파워, 네트워킹 및 연결 기능을 갖춘 하나 이상의 개별 데이터 센터로 구성된 AWS 글로벌 인프라의 구성 요소는 무엇입니까?","A. AWS Region
+B. Availability Zone
+C. Edge location
+D. AWS Outposts",b,a,아... 집합을 의미하는게 아니였음
+Which duties are the responsibility of a company that is using AWS Lambda? (Choose two.),AWS Lambda를 사용하는 회사의 책임은 무엇입니까? (두 가지를 선택하세요.),"A. Security inside of code
+B. Selection of CPU resources
+C. Patching of operating system
+D. Writing and updating of code
+E. Security of underlying infrastructure","a,d","a,d",
+Which AWS services or features provide disaster recovery solutions for Amazon EC2 instances? (Choose two.),Amazon EC2 인스턴스용 재해 복구 솔루션을 제공하는 AWS 서비스 또는 기능은 무엇입니까? (두 가지를 선택하세요.),"A. ׀•׀¡2 Reserved Instances
+B. EC2 Amazon Machine Images (AMIs)
+C. Amazon Elastic Block Store (Amazon EBS) snapshots
+D. AWS Shield
+E. Amazon GuardDuty","b,c","b,c",
+"A company is migrating to the AWS Cloud instead of running its infrastructure on premises.
+Which of the following are advantages of this migration? (Choose two.)","회사에서 인프라를 온프레미스에서 실행하는 대신 AWS 클라우드로 마이그레이션하고 있습니다.
+다음 중 이 마이그레이션의 이점은 무엇입니까? (두 가지를 선택하세요.)","A. Elimination of the need to perform security auditing
+B. Increased global reach and agility
+C. Ability to deploy globally in minutes
+D. Elimination of the cost of IT staff members
+E. Redundancy by default for all compute services
+ 
+","b,c","b,c",
+"A user is comparing purchase options for an application that runs on Amazon EC2 and Amazon RDS. The application cannot sustain any interruption. The application experiences a predictable amount of usage, including some seasonal spikes that last only a few weeks at a time. It is not possible to modify the application.
+Which purchase option meets these requirements MOST cost-effectively?","사용자가 Amazon EC2와 Amazon RDS에서 실행되는 애플리케이션의 구매 옵션을 비교하고 있습니다. 응용 프로그램은 중단을 지속할 수 없습니다. 애플리케이션은 한 번에 몇 주 동안만 지속되는 일부 계절적 급증을 포함하여 예측 가능한 사용량을 경험합니다. 응용 프로그램을 수정할 수 없습니다.
+어떤 구매 옵션이 이러한 요구 사항을 가장 비용 효율적으로 충족합니까?","A. Review the AWS Marketplace and buy Partial Upfront Reserved Instances to cover the predicted and seasonal load.
+B. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run on Spot Instances.
+C. Buy Reserved Instances for the predicted amount of usage throughout the year. Allow any seasonal usage to run at an On-Demand rate.
+D. Buy Reserved Instances to cover all potential usage that results from the seasonal usage.",c,b,"C가 정답이며, ""응용 프로그램이 중단을 지속할 수 없다""고 명시적으로 언급한 질문에서 스팟 인스턴스는 시작 및 종료 시간이 유연한 워크로드에 이상적이거나 중단을 견딜 수 있는 워크로드에 적합합니다. 이상적으로 우리는 중단을 허용하지 않는 가격을 원합니다. 이 경우 온디맨드가 될 것입니다."
+"A company wants to review its monthly costs of using Amazon EC2 and Amazon RDS for the past year.
+Which AWS service or tool provides this information?","회사에서 작년에 Amazon EC2 및 Amazon RDS를 사용한 월별 비용을 검토하려고 합니다.
+이 정보를 제공하는 AWS 서비스 또는 도구는 무엇입니까?","A. AWS Trusted Advisor
+B. Cost Explorer
+C. Amazon Forecast
+D. Amazon CloudWatch",b,b,
+"A company wants to migrate a critical application to AWS. The application has a short runtime. The application is invoked by changes in data or by shifts in system state. The company needs a compute solution that maximizes operational efficiency and minimizes the cost of running the application.
+Which AWS solution should the company use to meet these requirements?
+","회사에서 중요한 애플리케이션을 AWS로 마이그레이션하려고 합니다. 응용 프로그램의 실행 시간이 짧습니다. 응용 프로그램은 데이터의 변경 또는 시스템 상태의 변화에 의해 호출됩니다. 회사는 운영 효율성을 극대화하고 애플리케이션 실행 비용을 최소화하는 컴퓨팅 솔루션이 필요합니다.
+회사는 이러한 요구 사항을 충족하기 위해 어떤 AWS 솔루션을 사용해야 합니까?","A. Amazon EC2 On-Demand Instances
+B. AWS Lambda
+C. Amazon EC2 Reserved Instances
+D. Amazon EC2 Spot Instances",b,d,"""응용 프로그램은 데이터의 변경 또는 시스템 상태의 변화에 ​​의해 호출됩니다."" 문제가 발생하면 AWS Lambda를 호출할 수 있습니다. 이것은 데이터 또는 시스템 상태의 변경에 의해 호출되는 짧은 런타임인 Lambda의 일반적인 사용 사례입니다."
+Which AWS service or feature allows users to connect with and deploy AWS services programmatically?,사용자가 프로그래밍 방식으로 AWS 서비스에 연결하고 배포할 수 있도록 허용하는 AWS 서비스 또는 기능은 무엇입니까?,"A. AWS Management Console
+B. AWS Cloud9
+C. AWS CodePipeline
+D. AWS software development kits (SDKs)",d,d,
+"A company plans to create a data lake that uses Amazon S3.
+Which factor will have the MOST effect on cost?","회사에서 Amazon S3를 사용하는 데이터 레이크를 만들 계획입니다.
+비용에 가장 큰 영향을 미치는 요소는 무엇입니까?","A. The selection of S3 storage tiers
+B. Charges to transfer existing data into Amazon S3
+C. The addition of S3 bucket policies
+D. S3 ingest fees for each request
+",a,a,
+"A company is launching an ecommerce application that must always be available. The application will run on Amazon EC2 instances continuously for the next
+12 months.
+What is the MOST cost-effective instance purchasing option that meets these requirements?","회사에서 항상 사용할 수 있어야 하는 전자 상거래 애플리케이션을 출시하려고 합니다. 애플리케이션은 다음에 Amazon EC2 인스턴스에서 지속적으로 실행됩니다.
+12 개월.
+이러한 요구 사항을 충족하는 가장 비용 효율적인 인스턴스 구매 옵션은 무엇입니까?","A. Spot Instances
+B. Savings Plans
+C. Dedicated Hosts
+D. On-Demand Instances",b,b,
+Which AWS service or feature can a company use to determine which business unit is using specific AWS resources?,어떤 사업부가 특정 AWS 리소스를 사용하고 있는지 확인하기 위해 회사에서 사용할 수 있는 AWS 서비스 또는 기능은 무엇입니까?,"A. Cost allocation tags
+B. Key pairs
+C. Amazon Inspector
+D. AWS Trusted Advisor",a,d,태그를 사용하여 리소스를 구성하고 비용 할당 태그를 사용하여 자세한 수준에서 AWS 비용을 추적할 수 있습니다. 비용 할당 태그를 활성화하면 AWS는 비용 할당 태그를 사용하여 비용 할당 보고서에서 리소스 비용을 구성하여 AWS 비용을 보다 쉽게 ​​분류하고 추적할 수 있도록 합니다.
+"A company wants to migrate its workloads to AWS, but it lacks expertise in AWS Cloud computing.
+Which AWS service or feature will help the company with its migration?","회사에서 워크로드를 AWS로 마이그레이션하려고 하지만 AWS 클라우드 컴퓨팅에 대한 전문 지식이 부족합니다.
+회사의 마이그레이션에 도움이 되는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Trusted Advisor
+B. AWS Consulting Partners
+C. AWS Artifacts
+D. AWS Managed Services","b,d",b,"이건 좀 논란이 있음
+
+"
+Which AWS service or tool should a company use to centrally request and track service limit increases?,회사에서 서비스 한도 증가를 중앙에서 요청하고 추적하기 위해 사용해야 하는 AWS 서비스 또는 도구는 무엇입니까?,"A. AWS Config
+B. Service Quotas
+C. AWS Service Catalog
+D. AWS Budgets",b,b,
+Which documentation does AWS Artifact provide?,AWS Artifact는 어떤 문서를 제공합니까?,"A. Amazon EC2 terms and conditions
+B. AWS ISO certifications
+C. A history of a company's AWS spending
+D. A list of previous-generation Amazon EC2 instance types",b,b,
+Which task requires using AWS account root user credentials?,AWS 계정 루트 사용자 자격 증명을 사용해야 하는 작업은 무엇입니까?,"A. Viewing billing information
+B. Changing the AWS Support plan
+C. Starting and stopping Amazon EC2 instances
+D. Opening an AWS Support case
+",b,b,
+"A company needs to simultaneously process hundreds of requests from different users.
+Which combination of AWS services should the company use to build an operationally efficient solution?
+","회사는 서로 다른 사용자의 수백 건의 요청을 동시에 처리해야 합니다.
+회사는 운영상 효율적인 솔루션을 구축하기 위해 어떤 AWS 서비스 조합을 사용해야 합니까?","A. Amazon Simple Queue Service (Amazon SQS) and AWS Lambda
+B. AWS Data Pipeline and Amazon EC2
+C. Amazon Kinesis and Amazon Athena
+D. AWS Amplify and AWS AppSync",a,a,
+What is the scope of a VPC within the AWS network?,AWS 네트워크 내에서 VPC의 범위는 어떻게 됩니까?,"A. A VPC can span all Availability Zones globally.
+B. A VPC must span at least two subnets in each AWS Region.
+C. A VPC must span at least two edge locations in each AWS Region.
+D. A VPC can span all Availability Zones within an AWS Region.",d,d,
+Which of the following are components of an AWS Site-to-Site VPN connection? (Choose two.),다음 중 AWS Site-to-Site VPN 연결의 구성 요소는 무엇입니까? (두 가지를 선택하세요.),"A. AWS Storage Gateway
+B. Virtual private gateway
+C. NAT gateway
+D. Customer gateway
+E. Internet gateway","b,d","b,d",
+"A company needs to establish a connection between two VPCs. The VPCs are located in two different AWS Regions. The company wants to use the existing infrastructure of the VPCs for this connection.
+Which AWS service or feature can be used to establish this connection?","회사는 두 VPC 간에 연결을 설정해야 합니다. VPC는 서로 다른 두 AWS 리전에 있습니다. 회사는 이 연결에 VPC의 기존 인프라를 사용하려고 합니다.
+이 연결을 설정하는 데 사용할 수 있는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Client VPN
+B. VPC peering
+C. AWS Direct Connect
+D. VPC endpoints",b,b,
+"According to the AWS shared responsibility model, what responsibility does a customer have when using Amazon RDS to host a database?",AWS 공유 책임 모델에 따르면 Amazon RDS를 사용하여 데이터베이스를 호스팅할 때 고객은 어떤 책임을 져야 합니까?,"A. Manage connections to the database
+B. Install Microsoft SQL Server
+C. Design encryption-at-rest strategies
+D. Apply minor database patches",a,c,C가 아님: 저장 데이터 암호화 전략 설계: Amazon RDS는 기본적으로 데이터베이스 스토리지에 저장 데이터 암호화를 제공합니다. 디스크의 데이터 암호화를 처리하고 관련 키를 관리합니다. 고객은 Amazon RDS 인스턴스를 생성할 때 암호화를 활성화할 수 있지만 암호화 전략을 직접 설계할 필요는 없습니다.
+What are some advantages of using Amazon EC2 instances to host applications in the AWS Cloud instead of on premises? (Choose two.),온프레미스 대신 AWS 클라우드에서 애플리케이션을 호스팅하기 위해 Amazon EC2 인스턴스를 사용하면 어떤 이점이 있습니까? (두 가지를 선택하세요.),"A. EC2 includes operating system patch management.
+B. EC2 integrates with Amazon VPC, AWS CloudTrail, and AWS Identity and Access Management (IAM).
+C. EC2 has a 100% service level agreement (SLA).
+D. EC2 has a flexible, pay-as-you-go pricing model.
+E. EC2 has automatic storage cost optimization.","b,d","b,d","논란이 있음
+d,e라고 나옴"
+"A user needs to determine whether an Amazon EC2 instance's security groups were modified in the last month.
+How can the user see if a change was made?","사용자는 Amazon EC2 인스턴스의 보안 그룹이 지난달에 수정되었는지 확인해야 합니다.
+사용자는 변경 사항이 있는지 어떻게 알 수 있습니까?","A. Use Amazon EC2 to see if the security group was changed.
+B. Use AWS Identity and Access Management (IAM) to see which user or role changed the security group.
+C. Use AWS CloudTrail to see if the security group was changed.
+D. Use Amazon CloudWatch to see if the security group was changed.",c,c,
+Which AWS service will help protect applications running on AWS from DDoS attacks?,DDoS 공격으로부터 AWS에서 실행되는 애플리케이션을 보호하는 데 도움이 되는 AWS 서비스는 무엇입니까?,"A. Amazon GuardDuty
+B. AWS WAF
+C. AWS Shield
+D. Amazon Inspector",c,c,
+Which AWS service or feature acts as a firewall for Amazon EC2 instances?,Amazon EC2 인스턴스의 방화벽 역할을 하는 AWS 서비스 또는 기능은 무엇입니까?,"A. Network ACL
+B. Elastic network interface
+C. Amazon VPC
+D. Security group",d,d,
+How does the AWS Cloud pricing model differ from the traditional on-premises storage pricing model?,AWS 클라우드 요금 모델은 기존 온프레미스 스토리지 요금 모델과 어떻게 다릅니까?,"A. AWS resources do not incur costs
+B. There are no infrastructure operating costs
+C. There are no upfront cost commitments
+D. There are no software licensing costs",b,b,"논란있음
+b,c임"
+"A company has a single Amazon EC2 instance. The company wants to adopt a highly available architecture.
+What can the company do to meet this requirement?","회사에는 단일 Amazon EC2 인스턴스가 있습니다. 회사는 고가용성 아키텍처를 채택하려고 합니다.
+이 요구 사항을 충족하기 위해 회사는 무엇을 할 수 있습니까?","A. Scale vertically to a larger EC2 instance size.
+B. Scale horizontally across multiple Availability Zones.
+C. Purchase an EC2 Dedicated Instance.
+D. Change the EC2 instance family to a compute optimized instance.",b,b,
+"A company's on-premises application deployment cycle was 3-4 weeks. After migrating to the AWS Cloud, the company can deploy the application in 2-3 days.
+Which benefit has this company experienced by moving to the AWS Cloud?","회사의 온프레미스 애플리케이션 배포 주기는 3-4주였습니다. 회사는 AWS 클라우드로 마이그레이션한 후 2~3일 내에 애플리케이션을 배포할 수 있습니다.
+이 회사는 AWS 클라우드로 이전하여 어떤 이점을 얻었습니까?","A. Elasticity
+B. Flexibility
+C. Agility
+D. Resilience",c,d,"민첩성 개념을 까먹엇음....
+
+속도=민첩성"
+Which of the following are included in AWS Enterprise Support? (Choose two.),다음 중 AWS Enterprise Support에 포함되는 것은 무엇입니까? (두 가지를 선택하세요.),"A. AWS technical account manager (TAM)
+B. AWS partner-led support
+C. AWS Professional Services
+D. Support of third-party software integration to AWS
+E. 5-minute response time for critical issues","a,d","a,e","e는 못외움
+D는 처음암
+
+b와c는 aws 파트너사에서 지원하는거지 aws에서 지원하진 않음
+
+https://i.ytimg.com/vi/0LQcq_zyNmg/maxresdefault.jpg
+
+
+"
+"A global media company uses AWS Organizations to manage multiple AWS accounts.
+Which AWS service or feature can the company use to limit the access to AWS services for member accounts?
+","글로벌 미디어 회사는 AWS Organizations를 사용하여 여러 AWS 계정을 관리합니다.
+회원 계정의 AWS 서비스에 대한 액세스를 제한하기 위해 회사에서 사용할 수 있는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Identity and Access Management (IAM)
+B. Service control policies (SCPs)
+C. Organizational units (OUs)
+D. Access control lists (ACLs)",b,b,
+"A company wants to limit its employees' AWS access to a portfolio of predefined AWS resources.
+Which AWS solution should the company use to meet this requirement?","회사에서 사전 정의된 AWS 리소스 포트폴리오에 대한 직원의 AWS 액세스를 제한하려고 합니다.
+회사에서 이 요구 사항을 충족하려면 어떤 AWS 솔루션을 사용해야 합니까?","A. AWS Config
+B. AWS software development kits (SDKs)
+C. AWS Service Catalog
+D. AWS AppSync",c,b,난 서비스 카탈로그를 본적이 없음...
+"An online company was running a workload on premises and was struggling to launch new products and features. After migrating the workload to AWS, the company can quickly launch products and features and can scale its infrastructure as required.
+Which AWS Cloud value proposition does this scenario describe?","온라인 회사는 온프레미스에서 워크로드를 실행하고 있었고 새로운 제품과 기능을 출시하는 데 어려움을 겪고 있었습니다. 워크로드를 AWS로 마이그레이션한 후 회사는 신속하게 제품과 기능을 출시하고 필요에 따라 인프라를 확장할 수 있습니다.
+이 시나리오에서 설명하는 AWS 클라우드 가치 제안은 무엇입니까?","A. Business agility
+B. High availability
+C. Security
+D. Centralized auditing",a,b,영어를 좀 알아라....
+Which of the following are advantages of the AWS Cloud? (Choose two.),다음 중 AWS 클라우드의 장점은 무엇입니까? (두 가지를 선택하세요.),"A. AWS management of user-owned infrastructure
+B. Ability to quickly change required capacity
+C. High economies of scale
+D. Increased deployment time to market
+E. Increased fixed expenses","b,c",b,"음... 높은 규모의 경제는 몰랏음
+
+a는 사용자가 인프라를 소유하지 않음"
+"AWS has the ability to achieve lower pay-as-you-go pricing by aggregating usage across hundreds of thousands of users.
+This describes which advantage of the AWS Cloud?
+","AWS는 수십만 사용자의 사용량을 집계하여 종량제 요금을 낮출 수 있습니다.
+이것은 AWS 클라우드의 어떤 이점을 설명합니까?","A. Launch globally in minutes
+B. Increase speed and agility
+C. High economies of scale
+D. No guessing about compute capacity",c,c,
+"A company has a database server that is always running. The company hosts the server on Amazon EC2 instances. The instance sizes are suitable for the workload. The workload will run for 1 year.
+Which EC2 instance purchasing option will meet these requirements MOST cost-effectively?
+","회사에는 항상 실행되는 데이터베이스 서버가 있습니다. 회사는 Amazon EC2 인스턴스에서 서버를 호스팅합니다. 인스턴스 크기는 워크로드에 적합합니다. 워크로드는 1년 동안 실행됩니다.
+이러한 요구 사항을 가장 비용 효율적으로 충족하는 EC2 인스턴스 구매 옵션은 무엇입니까?","A. Standard Reserved Instances
+B. On-Demand Instances
+C. Spot Instances
+D. Convertible Reserved Instances",a,a,
+"A company is developing a mobile app that needs a high-performance NoSQL database.
+Which AWS services could the company use for this database? (Choose two.)
+","회사에서 고성능 NoSQL 데이터베이스가 필요한 모바일 앱을 개발하고 있습니다.
+회사에서 이 데이터베이스에 사용할 수 있는 AWS 서비스는 무엇입니까? (두 가지를 선택하세요.)","A. Amazon Aurora
+B. Amazon RDS
+C. Amazon Redshift
+D. Amazon DocumentDB (with MongoDB compatibility)
+E. Amazon DynamoDB","d,e","d,e",
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,

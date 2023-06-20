@@ -78,7 +78,7 @@ transit gateway 중
 <br>
 
 `vpc endpoint gateway`
-- 오직 s3와 다이나모DB전용임
+- 오직 `s3와 다이나모DB전용임`
 - 서브넷에 VPC 엔드포인트용 게이트웨이를 따로 생성함
 
 <br>

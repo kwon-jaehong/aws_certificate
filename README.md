@@ -10,10 +10,6 @@ AWS infrastructure event management
 -> AWS에서 제공되는 서비스 중 하나가 아닙니다. 그러나 AWS CloudTrail 및 AWS CloudWatch 같은 AWS 서비스를 사용하여 인프라 이벤트를 모니터링하고 관리할 수 있습니다.
 
 
-AWS Outposts
-
-AWS Local Zones
-
 스노우볼 다시 정리
 
 RDB 복제 다시정리

@@ -217,7 +217,10 @@ AWS 서비스관련해서 FAQ 자주묻는 질문들 모은곳
 
 
 
+-----------------------------------------------
+AWS Professional Services를 이용하고자 하는 경우, AWS 고객은 AWS Sales 팀과 연락하여 요청하고 원하는 서비스에 대한 계약 및 비용에 대한 협상을 진행해야 합니다. AWS Professional Services 팀은 고객의 요구 사항과 프로젝트 규모에 따라 컨설팅 서비스를 제공하며, 해당 서비스에 대한 비용은 합의된 계약에 따라 책정됩니다.
 
+AWS Professional Services를 사용하려면 AWS 계정을 가지고 있어야 하며, AWS 고객이 되어야 합니다. AWS 웹 사이트(https://aws.amazon.com/)에서 계정을 생성하고, AWS Sales 팀과 연락하여 AWS Professional Services를 요청하고 계약을 체결할 수 있습니다.
 
 
 

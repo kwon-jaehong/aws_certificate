@@ -369,9 +369,6 @@ https://aws.amazon.com/premiumsupport/plans/enterprise/
 
 
 
-
-
-
 설명
 올바른 옵션:
 
@@ -515,7 +512,7 @@ Amazon Simple Storage Service(Amazon S3) 스토리지 서버의 인프라 유지
 https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys
 
 
--> 다시 봐야할듯
+-> 다시 봐야할듯 `고객 간의 데이터 분리 보장 `은 AWS임!!!!!!
 
 
 

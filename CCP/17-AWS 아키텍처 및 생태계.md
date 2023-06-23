@@ -265,11 +265,23 @@ AWS 서비스 측면에서의 -  보안
 <br><br>
 <br><br>
 
+- AWS Partner Solutions (이전  Quick Starts)
+  - AWS 파트너 네트워크(Partner Network)의 일부로, AWS와 제휴한 기업 및 조직이 제공하는 솔루션과 서비스를 말합니다. 
+  - 주요 카테고리로는 아키텍처 설계, 개발 및 테스트, 데이터 분석, 보안, 인공지능(AI) 및 머신러닝(ML), IoT(Internet of Things), DevOps, 마이그레이션, 비즈니스 애플리케이션 등이 있습니다.
+  - `AWS 신기술 빨리 쓰고 싶으면` 이거 써야됨
+  - AWS 파트너 솔루션은 AWS 클라우드의 주요 워크로드에 대한 `자동화된 참조 배포`입니다.
+
+<br><br><br>
+
+
 AWS Professional Services <br>
 
+- `AWS 자체 팀임`
 - AWS Professional Services 팀은 고객의 요구 사항과 프로젝트 규모에 따라 `컨설팅 서비스를 제공`하며, 해당 서비스에 대한 비용은 합의된 계약에 따라 책정됩니다.
 - AWS 고객은 AWS Sales 팀과 연락하여 요청하고 원하는 `서비스에 대한 계약 및 비용에 대한 협상을 진행`해야 합니다.
-- 
+
+<br><br>
+
 -----------------------------
 ## AWS 지식센터
 

@@ -134,10 +134,69 @@ DNS 레코드의 유형마다 "value"의 의미와 형식이 다름
 
 ![Alt text](../etc/image2/dns%ED%98%B8%EC%8A%A4%ED%8A%B8%EC%A1%B4.png)
 
-
+- 리눅스 dnstools의 (dig와 nslookup을 통해 DNS 경로 추적 가능)
 -------------------------------------------------
 
-dig와 nslookup을 통해 DNS 경로 추적 가능
+## CNAME vs Alias 
+
+
+
+
+
+
+CNAME
+- AWS 리소스중 ELB나 클라우드 프론트를  사용하면 다음과 같은 DNS를 얻을 수 있다. (abb137fe4ab374af0a3c175828f4ca1e-1320128165.ap-northeast-2.elb.amazonaws.com)
+
+- 이 주소를 `temp.mrjaehong.com`으로 어떻게 이동 시킬까?
+  - CNAME 사용
+    - abb137fe4ab374af0a3c175828f4ca1e-1320128165.ap-northeast-2.elb.amazonaws.com => temp.mrjaehong.com으로 `CNAME 레코드 등록 하면됨`
+    - CNAME은 루트 도메인 네임 즉,(mrjaehong.com)이 아닌 경우에만 가능 (`서브도메인만 가능`)
+  - Alias 사용 (Alias는 route 53에서만 설정 가능)
+    - 별칭은 `root 도메인도 작동함`
+    - `무료임`
+    - `자체적으로 상태 확인`
+    - 별칭 레코드는 활성화 해서 `항상 A, AAAA 타입`에 적용하는 것임
+    - 별칭 타겟은 `ELB,cloudfront,API gateway, beanstalk, s3 websites, vpc endpoint interface, global accelerator, 동일 호스트존의 Route 53 record`
+    - `EC2의 DNS는 별칭 불가능!`
+
+![Alt text](../etc/image2/route53alias.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

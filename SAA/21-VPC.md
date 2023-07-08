@@ -63,6 +63,7 @@
 
 - 프라이빗 서브넷에 있는 Ec2인스턴스 인터넷 연결 통로
   - 왜씀? -> 베스쳔 호스트는 SSH연결만 해주기 위함이고, 프라이빗 Ec2는 인터넷 여전히 안됨
+- 오직 `Ipv4에서만 작동`
 
 - NAT에는 2종류가 있다
   - NAT Instance (구식)
@@ -216,32 +217,184 @@
 -----------------------------------------
 ## AWS Direct Connect
 
-- 
+- 기업 데이터 센터와 AWS AZ간에 `전용 연결선`을 생성
+- `DX`라고도 부름
+- VPC에 `VGW 설치해야됨`, `프라이빗 연결`
+- 하이브리드 구성 가능 (온프레미스,클라우드)
+- IPv4와 IPv6 지원 가능
+- 설치에 `한달정도 걸릴수` 있음 -> 안빠름
+  - 예)
+    - 기업 데이터 센터에서 큰 네트워크 대역폭 (큰 데이터셋)을 필요로 할때 
+
+
+![Alt text](../etc/image2/DX.png)
+
+- Direct Connect Gateway
+  - 리전에(다른 리전 포함) `여러 VPC와 다이렉트로 연결`하고 싶을때 사용
+
+![Alt text](../etc/image2/DX%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
 
 
+- Direct Connect 연결 타입
+  - Dedicated connections (전용 연결)
+    - 1, 10, 100 Gbps 대역폭 가능
+    - AWS에서 `전용 회선을 깔아줌`
+  - Hosted Connections (호스팅된 연결)
+    - 50Mbps, 500Mbps, 1,2,5,10 ~ 100Gbps 대역폭 가능 
+    - 필요하면 언제든 제거 해달라고 하면되고, 전용 회선보다는 유연함
+  
+
+- Hosted Connections:
+  - Hosted Connections은 `공유 인프라`를 사용하여 AWS Direct Connect 서비스를 제공합니다. `AWS는 여러 고객이 공유하는 물리적 링크를 유지하고 관리`합니다. 이 연결 유형은 여러 고객이 같은 물리적 인프라를 공유하기 때문에 비용이 저렴합니다. 하지만 이는 `가용성과 대역폭 효율성에 일부 제약`이 있을 수 있습니다.
+
+- Dedicated Connections:
+  - Dedicated Connections는 `고객에게 전용 물리적 연결을 제공`합니다. 각 고객은 자체 물리적 링크를 보유하며, `이 연결은 고객 전용`입니다. Dedicated Connections은 고객이 전체 대역폭을 사용하고 최고의 성능과 가용성을 제공할 수 있도록 합니다. 이러한 연결은 고객이 고유한 물리적 경로를 갖게 되므로 보안과 성능에 대한 추가 제어를 제공합니다.
+
+- 요약하면,`Hosted Connections는 공유 인프라를 사용하여 비용을 절감`하면서 연결을 설정하는 데 사용되며, `Dedicated Connections는 고객에게 전용 물리적 연결`을 제공하여 최고의 성능과 가용성을 보장합니다. 선택은 고객의 요구 사항과 예산에 따라 달라집니다.
 
 
 
+- Direct Connect `암호화 기능이 없음` -> 어짜피 프라이빗 통신이기 때문에
+  - 만약 암호화를 원한다면, VPN에서 제공하는 IPsec을 통해 암호화 가능
+
+
+- Direct Connect - Resiliency (복원력)
+  - 복원력을 높이기 위해, 여러 Direct Connect를 설치하는것이 좋다
+  - 복원력을 최대로 올릴려면, Direct Connect 이중화 필수
+
+![Alt text](../etc/image2/DX%EB%B3%B5%EC%9B%90%EB%A0%A5.png)
+
+
+--------------------------
+## AWS Direct Connect + Site to Site VPN
+
+- Direct Connect 2개 쓰면 좋겠지만, `비용이 많이듬`
+- 그래서 `백업으로 Site to Site VPN`을 연결 아키텍쳐에 적합
+
+![Alt text](../etc/image2/DX+site.png)
 
 
 
+-----------------------------------------------------
+## AWS Transit GateWay
+
+- 수천개의 `VPC 피어링, Site to Site VPN, Direct Connect`를 hub-and-spoke(star)별형 연결
+- 연결에는 `VPC 피어링 할 필요가 없고`, `전이적으로 연결 가능`
+- 즉, 이 서비스 이용하면, 모든 VPC에 접근 가능함
+- 기본은 리전 리소스이며, `리전 안에서 작동`
+  - 설정하면, `리전간 피어링도 가능`
+- 다른 계정에서 AWS 리소스를 사용하려면, `Resuorce Access Manager(RAM)을 사용`
+- Transit GateWay에 `자체 라우팅 테이블을 설정, VPC끼리 통신제어를 함`
+- AWS 서비스중 유일하게, `IP Multicast` 기능 제공
+  - `IP Multicast`는 IP 네트워크에서 `한 송신자가 여러 수신자에게 데이터를 전송하는 방법`입니다. 일반적으로 유니캐스트(Unicast)는 한 송신자가 한 수신자에게 데이터를 보내는 방식이며, 브로드캐스트(Broadcast)는 한 송신자가 모든 수신자에게 데이터를 보내는 방식입니다. 그러나 IP Multicast는 그 중간에 위치한 방식으로, 한 송신자가 관심 있는 그룹의 여러 수신자에게 데이터를 전송합니다.
+
+
+- 사례)
+  - Site-to-Site VPN 연결 대역폭을 `ECMP`를 사용해 늘림
+    - `Site-to-Site VPN를 많이 생성해서, 패킷의 분산 통신 정도라고 생각`
+    - ECMP는 Equal-Cost Multipath Routing(`다중 경로 라우팅`)의 약어입니다. ECMP는 네트워크에서 데이터 패킷이 여러 경로를 통해 전송되도록 하는 라우팅 알고리즘입니다. 이를 통해 네트워크 대역폭을 확장하고 링크의 부하를 균형있게 분산시킬 수 있습니다.
+
+
+    - Site-to-Site VPN을 AWS Transit Gateway에 연결하면 기본적으로 `2개`의 VPN 터널이 생성됩니다. 이는 일반적으로 `고가용성을 위해 사용`되며, 각각의 터널은 별도의` IPsec 연결로 암호화되어 데이터를 전송`합니다.
+
+    - 두 개의 VPN 터널은 동시에 사용되지만, 주로 하나의 터널이 활성화되고 `다른 하나는 대기 상태`로 유지됩니다. 터널 중 하나가 실패하거나 문제가 발생하면 다른 터널이 자동으로 활성화되어 연결을 유지합니다. 이를 통해 VPN 연결의 가용성과 내결함성이 향상됩니다.
+
+    - 터널 하나당 `1.25Gbps`처리
+    - Transit GateWay를 사용하면, 2터널이 뚫리므로, 2.5Gbps(ECMP)처리 가능
+
+
+    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
+
+    - 만약, 2개의 Site-to-Site VPN을 생성하면? -> `터널 4개 생성`
+
+    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
+    - 터널 추가 밑, 기본 VGW
+    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B43.png)
+
+    - 하지만... `돈이 비쌈`
+  - Direct connect Gateway랑도 연동 가능
+
+  - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B44.png)
+
+
+------------------------------------------
+## AWS VPC Traffic mirroring
+
+- VPC에서 트래픽을 수집하고, 검사하되 `AWS 리소스가 방해되지 않는방식`
+- ENI의 `source,target`을 정해 트래픽을 전체,필터링 해서 트래픽 분석 워크로드에 전송 할 수 있음
+- `동일한 VPC 리소스`나 `다른 VPC 리소스도` 가능(피어링 되어있으면)
+- 사례)
+  - 콘텐츠 검사, 위협 모니터링 등
+
+![Alt text](../etc/image2/VPC%ED%8A%B8%EB%9E%98%ED%94%BD%EB%AF%B8%EB%9F%AC%EB%A7%81.png)
 
 
 
+-----------------------------------------
+## AWS VPC용 IPv6
+
+- IPv4는 43억개 주소를 가짐 (부족)
+- IPv6는 3.4 * 10^38 주소 제공
+- IPv6에는 `사설 범위가 없음`, 다 퍼블릭임
+- 형식은 8자리, 16진수 사용
+  - 예) 
+    - 2001:db8:3333:4444:5555:6666:7777:8888
+
+- VPC와 서브넷에서 `IPv4는 비활성이 불가능함`
+- IPv6는 활성화 가능하고, `활성화` 하면, Ec2인스턴스를 생성하면 -> `사설 IPv4 하나와, 공용 IPv6 하나를 얻음` (ipv6 ipv4 dual stack)
+- `IPv6 IPv4 Dual Stack` 모드는 네트워크 장치나 시스템이 동시에 IPv6 및 IPv4 주소 체계를 지원하는 모드를 말합니다. 이 모드에서는 IPv6과 IPv4 주소 체계가 병렬로 동작하며, `네트워크 장치 및 시스템은 두 가지 IP 버전을 동시에 처리`할 수 있습니다.
+
+- SAA문제) IPv6가 활성화된 VPC에서 Ec2를 생성했는데, 서브넷에서 Ec2를 실행 할 수 없다고 나오면? -> `Ec2가 Ipv6를 받지 못해서가 아님(Ipv6 주소는 너무 많기 때문에), 원인은 서브넷에 이용가능한 IPv4가 없기 때문임`
+
+
+-------------------------------------
+## AWS Egress-only internet GateWay - 송신 전용 게이트웨이
+
+- `프라이빗 서브넷에 있는 Ec2 ipv6의 인터넷 아웃바운드` <-> 인터넷이랑 연결
+- Nat Gateway랑 비슷하지만, `Ipv6트래픽만 사용됨`
+- VPC에서 IPv6의 `아웃바운드를 연결`을 허용, `인바운드 아님!`
+- `라우팅 테이블 업데이트 해야됨`
 
 
 
+![Alt text](../etc/image2/%EC%9D%B4%EA%B7%B8%EB%9E%98%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
 
 
+![Alt text](../etc/image2/%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
 
+---------------------------------------
+## AWS 네트워크 비용
+
+- 같은 AZ Ec2가 사설(private IP)로 통신할 시 `무료`
+- 같은 리전, 다른 AZ 퍼블릭 IP 통신 0.02달러
+- 같은 리전, 다른 AZ 프라이빗 IP 통신 0.01달러
+
+![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A91.png)
 
 
+- `S3와 클라우드 프론트사이에서 데이터를 주고받는건 무료`
 
 
+![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A92.png)
+
+- VPC 엔드포인트 이용해라, GB당, 0.01달러
+![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A93.png)
 
 
+------------------------------------------
+## AWS Network Firewall
+
+- VPC를 보호를 위한 방화벽
+- 3계층에서 7계층까지 보호
+- `모든 방향(인,아웃), 모든 트래픽을 검사`
+- `여러 계정 or 여러 VPC에 적용 가능`
+- 수천개의 규칙, 수만 IP나 Port를 필터링 가능
+- `트래픽 허용,차단, 알림을 설정 할 수 있음`
+
+
+![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B0%A9%ED%99%94%EB%B2%BD.png)
 
 
 

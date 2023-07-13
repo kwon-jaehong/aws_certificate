@@ -801,4 +801,622 @@ D. AWS managed compliance as code with AWS Config",b,b,
 Which task does AWS perform automatically?,AWS는 어떤 작업을 자동으로 수행합니까?,"A. Encrypt data that is stored in Amazon DynamoDB.
 B. Patch Amazon EC2 instances.
 C. Encrypt user network traffic.
-D. Create TLS certificates for users' websites.","a,b","b,c","논란 많음, 다이나모 DB 암호화 볼것"
+D. Create TLS certificates for users' websites.","a,b","b,c","논란 많음, 다이나모 DB 암호화 볼것 → 
+네, AWS DynamoDB는 저장 데이터의 암호화를 자동으로 지원합니다. 전송중 암호화는 왜 자동이 아닌가?"
+"Which AWS service or tool can a company use to visualize, understand, and manage AWS spending and usage over time?","시간 경과에 따른 AWS 지출 및 사용량을 시각화, 이해 및 관리하기 위해 회사에서 사용할 수 있는 AWS 서비스 또는 도구는 무엇입니까?
+","A. AWS Trusted Advisor
+B. Amazon CloudWatch
+C. Cost Explorer
+D. AWS Budgets",c,c,
+"A company wants to deploy some of its resources in the AWS Cloud. To meet regulatory requirements, the data must remain local and on premises. There must be low latency between AWS and the company resources.
+Which AWS service or feature can be used to meet these requirements?","회사에서 일부 리소스를 AWS 클라우드에 배포하려고 합니다. 규정 요구 사항을 충족하려면 데이터가 로컬 및 온프레미스에 남아 있어야 합니다. AWS와 회사 리소스 간에 지연 시간이 짧아야 합니다.
+이러한 요구 사항을 충족하는 데 사용할 수 있는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Local Zones
+B. Availability Zones
+C. AWS Outposts
+D. AWS Wavelength Zones","a,c","a,c","논란 많음, 아웃포스트 같앗음"
+"A company requires an isolated environment within AWS for security purposes.
+Which action can be taken to accomplish this?",회사는 보안을 위해 AWS 내에 격리된 환경이 필요합니다. 이를 달성하기 위해 어떤 조치를 취할 수 있습니까?,"A. Create a separate Availability Zone to host the resources.
+B. Create a separate VPC to host the resources.
+C. Create a placement group to host the resources.
+D. Create an AWS Direct Connect connection between the company and AWS.",b,b,
+"Which AWS service is a highly available and scalable DNS web service?
+",가용성과 확장성이 뛰어난 DNS 웹 서비스인 AWS 서비스는 무엇입니까?,"A. Amazon VPC
+B. Amazon CloudFront
+C. Amazon Route 53
+D. Amazon Connect",c,c,
+Which of the following is an AWS best practice for managing an AWS account root user?,다음 중 AWS 계정 루트 사용자를 관리하기 위한 AWS 모범 사례는 무엇입니까?,"A. Keep the root user password with the security team.
+B. Enable multi-factor authentication (MFA) for the root user.
+C. Create an access key for the root user.
+D. Keep the root user password consistent for compliance purposes.",b,b,
+"A company wants to improve its security and audit posture by limiting Amazon EC2 inbound access.
+What should the company use to access instances remotely instead of opening inbound SSH ports and managing SSH keys?",회사는 Amazon EC2 인바운드 액세스를 제한하여 보안 및 감사 상태를 개선하려고 합니다. 회사는 인바운드 SSH 포트를 열고 SSH 키를 관리하는 대신 원격으로 인스턴스에 액세스하기 위해 무엇을 사용해야 합니까?,"A. EC2 key pairs
+B. AWS Systems Manager Session Manager
+C. AWS Identity and Access Management (IAM)
+D. Network ACLs",b,b,
+"After selecting an Amazon EC2 Dedicated Host reservation, which pricing option would provide the largest discount?",Amazon EC2 전용 호스트 예약을 선택한 후 가장 큰 할인을 제공하는 요금 옵션은 무엇입니까?,"A. No upfront payment
+B. Hourly on-demand payment
+C. Partial upfront payment
+D. All upfront payment",d,d,
+"A company has refined its workload to use specific AWS services to improve efficiency and reduce cost.
+Which best practice for cost governance does this example show?",회사에서 특정 AWS 서비스를 사용하여 효율성을 개선하고 비용을 절감하도록 워크로드를 개선했습니다. 이 예에서 보여주는 비용 거버넌스의 모범 사례는 무엇입니까?,"A. Resource controls
+B. Cost allocation
+C. Architecture optimization
+D. Tagging enforcement",c,c,
+"A company would like to host its MySQL databases on AWS and maintain full control over the operating system, database installation, and configuration.
+Which AWS service should the company use to host the databases?","회사는 AWS에서 MySQL 데이터베이스를 호스팅하고 운영 체제, 데이터베이스 설치 및 구성에 대한 완전한 제어를 유지하려고 합니다. 회사는 데이터베이스를 호스팅하기 위해 어떤 AWS 서비스를 사용해야 합니까?","A. Amazon RDS
+B. Amazon EC2
+C. Amazon DynamoDB
+D. Amazon Aurora",b,b,
+How does the AWS global infrastructure offer high availability and fault tolerance to its users?,AWS 글로벌 인프라는 어떻게 사용자에게 고가용성과 내결함성을 제공합니까?,"A. The AWS infrastructure is made up of multiple AWS Regions within various Availability Zones located in areas that have low flood risk, and are interconnected with low-latency networks and redundant power supplies.
+B. The AWS infrastructure consists of subnets containing various Availability Zones with multiple data centers located in the same geographic location.
+C. AWS allows users to choose AWS Regions and data centers so that users can select the closest data centers in different Regions.
+D. The AWS infrastructure consists of isolated AWS Regions with independent Availability Zones that are connected with low-latency networking and redundant power supplies.",d,d,
+"A company is using Amazon EC2 Auto Scaling to scale its Amazon EC2 instances.
+Which benefit of the AWS Cloud does this example illustrate?","회사에서 Amazon EC2 Auto Scaling을 사용하여 Amazon EC2 인스턴스를 확장하고 있습니다.
+이 예에서 설명하는 AWS 클라우드의 이점은 무엇입니까?","A. High availability
+B. Elasticity
+C. Reliability
+D. Global reach",b,a,"탄력성 다시보기, 신뢰성이랑 헷갈림"
+Which AWS service or feature is used to send both text and email messages from distributed applications?,분산 애플리케이션에서 문자 메시지와 이메일 메시지를 모두 보내는 데 사용되는 AWS 서비스 또는 기능은 무엇입니까?,"A. Amazon Simple Notification Service (Amazon SNS)
+B. Amazon Simple Email Service (Amazon SES)
+C. Amazon CloudWatch alerts
+D. Amazon Simple Queue Service (Amazon SQS)",a,a,
+A user is able to set up a master payer account to view consolidated billing reports through:,사용자는 마스터 지불인 계정을 설정하여 다음을 통해 통합 결제 보고서를 볼 수 있습니다.,"A. AWS Budgets.
+B. Amazon Macie.
+C. Amazon QuickSight.
+D. AWS Organizations.",d,d,
+"According to the AWS shared responsibility model, which task is the customer's responsibility?",AWS 공유 책임 모델에 따르면 고객이 책임지는 작업은 무엇입니까?,"A. Maintaining the infrastructure needed to run AWS Lambda
+B. Updating the operating system of Amazon DynamoDB instances
+C. Maintaining Amazon S3 infrastructure
+D. Updating the guest operating system on Amazon EC2 instances",d,d,
+"A company wants to migrate a small website and database quickly from on-premises infrastructure to the AWS Cloud. The company has limited operational knowledge to perform the migration.
+Which AWS service supports this use case?
+",한 회사가 소규모 웹사이트와 데이터베이스를 온프레미스 인프라에서 AWS 클라우드로 신속하게 마이그레이션하려고 합니다. 회사는 마이그레이션을 수행하기 위한 운영 지식이 제한되어 있습니다. 이 사용 사례를 지원하는 AWS 서비스는 무엇입니까?,"A. Amazon EC2
+B. Amazon Lightsail
+C. Amazon S3
+D. AWS Lambda
+",b,b,
+"A company is moving multiple applications to a single AWS account. The company wants to monitor the AWS Cloud costs incurred by each application.
+What can the company do to meet this requirement?",한 회사에서 여러 애플리케이션을 단일 AWS 계정으로 이전하고 있습니다. 회사는 각 애플리케이션에서 발생하는 AWS 클라우드 비용을 모니터링하려고 합니다. 이 요구 사항을 충족하기 위해 회사는 무엇을 할 수 있습니까?,"A. Set up invoiced billing.
+B. Use AWS Artifact.
+C. Set budgets in Cost Explorer.
+D. Create cost allocation tags.",d,d,
+"Which design principle is achieved by following the reliability pillar of the AWS Well-Architected Framework?
+",AWS Well-Architected 프레임워크의 안정성 원칙에 따라 달성되는 설계 원칙은 무엇입니까?,"A. Vertical scaling
+B. Manual failure recovery
+C. Testing recovery procedures
+D. Changing infrastructure manually",c,c,
+"A user needs to quickly deploy a non-relational database on AWS. The user does not want to manage the underlying hardware or the database software.
+Which AWS service can be used to accomplish this?",사용자는 AWS에 비관계형 데이터베이스를 신속하게 배포해야 합니다. 사용자는 기본 하드웨어나 데이터베이스 소프트웨어를 관리하기를 원하지 않습니다. 이를 위해 어떤 AWS 서비스를 사용할 수 있습니까?,"A. Amazon RDS
+B. Amazon DynamoDB
+C. Amazon Aurora
+D. Amazon Redshift
+",b,b,
+Which task is an AWS responsibility when a workload is running in Amazon RDS?,워크로드가 Amazon RDS에서 실행 중일 때 AWS가 담당하는 작업은 무엇입니까?,"A. Creating the database table
+B. Updating the database schema
+C. Installing the database engine
+D. Dropping the database records",c,c,
+"A development team wants to publish and manage web services that provide REST APIs.
+Which AWS service will meet this requirement?",개발 팀은 REST API를 제공하는 웹 서비스를 게시하고 관리하려고 합니다. 이 요구 사항을 충족하는 AWS 서비스는 무엇입니까?,"A. AWS App Mesh
+B. Amazon API Gateway
+C. Amazon CloudFront
+D. AWS Cloud Map",b,b,
+"A company has a social media platform in which users upload and share photos with other users. The company wants to identify and remove inappropriate photos. The company has no machine learning (ML) scientists and must build this detection capability with no ML expertise.
+Which AWS service should the company use to build this capability?
+","회사에는 사용자가 사진을 업로드하고 다른 사용자와 공유하는 소셜 미디어 플랫폼이 있습니다. 회사는 부적절한 사진을 식별하고 제거하기를 원합니다. 이 회사에는 ML(기계 학습) 과학자가 없으며 ML 전문 지식 없이 이 탐지 기능을 구축해야 합니다.
+회사는 이 기능을 구축하기 위해 어떤 AWS 서비스를 사용해야 합니까?","A. Amazon SageMaker
+B. Amazon Textract
+C. Amazon Rekognition
+D. Amazon Comprehend",c,c,
+Which responsibility belongs to AWS when a company hosts its databases on Amazon EC2 instances?,회사가 Amazon EC2 인스턴스에서 데이터베이스를 호스팅할 때 AWS에 속한 책임은 무엇입니까?,"A. Database backups
+B. Database software patches
+C. Operating system patches
+D. Operating system installations.",d,d,
+"A company wants to use Amazon S3 to store its legacy data. The data is rarely accessed. However, the data is critical and cannot be recreated. The data needs to be available for retrieval within seconds.
+Which S3 storage class meets these requirements MOST cost-effectively?",,"A. S3 Standard
+B. S3 One Zone-Infrequent Access (S3 One Zone-IA)
+C. S3 Standard-Infrequent Access (S3 Standard-IA)
+D. S3 Glacier
+",c,b,"데이터는 재성성 X에 -> 고가용성을 선택햇어야 했음
+https://aws.amazon.com/about-aws/whats-new/2018/04/announcing-s3-one-zone-infrequent-access-a-new-amazon-s3-storage-class/"
+"An online retail company wants to migrate its on-premises workload to AWS. The company needs to automatically handle a seasonal workload increase in a cost- effective manner.
+Which AWS Cloud features will help the company meet this requirement? (Choose two.)","온라인 소매 회사는 온프레미스 워크로드를 AWS로 마이그레이션하려고 합니다. 회사는 계절에 따라 증가하는 워크로드를 비용 효율적인 방식으로 자동으로 처리해야 합니다.
+회사가 이 요구 사항을 충족하는 데 도움이 되는 AWS 클라우드 기능은 무엇입니까? (두 가지를 선택하세요.)","A. Cross-Region workload deployment
+B. Pay-as-you-go pricing
+C. Built-in AWS CloudTrail audit capabilities
+D. Auto Scaling policies
+E. Centralized logging
+","b,d","b,d",
+Which AWS service helps developers use loose coupling and reliable messaging between microservices?,개발자가 마이크로 서비스 간에 느슨한 결합과 안정적인 메시징을 사용하는 데 도움이 되는 AWS 서비스는 무엇입니까?,"A. Elastic Load Balancing
+B. Amazon Simple Notification Service (Amazon SNS)
+C. Amazon CloudFront
+D. Amazon Simple Queue Service (Amazon SQS)",d,d,
+"A company needs to build an application that uses AWS services. The application will be delivered to residents in European Counties. The company must abide by regional regulatory requirements.
+Which AWS service or program should the company use to determine which AWS services meet the regional requirements?","회사는 AWS 서비스를 사용하는 애플리케이션을 구축해야 합니다. 신청서는 유럽 카운티 거주자에게 전달됩니다. 회사는 지역 규제 요건을 준수해야 합니다.
+지역 요구 사항을 충족하는 AWS 서비스를 결정하기 위해 회사에서 사용해야 하는 AWS 서비스 또는 프로그램은 무엇입니까?","A. AWS Audit Manager
+B. AWS Shield
+C. AWS Compliance Program
+D. AWS Artifact",c,d,AWS Compliance Program를 안배움
+"A company needs to implement identity management for a fleet of mobile apps that are running in the AWS Cloud.
+Which AWS service will meet this requirement?",회사는 AWS 클라우드에서 실행 중인 모바일 앱 플릿에 대한 자격 증명 관리를 구현해야 합니다. 이 요구 사항을 충족하는 AWS 서비스는 무엇입니까?,"A. Amazon Cognito
+B. AWS Security Hub
+C. AWS Shield
+D. AWS WAF
+",a,a,
+"A company needs an Amazon EC2 instance for a rightsized database server that must run constantly for 1 year.
+Which EC2 instance purchasing option will meet these requirements MOST cost-effectively?","회사는 1년 동안 지속적으로 실행해야 하는 적절한 크기의 데이터베이스 서버를 위해 Amazon EC2 인스턴스가 필요합니다.
+이러한 요구 사항을 가장 비용 효율적으로 충족하는 EC2 인스턴스 구매 옵션은 무엇입니까?","A. Standard Reserved Instance
+B. Convertible Reserved Instance
+C. On-Demand Instance
+D. Spot Instance
+",a,a,
+"A company has multiple applications and is now building a new multi-tier application. The company will host the new application on Amazon EC2 instances. The company wants the network routing and traffic between the various applications to follow the security principle of least privilege.
+Which AWS service or feature should the company use to enforce this principle?","한 회사에 여러 애플리케이션이 있으며 현재 새로운 다중 계층 애플리케이션을 구축하고 있습니다. 회사는 Amazon EC2 인스턴스에서 새 애플리케이션을 호스팅합니다. 회사는 다양한 애플리케이션 간의 네트워크 라우팅 및 트래픽이 최소 권한의 보안 원칙을 따르기를 원합니다.
+회사에서 이 원칙을 시행하기 위해 사용해야 하는 AWS 서비스 또는 기능은 무엇입니까?","A. Security groups
+B. AWS Shield
+C. AWS Global Accelerator
+D. AWS Direct Connect gateway
+",a,a,
+"A company's web application requires AWS credentials and authorizations to use an AWS service.
+Which IAM entity should the company use as best practice?","회사의 웹 애플리케이션에서 AWS 서비스를 사용하려면 AWS 자격 증명 및 권한 부여가 필요합니다.
+회사에서 모범 사례로 사용해야 하는 IAM 엔터티는 무엇입니까?
+","A. IAM role
+B. IAM user
+C. IAM group
+D. IAM multi-factor authentication (MFA)",a,a,
+"A company is creating a document that defines the operating system patch routine for all the company's systems.
+Which AWS resources should the company include in this document? (Choose two.)","회사에서 회사의 모든 시스템에 대한 운영 체제 패치 루틴을 정의하는 문서를 작성하고 있습니다.
+회사는 이 문서에 어떤 AWS 리소스를 포함해야 합니까? (두 가지를 선택하세요.)
+","A. Amazon EC2 instances
+B. AWS Lambda functions
+C. AWS Fargate tasks
+D. Amazon RDS instances
+E. Amazon Elastic Container Service (Amazon ECS) instances","a,d,e","a,e",RDS패치도 고객이 직접 할 수 있나?
+Which AWS service or feature gives a company the ability to control incoming traffic and outgoing traffic for Amazon EC2 instances?,회사에서 Amazon EC2 인스턴스에 대한 수신 트래픽과 발신 트래픽을 제어할 수 있는 AWS 서비스 또는 기능은 무엇입니까?,"A. Security groups
+B. Amazon Route 53
+C. AWS Direct Connect
+D. Amazon VPC",a,a,
+"A company is starting to build its infrastructure in the AWS Cloud. The company wants access to technical support during business hours. The company also wants general architectural guidance as teams build and test new applications.
+Which AWS Support plan will meet these requirements at the LOWEST cost?","한 회사가 AWS 클라우드에서 인프라를 구축하기 시작했습니다. 회사는 업무 시간 동안 기술 지원에 액세스하기를 원합니다. 회사는 또한 팀이 새로운 애플리케이션을 빌드하고 테스트할 때 일반적인 아키텍처 지침을 원합니다.
+가장 저렴한 비용으로 이러한 요구 사항을 충족하는 AWS Support 플랜은 무엇입니까?
+","A. AWS Basic Support
+B. AWS Developer Support
+C. AWS Business Support
+D. AWS Enterprise Support",b,d,플랜들 다시 보기
+"A company is migrating its public website to AWS. The company wants to host the domain name for the website on AWS.
+Which AWS service should the company use to meet this requirement?",회사에서 공개 웹 사이트를 AWS로 마이그레이션하고 있습니다. 회사는 AWS에서 웹 사이트의 도메인 이름을 호스팅하려고 합니다. 회사에서 이 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?,"A. AWS Lambda
+B. Amazon Route 53
+C. Amazon CloudFront
+D. AWS Direct Connect",b,b,
+"A company needs to evaluate its AWS environment and provide best practice recommendations in five categories: cost, performance, service limits, fault tolerance, and security.
+Which AWS service can the company use to meet these requirements?",,"A. AWS Shield
+B. AWS WAF
+C. AWS Trusted Advisor
+D. AWS Service Catalog
+",c,c,
+Which AWS service provides the capability to view end-to-end performance metrics and troubleshoot distributed applications?,엔드 투 엔드 성능 지표를 보고 분산 애플리케이션 문제를 해결할 수 있는 기능을 제공하는 AWS 서비스는 무엇입니까?,"A. AWS Cloud9
+B. AWS CodeStar
+C. AWS Cloud Map
+D. AWS X-Ray",d,d,
+Which cloud computing benefit does AWS demonstrate with its ability to offer lower variable costs as a result of high purchase volumes?,대량 구매로 인해 가변 비용을 낮출 수 있는 능력으로 AWS가 입증하는 클라우드 컴퓨팅 이점은 무엇입니까?,"A. Pay-as-you-go pricing
+B. High availability
+C. Global reach
+D. Economies of scale",d,d,
+"Which AWS service provides threat detection by monitoring for malicious activities and unauthorized actions to protect AWS accounts, workloads, and data that is stored in Amazon S3?
+","AWS 계정, 워크로드 및 Amazon S3에 저장된 데이터를 보호하기 위해 악의적인 활동 및 무단 작업을 모니터링하여 위협 탐지를 제공하는 AWS 서비스는 무엇입니까?","A. AWS Shield
+B. AWS Firewall Manager
+C. Amazon GuardDuty
+D. Amazon Inspector",c,c,
+Which AWS service can a company use to store and manage Docker images?,회사에서 Docker 이미지를 저장하고 관리하는 데 사용할 수 있는 AWS 서비스는 무엇입니까?,"A. Amazon DynamoDB
+B. Amazon Kinesis Data Streams
+C. Amazon Elastic Container Registry (Amazon ECR)
+D. Amazon Elastic File System (Amazon EFS)
+",c,c,
+"A company needs an automated security assessment report that will identify unintended network access to Amazon EC2 instances. The report also must identify operating system vulnerabilities on those instances.
+Which AWS service or feature should the company use to meet this requirement?","회사에는 Amazon EC2 인스턴스에 대한 의도하지 않은 네트워크 액세스를 식별하는 자동화된 보안 평가 보고서가 필요합니다. 보고서는 또한 해당 인스턴스에 대한 운영 체제 취약성을 식별해야 합니다.
+이 요구 사항을 충족하기 위해 회사에서 사용해야 하는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Trusted Advisor
+B. Security groups
+C. Amazon Macie
+D. Amazon Inspector",d,d,
+"A global company is building a simple time-tracking mobile app. The app needs to operate globally and must store collected data in a database. Data must be accessible from the AWS Region that is closest to the user.
+What should the company do to meet these data storage requirements with the LEAST amount of operational overhead?","한 글로벌 기업이 간단한 시간 추적 모바일 앱을 구축하고 있습니다. 앱은 전역적으로 작동해야 하며 수집된 데이터를 데이터베이스에 저장해야 합니다. 데이터는 사용자와 가장 가까운 AWS 리전에서 액세스할 수 있어야 합니다.
+최소한의 운영 오버헤드로 이러한 데이터 스토리지 요구 사항을 충족하려면 회사에서 무엇을 해야 합니까?","A. Use Amazon EC2 in multiple Regions to host separate databases
+B. Use Amazon RDS cross-Region replication
+C. Use Amazon DynamoDB global tables
+D. Use AWS Database Migration Service (AWS DMS)",c,c,
+Which of the following are economic advantages of the AWS Cloud? (Choose two.),다음 중 AWS 클라우드의 경제적 이점은 무엇입니까? (두 가지를 선택하세요.),"A. Increased workforce productivity
+B. Decreased need to encrypt user data
+C. Manual compliance audits
+D. Simplified total cost of ownership (TCO) accounting
+E. Faster product launches","a,d,e","d,e",논란이 많음
+Which controls does the customer fully inherit from AWS in the AWS shared responsibility model?,고객이 AWS 공유 책임 모델에서 AWS로부터 완전히 상속받는 통제는 무엇입니까?,"A. Patch management controls
+B. Awareness and training controls
+C. Physical and environmental controls
+D. Configuration management controls",c,d,"이것은 당신의 영어 읽기를 테스트하는 것입니다
+영어 문법 문젴ㅋㅋ"
+"Which task is a customer's responsibility, according to the AWS shared responsibility model?",AWS 공유 책임 모델에 따르면 고객의 책임은 무엇입니까?,"A. Management of the guest operating systems
+B. Maintenance of the configuration of infrastructure devices
+C. Management of the host operating systems and virtualization
+D. Maintenance of the software that powers Availability Zones
+",a,a,
+"A company needs to deliver new website features quickly in an iterative manner to minimize the time to market.
+Which AWS Cloud concept does this requirement represent?",회사는 시장 출시 시간을 최소화하기 위해 반복적인 방식으로 새로운 웹 사이트 기능을 신속하게 제공해야 합니다. 이 요구 사항은 어떤 AWS 클라우드 개념을 나타냅니까?,"A. Reliability
+B. Elasticity
+C. Agility
+D. High availability",c,c,
+"A company wants to increase its ability to recover its infrastructure in the case of a natural disaster.
+Which pillar of the AWS Well-Architected Framework does this ability represent?","회사는 자연 재해 발생 시 인프라를 복구할 수 있는 능력을 높이고자 합니다.
+이 기능이 나타내는 AWS Well-Architected 프레임워크의 기둥은 무엇입니까?","A. Cost optimization
+B. Performance efficiency
+C. Reliability
+D. Security",c,c,
+Which AWS service tracks API calls and user activity?,API 호출 및 사용자 활동을 추적하는 AWS 서비스는 무엇입니까?,"A. AWS Organizations
+B. AWS Config
+C. Amazon CloudWatch
+D. AWS CloudTrail",d,d,
+"Which AWS service, feature, or tool uses machine learning to continuously monitor cost and usage for unusual cloud spending?","기계 학습을 사용하여 비정상적인 클라우드 지출에 대한 비용 및 사용량을 지속적으로 모니터링하는 AWS 서비스, 기능 또는 도구는 무엇입니까?","A. Amazon Lookout for Metrics
+B. AWS Budgets
+C. Amazon CloudWatch
+D. AWS Cost Anomaly Detection",d,d,
+"A company deployed an application on an Amazon EC2 instance. The application ran as expected for 6 months in the past week, users have reported latency issues. A system administrator found that the CPU utilization was at 100% during business hours. The company wants a scalable solution to meet demand.
+Which AWS service or feature should the company use to handle the load for its application during periods of high demand?","회사에서 Amazon EC2 인스턴스에 애플리케이션을 배포했습니다. 애플리케이션은 지난 주에 6개월 동안 예상대로 실행되었으며 사용자는 대기 시간 문제를 보고했습니다. 시스템 관리자는 업무 시간 동안 CPU 사용률이 100%임을 발견했습니다. 회사는 수요를 충족할 수 있는 확장 가능한 솔루션을 원합니다.
+수요가 많은 기간 동안 회사에서 애플리케이션의 로드를 처리하기 위해 사용해야 하는 AWS 서비스 또는 기능은 무엇입니까?
+","A. Auto Scaling groups
+B. AWS Global Accelerator
+C. Amazon Route 53
+D. An Elastic IP address",a,a,
+"A company wants to migrate to AWS and use the same security software it uses on premises. The security software vendor offers its security software as a service on AWS.
+Where can the company purchase the security solution?",회사에서 AWS로 마이그레이션하고 온프레미스에서 사용하는 것과 동일한 보안 소프트웨어를 사용하려고 합니다. 보안 소프트웨어 공급업체는 AWS에서 보안 소프트웨어를 서비스로 제공합니다. 회사는 보안 솔루션을 어디에서 구입할 수 있습니까?,"A. AWS Partner Solutions Finder
+B. AWS Support Center
+C. AWS Management Console
+D. AWS Marketplace",d,d,
+"A company is generating large sets of critical data in its on-premises data center. The company needs to securely transfer the data to AWS for processing. These transfers must occur daily over a dedicated connection.
+Which AWS service should the company use to meet these requirements?
+","회사는 온프레미스 데이터 센터에서 대량의 중요한 데이터 세트를 생성하고 있습니다. 회사는 처리를 위해 데이터를 AWS로 안전하게 전송해야 합니다. 이러한 전송은 전용 연결을 통해 매일 발생해야 합니다.
+회사에서 이러한 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?","A. AWS Backup
+B. AWS DataSync
+C. AWS Direct Connect
+D. AWS Snowball","b,c",c,데이터 싱크도 보안 적용이 되나?
+"A company wants to run production workloads on AWS. The company wants access to technical support from engineers 24 hours a day, 7 days a week. The company also wants access to the AWS Health API and contextual architectural guidance for business use cases. The company has a strong IT support team and does not need concierge support.
+Which AWS Support plan will meet these requirements at the LOWEST cost?","회사에서 AWS에서 프로덕션 워크로드를 실행하려고 합니다. 회사는 연중무휴 엔지니어의 기술 지원을 원합니다. 회사는 또한 비즈니스 사용 사례에 대한 AWS 상태 API 및 상황별 아키텍처 지침에 대한 액세스를 원합니다. 회사에는 강력한 IT 지원 팀이 있으며 컨시어지 지원이 필요하지 않습니다.
+가장 저렴한 비용으로 이러한 요구 사항을 충족하는 AWS Support 플랜은 무엇입니까?
+","A. AWS Basic Support
+B. AWS Developer Support
+C. AWS Business Support
+D. AWS Enterprise Support
+",c,c,
+"Which of the following is a managed AWS service that is used specifically for extract, transform, and load (ETL) data?","다음 중 특히 ETL(추출, 변환 및 로드) 데이터에 사용되는 관리형 AWS 서비스는 무엇입니까?","A. Amazon Athena
+B. AWS Glue
+C. Amazon S3
+D. AWS Snowball Edge",b,b,
+Which of the following actions are controlled with AWS Identity and Access Management (IAM)? (Choose two.),다음 중 AWS Identity and Access Management(IAM)로 제어되는 작업은 무엇입니까? (두 가지를 선택하세요.),"A. Control access to AWS service APIs and to other specific resources.
+B. Provide intelligent threat detection and continuous monitoring.
+C. Protect the AWS environment using multi-factor authentication (MFA).
+D. Grant users access to AWS data centers.
+E. Provide firewall protection for applications from common web attacks.
+","a,c,d","a,d",논란이 있음
+"Which of the following are shared controls that apply to both AWS and the customer, according to the AWS shared responsibility model? (Choose two.)",다음 중 AWS 공유 책임 모델에 따라 AWS와 고객 모두에게 적용되는 공유 제어는 무엇입니까? (두 가지를 선택하세요.),"A. Resource configuration management
+B. Network data integrity
+C. Employee awareness and training
+D. Physical and environmental security
+E. Replacement and disposal of disk drives
+","a,c","a,c",
+What information is found on an AWS Identity and Access Management (IAM) credential report? (Choose two.),AWS Identity and Access Management(IAM) 자격 증명 보고서에는 어떤 정보가 있습니까? (두 가지를 선택하세요.),"A. The date and time when an IAM user's password was last used to sign in to the AWS Management Console.
+B. The type of multi-factor authentication (MFA) device assigned to an IAM user.
+C. The User-Agent browser identifier for each IAM user currently logged in.
+D. Whether multi-factor authentication (MFA) has been enabled for an IAM user.
+E. The number of incorrect login attempts by each IAM user in the previous 30 days.","a,d","a,d",
+What is the LEAST expensive AWS Support plan that contains a full set of AWS Trusted Advisor best practice checks?,전체 AWS Trusted Advisor 모범 사례 검사를 포함하는 가장 저렴한 AWS Support 계획은 무엇입니까?,"A. AWS Enterprise Support
+B. AWS Business Support
+C. AWS Developer Support
+D. AWS Basic Support",b,d,모범사례 검사 다시 보기
+"Which AWS service provides domain registration, DNS routing, and service health checks?","도메인 등록, DNS 라우팅 및 서비스 상태 확인을 제공하는 AWS 서비스는 무엇입니까?","A. AWS Direct Connect
+B. Amazon Route 53
+C. Amazon CloudFront
+D. Amazon API Gateway",b,b,
+"A bank needs to store recordings of calls made to its contact center for 6 years. The recordings must be accessible within 48 hours from the time they are requested.
+Which AWS service will provide a secure and cost-effective solution for retaining these files?","은행은 컨택 센터에 걸려온 통화 녹음을 6년 동안 저장해야 합니다. 녹음은 요청된 시점으로부터 48시간 이내에 액세스할 수 있어야 합니다.
+이러한 파일을 보관하기 위한 안전하고 비용 효율적인 솔루션을 제공하는 AWS 서비스는 무엇입니까?","A. Amazon DynamoDB
+B. Amazon S3 Glacier
+C. Amazon Connect
+D. Amazon ElastiCache",b,b,
+Which AWS service should be used to migrate a company's on-premises MySQL database to Amazon RDS?,회사의 온프레미스 MySQL 데이터베이스를 Amazon RDS로 마이그레이션하려면 어떤 AWS 서비스를 사용해야 합니까?,"A. AWS Direct Connect
+B. AWS Server Migration Service (AWS SMS)
+C. AWS Database Migration Service (AWS DMS)
+D. AWS Schema Conversion Tool (AWS SCT)",c,c,
+Which benefits does a company gain when the company moves from on-premises IT architecture to the AWS Cloud? (Choose two.),회사가 온프레미스 IT 아키텍처에서 AWS 클라우드로 이전할 때 회사에서 얻을 수 있는 이점은 무엇입니까? (두 가지를 선택하세요.),"A. Reduced or eliminated tasks for hardware troubleshooting, capacity planning, and procurement
+B. Elimination of the need for trained IT staff
+C. Automatic security configuration of all applications that are migrated to the cloud
+D. Elimination of the need for disaster recovery planning
+E. Faster deployment of new features and applications","a,e","a,e",
+Which of the following is a benefit of decoupling an AWS Cloud architecture?,다음 중 AWS 클라우드 아키텍처를 분리할 때의 이점은 무엇입니까?,"A. Reduced latency
+B. Ability to upgrade components independently
+C. Decreased costs
+D. Fewer components to manage",b,b,
+Which task is the responsibility of the customer according to the AWS shared responsibility model?,AWS 공유 책임 모델에 따라 고객의 책임은 무엇입니까?,"A. Maintain the security of the hardware that runs Amazon EC2 instances.
+B. Patch the guest operating system of Amazon EC2 instances.
+C. Protect the security of the AWS global infrastructure.
+D. Patch Amazon RDS software.",b,b,
+Which AWS Organizations feature can be used to track charges across multiple accounts and report the combined cost?,여러 계정의 요금을 추적하고 통합 비용을 보고하는 데 사용할 수 있는 AWS Organizations 기능은 무엇입니까?,"A. Service control policies (SCPs)
+B. Cost Explorer
+C. Consolidated billing
+D. AWS Identity and Access Management (IAM)",c,c,
+Which of the following is a cloud benefit that AWS offers to its users?,다음 중 AWS가 사용자에게 제공하는 클라우드 이점은 무엇입니까?,"A. The ability to configure AWS data center hypervisors
+B. The ability to purchase hardware in advance of increased traffic
+C. The ability to deploy to AWS on a global scale
+D. Compliance audits for user IT environments
+",c,c,
+"An ecommerce company has migrated its IT infrastructure from an on-premises data center to the AWS Cloud.
+Which cost is the company's direct responsibility?","한 전자상거래 회사가 IT 인프라를 온프레미스 데이터 센터에서 AWS 클라우드로 마이그레이션했습니다.
+어떤 비용이 회사의 직접적인 책임입니까?","A. Cost of application software licenses
+B. Cost of the hardware infrastructure on AWS
+C. Cost of power for the AWS servers
+D. Cost of physical security for the AWS data center",a,b,영단어 이상함
+What are the five pillars of the AWS Well-Architected Framework?,AWS Well-Architected 프레임워크의 5가지 기둥은 무엇입니까?,"A. Encryption, documentation, speed, hybrid design, and cost optimization
+B. Containerization, cost margins, globalization, marketplace, and developer operations
+C. Network, compute, storage, security, and developer operations
+D. Operational excellence, reliability, performance efficiency, security, and cost optimization",d,d,
+"A company accepts enrollment applications on handwritten paper forms. The company uses a manual process to enter the form data into its backend systems.
+The company wants to automate the process by scanning the forms and capturing the enrollment data from scanned PDF files.
+Which AWS service should the company use to build this process?","회사는 손으로 쓴 종이 양식으로 등록 신청서를 받습니다. 회사는 수동 프로세스를 사용하여 양식 데이터를 백엔드 시스템에 입력합니다.
+회사는 양식을 스캔하고 스캔한 PDF 파일에서 등록 데이터를 캡처하여 프로세스를 자동화하려고 합니다.
+회사는 이 프로세스를 구축하기 위해 어떤 AWS 서비스를 사용해야 합니까?","A. Amazon Rekognition
+B. Amazon Textract
+C. Amazon Transcribe
+D. Amazon Comprehend",b,b,
+"Which AWS service should a company use to organize, characterize, and search large numbers of images?","회사에서 많은 수의 이미지를 구성, 특성화 및 검색하려면 어떤 AWS 서비스를 사용해야 합니까?","A. Amazon Transcribe
+B. Amazon Rekognition
+C. Amazon Aurora
+D. Amazon QuickSight",b,b,
+"An ecommerce company wants to use Amazon EC2 Auto Scaling to add and remove EC2 instances based on CPU utilization.
+Which AWS service or feature can initiate an Amazon EC2 Auto Scaling action to achieve this goal?","전자상거래 회사는 Amazon EC2 Auto Scaling을 사용하여 CPU 사용률에 따라 EC2 인스턴스를 추가 및 제거하려고 합니다.
+이 목표를 달성하기 위해 Amazon EC2 Auto Scaling 작업을 시작할 수 있는 AWS 서비스 또는 기능은 무엇입니까?","A. Amazon Simple Queue Service (Amazon SQS)
+B. Amazon Simple Notification Service (Amazon SNS)
+C. AWS Systems Manager
+D. Amazon CloudWatch alarm",d,d,
+"A company wants to host a private version control system for its application code in the AWS Cloud.
+Which AWS service should the company use to meet this requirement?","회사는 AWS 클라우드에서 애플리케이션 코드에 대한 프라이빗 버전 제어 시스템을 호스팅하려고 합니다.
+회사에서 이 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?
+","A. AWS CodePipeline
+B. AWS CodeStar
+C. AWS CodeCommit
+D. AWS CodeDeploy
+",c,c,
+Which AWS service or tool can a company set up to send notifications that a custom spending threshold has been reached or exceeded?,사용자 지정 지출 임계값에 도달했거나 초과했다는 알림을 보내도록 회사에서 설정할 수 있는 AWS 서비스 또는 도구는 무엇입니까?,"A. AWS Budgets
+B. AWS Trusted Advisor
+C. AWS CloudTrail
+D. AWS Support",a,a,
+Which AWS service is used to host static websites?,정적 웹 사이트를 호스팅하는 데 사용되는 AWS 서비스는 무엇입니까?,"A. Amazon S3
+B. Amazon Elastic Block Store (Amazon EBS)
+C. AWS CloudFormation
+D. Amazon Elastic File System (Amazon EFS)",a,a,
+Which AWS service contains built-in engines to protect web applications that run in the cloud from SQL injection attacks and cross-site scripting?,SQL 인젝션 공격 및 교차 사이트 스크립팅으로부터 클라우드에서 실행되는 웹 애플리케이션을 보호하는 내장 엔진이 포함된 AWS 서비스는 무엇입니까?,"A. AWS WAF
+B. AWS Shield Advanced
+C. Amazon GuardDuty
+D. Amazon Detective
+",a,a,
+"A company owns per-core software licenses.
+Which Amazon EC2 instance purchasing option must the company use for this license type?","회사는 코어당 소프트웨어 라이선스를 소유합니다.
+회사에서 이 라이선스 유형에 사용해야 하는 Amazon EC2 인스턴스 구매 옵션은 무엇입니까?
+","A. Reserved Instances
+B. Dedicated Hosts
+C. Spot Instances
+D. Dedicated Instances",b,b, 전용 호스트는 고객 전용의 물리적 서버를 제공합니다. 이를 통해 고객은 라이선스가 특정 소프트웨어 공급업체의 규칙을 준수하는 한 추가 라이선스 비용 없이 기존 서버 바인딩 소프트웨어 라이선스를 사용할 수 있습니다.
+"A company needs to set up user authentication for a new application. Users must be able to sign in directly with a user name and password, or through a third- party provider.
+Which AWS service should the company use to meet these requirements?","회사는 새 애플리케이션에 대한 사용자 인증을 설정해야 합니다. 사용자는 사용자 이름과 암호를 사용하거나 타사 공급자를 통해 직접 로그인할 수 있어야 합니다.
+회사에서 이러한 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?
+","A. AWS Single Sign-On
+B. AWS Signer
+C. Amazon Cognito
+D. AWS Directory Service",c,c,
+"A company's IT team is managing MySQL database server clusters. The IT team has to patch the database and take backup snapshots of the data in the clusters.
+The company wants to move this workload to AWS so that these tasks will be completed automatically.
+What should the company do to meet these requirements?
+","회사의 IT 팀이 MySQL 데이터베이스 서버 클러스터를 관리하고 있습니다. IT 팀은 데이터베이스를 패치하고 클러스터에 있는 데이터의 백업 스냅샷을 만들어야 합니다.
+회사는 이러한 작업이 자동으로 완료되도록 이 워크로드를 AWS로 옮기려고 합니다.
+이러한 요구 사항을 충족하기 위해 회사는 무엇을 해야 합니까?","A. Deploy MySQL database server clusters on Amazon EC2 instances.
+B. Use Amazon RDS with a MySQL database.
+C. Use an AWS CloudFormation template to deploy MySQL database servers on Amazon EC2 instances.
+D. Migrate all the MySQL database data to Amazon S3.
+",b,b,
+What is the primary use case for Amazon GuardDuty?,Amazon GuardDuty의 기본 사용 사례는 무엇입니까?,"A. Prevention of DDoS attacks
+B. Protection against SQL injection attacks
+C. Automatic monitoring for threats to AWS workloads
+D. Automatic provisioning of AWS resources",c,c,
+Which statements explain the business value of migration to the AWS Cloud? (Choose two.),다음 중 AWS 클라우드로의 마이그레이션의 비즈니스 가치를 설명하는 문장은 무엇입니까? (두 가지를 선택하세요.),"A. The migration of enterprise applications to the AWS Cloud makes these applications automatically available on mobile devices.
+B. AWS availability and security provide the ability to improve service level agreements (SLAs) while reducing risk and unplanned downtime.
+C. Companies that migrate to the AWS Cloud eliminate the need to plan for high availability and disaster recovery.
+D. Companies that migrate to the AWS Cloud reduce IT costs related to infrastructure, freeing budget for reinvestment in other areas.
+E. Applications are modernized because migration to the AWS Cloud requires companies to rearchitect and rewrite all enterprise applications.","b,d","b,d",
+"A company needs to identify personally identifiable information (PII), such as credit card numbers, from data that is stored in Amazon S3.
+Which AWS service should the company use to meet this requirement?","회사는 Amazon S3에 저장된 데이터에서 신용 카드 번호와 같은 개인 식별 정보(PII)를 식별해야 합니다.
+회사에서 이 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?",,d,d,
+"Which AWS services or tools are designed to protect a workload from SQL injections, cross-site scripting, and DDoS attacks? (Choose two.)","SQL 삽입, 교차 사이트 스크립팅 및 DDoS 공격으로부터 워크로드를 보호하도록 설계된 AWS 서비스 또는 도구는 무엇입니까? (두 가지를 선택하세요.)","A. VPC endpoint
+B. Virtual private gateway
+C. AWS Shield Standard
+D. AWS Config
+E. AWS WAF","c,e","c,e",
+"A company wants to forecast future costs and usage of AWS resources based on past consumption.
+Which AWS service or tool will provide this forecast?
+","회사에서 과거 소비를 기반으로 AWS 리소스의 미래 비용과 사용량을 예측하려고 합니다.
+이 예측을 제공하는 AWS 서비스 또는 도구는 무엇입니까?
+","A. AWS Cost and Usage Report
+B. Amazon Forecast
+C. AWS Pricing Calculator
+D. Cost Explorer",d,d,
+Which AWS services use cloud-native storage that provides replication across multiple Availability Zones by default? (Choose two.),기본적으로 여러 가용 영역에서 복제를 제공하는 클라우드 네이티브 스토리지를 사용하는 AWS 서비스는 무엇입니까? (두 가지를 선택하세요.),"A. Amazon ElastiCache
+B. Amazon RDS for Oracle
+C. Amazon Neptune
+D. Amazon DocumentDB (with MongoDB compatibility)
+E. Amazon Redshift","c,d","a,b","기본적으로 복제 읽기본 활성화는 레드쉬프트 넵튠임
+RDS 복제는 기본적으로 활성 X 기본적으로 복제되는거 다시 보기"
+Which AWS services are serverless? (Choose two.),어떤 AWS 서비스가 서버리스입니까? (두 가지를 선택하세요.),"A. AWS Fargate
+B. Amazon Managed Streaming for Apache Kafka
+C. Amazon EMR
+D. Amazon S3
+E. Amazon EC2","a,d","a,d",
+"Which task is the responsibility of AWS, according to the AWS shared responsibility model?",AWS 공동 책임 모델에 따라 AWS가 책임지는 작업은 무엇입니까?,"A. Apply guest operating system patches to Amazon EC2 instances.
+B. Provide monitoring of human resources information management (HRIM) systems.
+C. Perform automated backups of Amazon RDS instances.
+D. Optimize the costs of running AWS services.",c,c,RDS 자동 백업 활성화 여부 보기
+"A company needs to deploy a PostgreSQL database into Amazon RDS. The database must be highly available and fault tolerant.
+Which AWS solution should the company use to meet these requirements?
+","회사는 PostgreSQL 데이터베이스를 Amazon RDS에 배포해야 합니다. 데이터베이스는 가용성이 높고 내결함성이 있어야 합니다.
+회사는 이러한 요구 사항을 충족하기 위해 어떤 AWS 솔루션을 사용해야 합니까?","A. Amazon RDS with a single Availability Zone
+B. Amazon RDS snapshots
+C. Amazon RDS with multiple Availability Zones
+D. AWS Database Migration Service (AWS DMS)",c,c,
+"A company wants to add facial identification to its user verification process on an application.
+Which AWS service should the company use to meet this requirement?","회사에서 애플리케이션의 사용자 확인 프로세스에 얼굴 인식을 추가하려고 합니다.
+회사에서 이 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?","A. Amazon Polly
+B. Amazon Transcribe
+C. Amazon Lex
+D. Amazon Rekognition",d,d,
+"A company wants the ability to quickly upload its applications to the AWS Cloud without needing to provision underlying resources.
+Which AWS service will meet these requirements?","회사는 기본 리소스를 프로비저닝할 필요 없이 애플리케이션을 AWS 클라우드에 빠르게 업로드할 수 있는 기능을 원합니다.
+이러한 요구 사항을 충족하는 AWS 서비스는 무엇입니까?","A. AWS CloudFormation
+B. AWS Elastic Beanstalk
+C. AWS CodeDeploy
+D. AWS CodeCommit",b,b,"빈스텍 다시 보기, 진짜 사전에 자원을 프로비저닝 할필요 없나? → Pass니까"
+Which AWS service monitors CPU utilization on Amazon EC2 instances?,Amazon EC2 인스턴스에서 CPU 사용률을 모니터링하는 AWS 서비스는 무엇입니까?,"A. AWS CloudTrail
+B. Amazon Inspector
+C. AWS Config
+D. Amazon CloudWatch",d,d,
+"A company needs to label its AWS resources so that the company can categorize and track costs.
+What should the company do to meet this requirement?","회사는 비용을 분류하고 추적할 수 있도록 AWS 리소스에 레이블을 지정해야 합니다.
+이 요구 사항을 충족하기 위해 회사는 무엇을 해야 합니까?","A. Use cost allocation tags.
+B. Use AWS Identity and Access Management (IAM).
+C. Use AWS Organizations.
+D. Use the AWS Cost Management coverage report.
+",a,a,
+"A company wants its employees to have access to virtual desktop infrastructure to securely access company-provided desktops through the employees' personal devices.
+Which AWS service should the company use to meet these requirements?","회사는 직원이 가상 데스크톱 인프라에 액세스하여 직원의 개인 장치를 통해 회사에서 제공한 데스크톱에 안전하게 액세스하기를 원합니다.
+회사에서 이러한 요구 사항을 충족하려면 어떤 AWS 서비스를 사용해야 합니까?
+","A. Amazon AppStream 2.0
+B. AWS AppSync
+C. Amazon FSx for Windows File Server
+D. Amazon WorkSpaces",d,d,
+Which task can a company complete by using AWS Organizations?,회사에서 AWS Organizations를 사용하여 완료할 수 있는 작업은 무엇입니까?,"A. Track application deployment statuses globally.
+B. Remove unused and underutilized AWS resources across all accounts.
+C. Activate DDoS protection across all accounts.
+D. Share pre-purchased Amazon EC2 resources across accounts.",d,d,
+"A user has been granted permission to change their own IAM user password.
+Which AWS services can the user use to change the password? (Choose two.)
+A","사용자에게 자신의 IAM 사용자 암호를 변경할 수 있는 권한이 부여되었습니다.
+사용자가 암호를 변경하는 데 사용할 수 있는 AWS 서비스는 무엇입니까? (두 가지를 선택하세요.)","A. AWS Command Line Interface (AWS CLI)
+B. AWS Key Management Service (AWS KMS)
+C. AWS Management Console
+D. AWS Resource Access Manager (AWS RAM)
+E. AWS Secrets Manager","a,c","a,c",
+"A company needs to run an application on Amazon EC2 instances. The instances cannot be interrupted at any time. The company needs an instance purchasing option that requires no long-term commitment or upfront payment.
+Which instance purchasing option will meet these requirements MOST cost-effectively?","회사는 Amazon EC2 인스턴스에서 애플리케이션을 실행해야 합니다. 인스턴스는 언제든지 중단할 수 없습니다. 회사는 장기 약정이나 선결제가 필요하지 않은 인스턴스 구매 옵션이 필요합니다.
+이러한 요구 사항을 가장 비용 효율적으로 충족하는 인스턴스 구매 옵션은 무엇입니까?","A. On-Demand Instances
+B. Spot Instances
+C. Dedicated Hosts
+D. Reserved Instances",a,a,
+"A company uses Amazon EC2 instances to run its web application. The company uses On-Demand Instances and Spot Instances. The company needs to visualize its monthly spending on both types of instances.
+Which AWS service or feature will meet this requirement?","회사는 Amazon EC2 인스턴스를 사용하여 웹 애플리케이션을 실행합니다. 회사는 온디맨드 인스턴스와 스팟 인스턴스를 사용합니다. 회사는 두 가지 유형의 인스턴스에 대한 월별 지출을 시각화해야 합니다.
+이 요구 사항을 충족하는 AWS 서비스 또는 기능은 무엇입니까?","A. AWS Cost Explorer
+B. AWS Budgets
+C. Amazon CloudWatch
+D. AWS Cost Categories",a,d,코스트 카테고리 + 비용 탐색기 기능 이해 부족
+Which task can a user complete by using AWS Identity and Access Management (IAM)?,사용자가 AWS Identity and Access Management(IAM)를 사용하여 완료할 수 있는 작업은 무엇입니까?,"A. Validate JSON syntax from an application configuration file.
+B. Analyze logs from an Amazon API Gateway call.
+C. Filter traffic to or from an Amazon EC2 instance.
+D. Grant permissions to applications that run on Amazon EC2 instances.",d,d,
+"A company needs to generate reports for business intelligence and operational analytics on petabytes of semistructured and structured data. These reports are produced from standard SQL queries on data that is in an Amazon S3 data lake.
+Which AWS service provides the ability to analyze this data?","회사는 페타바이트 규모의 반구조화 및 구조화 데이터에 대한 비즈니스 인텔리전스 및 운영 분석을 위한 보고서를 생성해야 합니다. 이러한 보고서는 Amazon S3 데이터 레이크에 있는 데이터에 대한 표준 SQL 쿼리에서 생성됩니다.
+이 데이터를 분석할 수 있는 기능을 제공하는 AWS 서비스는 무엇입니까?","A. Amazon RDS
+B. Amazon Neptune
+C. Amazon DynamoDB
+D. Amazon Redshift",d,d,
+"A system automatically recovers from failure when a company launches its workload on the AWS Cloud services platform.
+Which pillar of the AWS Well-Architected Framework does this situation demonstrate?","회사가 AWS 클라우드 서비스 플랫폼에서 워크로드를 시작하면 시스템이 자동으로 장애로부터 복구됩니다.
+이 상황은 AWS Well-Architected 프레임워크의 어떤 기둥을 보여줍니까?","A. Cost optimization
+B. Operational excellence
+C. Performance efficiency
+D. Reliability",d,d,
+Which of the following describes AWS Local Zones?,다음 중 AWS 로컬 영역에 대한 설명은 무엇입니까?,"A. A cluster of data centers in one geographic location
+B. A site used by Amazon CloudFront to cache frequently accessed content
+C. An extension of an AWS Region to more granular locations
+D. One or more data centers with redundant power and networking",c,b,"로컬존에 대한 이해 필요
+https://aws.amazon.com/about-aws/global-infrastructure/localzones/faqs/"
+"A retail company is migrating its IT infrastructure applications from on premises to the AWS Cloud.
+Which costs will the company eliminate with this migration? (Choose two.)","소매 회사는 IT 인프라 애플리케이션을 온프레미스에서 AWS 클라우드로 마이그레이션하고 있습니다.
+이 마이그레이션을 통해 회사에서 제거할 비용은 무엇입니까? (두 가지를 선택하세요.)","A. Cost of data center operations
+B. Cost of application licensing
+C. Cost of marketing campaigns
+D. Cost of physical server hardware
+E. Cost of network management","a,d,e","a,d",
+What is a benefit of moving to the AWS Cloud in terms of improving time to market?,시장 출시 시간 단축 측면에서 AWS 클라우드로 전환하면 어떤 이점이 있습니까?,"A. Decreased deployment speed
+B. Increased application security
+C. Increased business agility
+D. Increased backup capabilities
+",c,c,
+Which of the following are characteristics of a serverless application that runs in the AWS Cloud? (Choose two.),다음 중 AWS 클라우드에서 실행되는 서버리스 애플리케이션의 특징은 무엇입니까? (두 가지를 선택하세요.),"A. Users must manually configure Amazon EC2 instances.
+B. Users have a choice of operating systems.
+C. The application has built-in fault tolerance.
+D. Users can run Amazon EC2 Spot Instances.
+E. The application can scale based on demand.","c,e","c,e",
+"A company has existing software licenses that it wants to bring to AWS, but the licensing model requires licensing physical cores.
+How can the company meet this requirement in the AWS Cloud?","회사에는 AWS로 가져오려는 기존 소프트웨어 라이선스가 있지만 라이선스 모델에는 라이선스 물리적 코어가 필요합니다.
+회사는 AWS 클라우드에서 이 요구 사항을 어떻게 충족할 수 있습니까?","A. Launch an Amazon EC2 instance with default tenancy.
+B. Launch an Amazon EC2 instance on a Dedicated Host.
+C. Create an On-Demand Capacity Reservation.
+D. Purchase Dedicated Reserved Instances.",b,b,
+"A company has a complex AWS architecture. The company needs assistance from a dedicated technical professional who can suggest strategies regarding incidents, trade-offs, support, and risk management.
+Which AWS Support plan will provide the required support?","회사에는 복잡한 AWS 아키텍처가 있습니다. 회사는 사고, 절충, 지원 및 위험 관리에 관한 전략을 제안할 수 있는 전담 기술 전문가의 도움이 필요합니다.
+필요한 지원을 제공하는 AWS Support 플랜은 무엇입니까?
+","A. AWS Business Support
+B. AWS Enterprise Support
+C. AWS Developer Support
+D. AWS Basic Support",b,b,
+Which of the following is an advantage that the AWS Cloud provides to users?,다음 중 AWS 클라우드가 사용자에게 제공하는 이점은 무엇입니까?,"A. Users eliminate the need to guess about infrastructure capacity requirements.
+B. Users decrease their variable costs by maintaining sole ownership of IT hardware.
+C. Users maintain control of underlying IT infrastructure hardware.
+D. Users maintain control of operating systems for managed services.",a,a,
+Which AWS services can use AWS WAF to protect against common web exploitations? (Choose two.),AWS WAF를 사용하여 일반적인 웹 악용으로부터 보호할 수 있는 AWS 서비스는 무엇입니까? (두 가지를 선택하세요.),"A. Amazon Route 53
+B. Amazon CloudFront
+C. AWS Transfer Family
+D. AWS Site-to-Site VPN
+E. Amazon API Gateway","b,e","b,e",
+Which controls are shared under the AWS shared responsibility model? (Choose two.),AWS 공유 책임 모델에서는 어떤 통제를 공유합니까? (두 가지를 선택하세요.),"A. Awareness and training
+B. Patching of Amazon RDS
+C. Configuration management
+D. Physical and environmental controls
+E. Service and communications protection or security","a,c","a,c",
+"A company manages global applications that require static IP addresses.
+Which AWS service would enable the company to improve the availability and performance of its applications?","고정 IP 주소가 필요한 글로벌 애플리케이션을 관리하는 회사입니다.
+회사에서 애플리케이션의 가용성과 성능을 개선할 수 있는 AWS 서비스는 무엇입니까?
+","A. Amazon CloudFront
+B. AWS Global Accelerator
+C. Amazon S3 Transfer Acceleration
+D. Amazon API Gateway",b,b,글로벌 악셀 다시보기
+Which of the following are AWS compute services? (Choose two.),다음 중 AWS 컴퓨팅 서비스는 무엇입니까? (두 가지를 선택하세요.),"A. Amazon Lightsail
+B. AWS Systems Manager
+C. AWS CloudFormation
+D. AWS Batch
+E. Amazon Inspector","a,d","a,d",
+"A company needs to report on events that involve the specific AWS services that the company uses.
+Which AWS service or resource can the company use with Amazon CloudWatch to meet this requirement?","회사는 회사에서 사용하는 특정 AWS 서비스와 관련된 이벤트에 대해 보고해야 합니다.
+이 요구 사항을 충족하기 위해 회사에서 Amazon CloudWatch와 함께 사용할 수 있는 AWS 서비스 또는 리소스는 무엇입니까?
+","A. Amazon Inspector
+B. AWS Personal Health Dashboard
+C. AWS Trusted Advisor
+D. AWS CloudTrail logs",d,d,
+,"AWS Enterprise Support가 있는 회사는 월별 AWS 청구서를 이해하는 데 도움이 필요하며 청구 모범 사례를 구현하려고 합니다.
+이러한 목표를 달성하기 위해 사용할 수 있는 AWS 도구 또는 리소스는 무엇입니까?
+",,,,
+,다음 중 모든 규모에서 일관된 한 자릿수 밀리초 성능을 제공하는 AWS 키-값 데이터베이스는 무엇입니까?,,,,
+,"회사에서 새로운 Node.js 애플리케이션을 개발하고 있습니다. 애플리케이션의 인기가 높아짐에 따라 증가하는 수요를 충족하려면 애플리케이션에 확장 가능한 NoSQL 데이터베이스가 있어야 합니다.
+어떤 AWS 서비스가 데이터베이스 요구 사항을 충족합니까?",,,,
+,"회사에서 코드 코딩, 빌드, 테스트 및 배포를 위한 전체 개발 및 지속적 배포 도구 체인을 설정하려고 합니다.
+이러한 요구 사항을 충족하는 AWS 서비스는 무엇입니까?",,,,
+,고객이 AWS 계정에서 API 호출을 감사할 수 있는 서비스는 무엇입니까?,,,,
+,"회사가 사무실을 이전하고 AWS에 대한 암호화된 연결을 설정해야 합니다.
+이 요구 사항을 충족하는 데 도움이 되는 AWS 서비스는 무엇입니까?
+",,,,
+,"회사는 가능한 최저 비용으로 Amazon EC2 인스턴스에서 안정적이고 예측 가능한 성능을 필요로 합니다. 또한 회사는 적절한 리소스를 적시에 사용할 수 있도록 리소스를 확장할 수 있는 능력이 필요합니다.
+이러한 요구 사항을 충족하는 AWS 서비스 또는 리소스는 무엇입니까?
+",,,,
+,회사가 AWS 클라우드 사용이 현지 규제 표준을 준수하는지 평가하는 데 도움이 되는 문서를 제공하는 조치는 무엇입니까?,,,,

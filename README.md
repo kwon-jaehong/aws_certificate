@@ -40,12 +40,18 @@ kms 다시
 
 - 뭘로 짤까... 리액트?
 - 일단 셀레니움으로 익그젬토픽 긁어야됨
+- html 자체를 저장해놓자
+
+
+
+Exam AWS Certified Cloud Practitioner topic 1 question 986 discussion
+
+EXAM AWS CERTIFIED SOLUTIONS ARCHITECT - ASSOCIATE SAA-C03 TOPIC 1 QUESTION 543 DISCUSSION
 
 
 
 
-
-
+https://github.com/Ditectrev/AWS-Cloud-Practitioner-CLF-C01-Exam-Questions-Answers
 
 
 

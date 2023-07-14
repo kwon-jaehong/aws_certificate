@@ -27,7 +27,7 @@ en_ef = pd.read_csv('./KO_CLF_quiz_data.csv')
 # en_ef['H']=en_ef['H'].astype('string')
 # en_ef['I']=en_ef['I'].astype('string')
 
-for i in tqdm(range(848,len(en_ef))):
+for i in tqdm(range(0,313)):
 
 
     if str(en_ef.loc[i,'quiz_title'])!="<NA>":

@@ -10,22 +10,25 @@ save_html_dir = "./exam_CLF"
 # browser = webdriver.Firefox()
 browser = webdriver.Chrome()
 # query_base = "Exam AWS Certified Cloud Practitioner topic 1 question 986 discussion"
-query_base = "Exam AWS Certified Cloud Practitioner topic 1 question "
+query_base = 'Exam AWS Certified Cloud Practitioner topic 1 question "'
 
 
 pattern = r'^https://www.examtopics.com/'
 
 
-# except_list = [865]
+search_list = ['870', '873', '876', '878', '879', '889', '896', '897', '898', '904', '905', '921', '925', '932', '956', '957', '975', '976']
 except_list = []
 
-for i in range(491,987):
-    # os.path.join(save_html_dir,str(i).zfill(3)+".html")
-    if os.path.exists(os.path.join(save_html_dir,str(i).zfill(3)+".html")) or i in except_list:
+
+for i in search_list:
+    
+    # if os.path.exists(os.path.join(save_html_dir,str(i).zfill(3)+".html")) or i in except_list:
+    #     pass
+    if i in except_list:
         pass
     else:
         
-        query_text = query_base + str(i) + " discussion"
+        query_text = query_base + str(i) + '" discussion'
         quiz_number_pattern = str(i)
 
 
@@ -54,13 +57,12 @@ for i in range(491,987):
                 print("매칭 맞음:",href['href'],str(i))
                 # if re.search(quiz_number_pattern, href['href']):
                     # print("숫자 맞음:",href['href'])
-            # if re.match(pattern, href['href']) and re.search(quiz_number_pattern, href['href']):
-                example_url = href['href']
+                if re.search(quiz_number_pattern, href['href']):
+                    example_url = href['href']
                 # print(href['href'])
-                break
+                    break
         
         if len(example_url)==0:
-            i -= 1
             pass
         else:
             browser.get(example_url)

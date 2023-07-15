@@ -32,6 +32,7 @@ label.radio input:checked + span {
   color: #fff;
 }
 
+
 .ans {
   margin-left: 36px !important;
 }

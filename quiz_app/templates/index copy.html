@@ -23,18 +23,9 @@
               <div
                 class="d-flex flex-row justify-content-between align-items-center mcq"
               >
-                <h4>{{quiz_data.quiz_id}}</h4>
+                <h4>{{session.quiz_data.quiz_id}}</h4>
                 
-                {% if quiz_data.is_correct %}
-                <h1 class="text-danger">
-                  {% if quiz_data.is_correct==1 %}
-                    X 정답은{{quiz_data.most_vote}}
-                  {% elif quiz_data.is_correct==2 %}
-                    O 정답은{{quiz_data.most_vote}}
-                  {% endif %} 
-
-                </h1>
-                {% endif %} 
+                <h1 class="text-danger">X</h1>
 
                 <span>진행상황 ({{session.current_quiz_count}} of 65)</span>
               </div>
@@ -45,34 +36,34 @@
             <div class="question bg-white p-3 border-bottom">
               <div class="d-flex flex-row align-items-center question-title">
                 <h3 class="text-danger">Q.</h3>
-                <h6 class="mt-1 ml-2">{{quiz_data.ko_quiz_title}}</h5>
+                <h6 class="mt-1 ml-2">{{session.quiz_data.ko_quiz_title}}</h5>
               </div>
               <hr></hr>
               {% endif %} 
               
-
-
               {% if not session.Hide_EN_quiz %}
+
+
               <div class="d-flex flex-row align-items-center question-title">
                 <h3 class="text-danger">Q.</h3>
-                <h6 class="mt-1 ml-2">{{quiz_data.en_quiz_title}}</h5>
+                <h6 class="mt-1 ml-2">{{session.quiz_data.en_quiz_title}}</h5>
               </div>
               <hr></hr>
               {% endif %}
               
               <form method="post" >
-              {% if quiz_data.en_A %}
+              {% if session.quiz_data.en_A %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="A" value="True" {% if quiz_data.A_C %} checked {% endif %}/>
+                  <input type="checkbox" name="A" value="True" />
                   <span>A. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_A}}</span>
+                  <span>{{session.quiz_data.ko_A}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_A}}</span>
+                  <span>{{session.quiz_data.en_A}}</span>
                   <br>
                   <br>
                   {% endif %}
@@ -81,18 +72,18 @@
               {% endif %}
 
 
-              {% if quiz_data.en_B %}
+              {% if session.quiz_data.en_B %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="B" value="True" {% if quiz_data.B_C %} checked {% endif %}/>
+                  <input type="checkbox" name="B" value="True" />
                   <span>B. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_B}}</span>
+                  <span>{{session.quiz_data.ko_B}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_B}}</span>
+                  <span>{{session.quiz_data.en_B}}</span>
                   <br>
                   <br>
                   {% endif %}
@@ -101,18 +92,18 @@
               {% endif %}
 
 
-              {% if quiz_data.en_C %}
+              {% if session.quiz_data.en_C %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="C" value="True" {% if quiz_data.C_C %} checked {% endif %} />
+                  <input type="checkbox" name="C" value="True" />
                   <span>C. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_C}}</span>
+                  <span>{{session.quiz_data.ko_C}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_C}}</span>
+                  <span>{{session.quiz_data.en_C}}</span>
                   <br>
                   <br>
                   {% endif %}
@@ -122,18 +113,18 @@
 
 
 
-              {% if quiz_data.en_D %}
+              {% if session.quiz_data.en_D %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="D" value="True" {% if quiz_data.D_C %} checked {% endif %}/>
+                  <input type="checkbox" name="D" value="True" />
                   <span>D. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_D}}</span>
+                  <span>{{session.quiz_data.ko_D}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_D}}</span>
+                  <span>{{session.quiz_data.en_D}}</span>
                   <br>
                   <br>
                   {% endif %}
@@ -141,18 +132,18 @@
               </div>
               {% endif %}
 
-              {% if quiz_data.en_E %}
+              {% if session.quiz_data.en_E %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="E" value="True" {% if quiz_data.E_C %} checked {% endif %}/>
+                  <input type="checkbox" name="E" value="True" />
                   <span>E. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_E}}</span>
+                  <span>{{session.quiz_data.ko_E}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_E}}</span>
+                  <span>{{session.quiz_data.en_E}}</span>
                   <br>
                   <br>
                   {% endif %}
@@ -161,49 +152,34 @@
               {% endif %}
 
 
-              {% if quiz_data.en_F %}
+              {% if session.quiz_data.en_F %}
               <div class="ans ml-2 ">
                 <label class="checkbox">
-                  <input type="checkbox" name="F" value="True"  {% if quiz_data.F_C %} checked {% endif %}/>
+                  <input type="checkbox" name="F" value="True" />
                   <span>F. </span>
                   {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_F}}</span>
+                  <span>{{session.quiz_data.ko_F}}</span>
                   {% endif %}
 
                   {% if not session.Hide_EN_choice %}
                   <br>
-                  <span>{{quiz_data.en_F}}</span>
+                  <span>{{session.quiz_data.en_F}}</span>
                   <br>
                   <br>
                   {% endif %}
                 </label>
               </div>
               {% endif %}
+
 
 
             </div>
-
-
-
             <div
-            class="d-flex flex-row justify-content-between align-items-center p-3 bg-white border-bottom"
-          >
-          <label for="subject"> 
-            카테고리입력&nbsp;
-            1-클라우드 개념&nbsp;
-            2-보안 및 규정 준수&nbsp;
-            3-기술 &nbsp;
-            4-결제 및 요금제&nbsp;  </label>
-          <input type="text" name="subject"  pattern="[0-9]+" title="Please enter numbers only" value={{quiz_data.subject}}>
-        </div>
-
-
-            <div
-              class="d-flex flex-row justify-content-between align-items-center p-3 bg-white border-bottom"
+              class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"
             >
               <button
                 class="btn btn-primary d-flex align-items-center btn-danger"
-                type="submit" formaction="/previous"
+                type="button"
               >
                 <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;이전</button
               >
@@ -223,42 +199,12 @@
               </button>
             </form>
             </div>
-
-
-
-
-
-            <div
-              class="d-flex flex-row  p-3 bg-white"
-            >
-            
-            <p>
-              틀린문제 :  
-            </p> 
-            <br>
-
-              {% for key, value in session.solution_history.items() %}
-
-                {% if value == 1 %}
-                <p>
-                  {{key}},
-                </p> 
-                {% endif %}
-
-               {% endfor  %} 
-              
-
-              </form>
-
-            </div>
-
-            
           </div>
         </div>
       </div>
     </div>
     <div>
-    
+    <span class="align-items-center">틀린문제</span>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>

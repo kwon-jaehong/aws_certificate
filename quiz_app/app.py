@@ -50,7 +50,7 @@ async def start_test(request: Request):
     request.session["Hide_KO_quiz"] = False
     request.session["Hide_KO_choice"] = False
 
-    
+    request.session["Hide_KO_choice"] = mdf['quiz_id'].to_list()
 
     
     quiz_data = await quiz_data_refine(mdf.loc[quize_pointer])

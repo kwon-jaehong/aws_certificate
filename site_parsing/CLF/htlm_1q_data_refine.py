@@ -17,7 +17,7 @@ def None_most_vote(most_vote,correct,q_id):
 
 
 
-master_df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
+master_df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'en_quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
 
 
 
@@ -34,7 +34,7 @@ for i in tqdm(range(491,987)):
         # 파일 내용 읽기
         html_data = file.read()
 
-    df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
+    df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'en_quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
 
     correct_str = ""
     most_vote_str = ""
@@ -50,7 +50,7 @@ for i in tqdm(range(491,987)):
 
 
     div_body = soup.find("p", class_="card-text")
-    quiz_title = div_body.text.replace("\t","").replace("\n","").strip()
+    en_quiz_title = div_body.text.replace("\t","").replace("\n","").strip()
 
     correct_str = soup.find("span",class_="correct-answer").text
     
@@ -79,7 +79,7 @@ for i in tqdm(range(491,987)):
         sentence_dict[choice_symbol] = choice_sentence
         
     if quiz_id==str(i):
-        df.loc[len(df)] = {"exam_category":"examtopics","exam_type":"CLF-01","quiz_id":quiz_id,"quiz_title":quiz_title,"most_vote":most_vote_str,"correct":correct_str,"A":sentence_dict.get('A'),"B":sentence_dict.get('B'),"C":sentence_dict.get('C'),"D":sentence_dict.get('D'),"E":sentence_dict.get('E'),"F":sentence_dict.get('F'),"G":sentence_dict.get('G'),"H":sentence_dict.get('H'),"I":sentence_dict.get('I')}
+        df.loc[len(df)] = {"exam_category":"examtopics","exam_type":"CLF-01","quiz_id":quiz_id,"en_quiz_title":en_quiz_title,"most_vote":most_vote_str,"correct":correct_str,"A":sentence_dict.get('A'),"B":sentence_dict.get('B'),"C":sentence_dict.get('C'),"D":sentence_dict.get('D'),"E":sentence_dict.get('E'),"F":sentence_dict.get('F'),"G":sentence_dict.get('G'),"H":sentence_dict.get('H'),"I":sentence_dict.get('I')}
     else:
         df.loc[len(df)] = {"exam_category":"examtopics","exam_type":"CLF-01","quiz_id":str(i)}
 
@@ -91,6 +91,6 @@ for i in tqdm(range(491,987)):
 
 master_df = master_df.drop_duplicates(subset=['quiz_id'], keep=False).reset_index(drop=True)
 
-null_list = master_df[master_df['quiz_title'].isnull()].quiz_id.tolist()
+null_list = master_df[master_df['en_quiz_title'].isnull()].quiz_id.tolist()
 
 master_df.to_csv('./CLF_quiz_data.csv',index=False)

@@ -13,7 +13,7 @@ def None_most_vote(most_vote,correct):
 
 
 
-master_df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
+master_df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'en_quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
 
 
 # df = pd.read_csv('./quiz.csv')
@@ -26,7 +26,7 @@ html_dir = "./exam_CLF"
 
 
 for i in tqdm(range(1,50)):
-    df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
+    df = pd.DataFrame(columns=['exam_category',"exam_type","quiz_id",'en_quiz_title','most_vote',"correct",'A','B','C','D','E','F','G','H','I'])
 
     with open(os.path.join(html_dir,str(i).zfill(3)+".html"), "r", encoding="utf-8") as file:
         # 파일 내용 읽기
@@ -53,7 +53,7 @@ for i in tqdm(range(1,50)):
         quiz_body = div.find("div",class_="card-body question-body")
         
         ## 퀴즈 질문
-        quiz_title = quiz_body.find("p",class_="card-text").text.replace("\n","").strip()
+        en_quiz_title = quiz_body.find("p",class_="card-text").text.replace("\n","").strip()
         
         
         ## example 사이트 공식 정답
@@ -77,7 +77,7 @@ for i in tqdm(range(1,50)):
                 most_vote_str += choice_symbol
             
             
-        df.loc[len(df)] = {"exam_category":"examtopics","exam_type":"CLF-01","quiz_id":quiz_id,"quiz_title":quiz_title,"most_vote":most_vote_str,"correct":correct_str,"A":sentence_dict.get('A'),"B":sentence_dict.get('B'),"C":sentence_dict.get('C'),"D":sentence_dict.get('D'),"E":sentence_dict.get('E'),"F":sentence_dict.get('F'),"G":sentence_dict.get('G'),"H":sentence_dict.get('H'),"I":sentence_dict.get('I')}
+        df.loc[len(df)] = {"exam_category":"examtopics","exam_type":"CLF-01","quiz_id":quiz_id,"en_quiz_title":en_quiz_title,"most_vote":most_vote_str,"correct":correct_str,"A":sentence_dict.get('A'),"B":sentence_dict.get('B'),"C":sentence_dict.get('C'),"D":sentence_dict.get('D'),"E":sentence_dict.get('E'),"F":sentence_dict.get('F'),"G":sentence_dict.get('G'),"H":sentence_dict.get('H'),"I":sentence_dict.get('I')}
 
     df["most_vote"] = df.apply(lambda x : None_most_vote(x["most_vote"], x["correct"]) , axis = 1 )
 

@@ -1,19 +1,201 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-   </head>
-   <body>
-    <form method="post">
-        {% comment %} <input type="string" name="username" value="{{username}}"/> <br> {% endcomment %}
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap 4</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <style>
+      p {
+        margin: 20px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+          <div class="border">
+            <div class="question bg-white p-3 border-bottom">
+              <div
+                class="d-flex flex-row justify-content-between align-items-center mcq"
+              >
+                <h4>{{quiz_data.quiz_id}}</h4>
+                <span>({{request.session.current_quiz_count}} of 65)</span>
+              </div>
+            </div>
 
-        <input type="checkbox" name="option" value="option2"> 옵션 2<br>
-        <input type="checkbox" name="option" value="option3"> 옵션 3<br>
-        <input type="submit">
-    </form>
-    {% if data %}
-        <h3> ㅇㅇ </h3>
-    {% endif %}
-   </body>
+            {% if not request.session.Hide_KO_quiz %}
+
+            <div class="question bg-white p-3 border-bottom">
+              <div class="d-flex flex-row align-items-center question-title">
+                <h3 class="text-danger">Q.</h3>
+                <h6 class="mt-1 ml-2">{{quiz_data.ko_quiz_title}}</h5>
+              </div>
+              <hr></hr>
+              {% endif %} 
+              
+              {% if not request.session.Hide_EN_quiz %}
+
+
+              <div class="d-flex flex-row align-items-center question-title">
+                <h3 class="text-danger">Q.</h3>
+                <h6 class="mt-1 ml-2">{{quiz_data.en_quiz_title}}</h5>
+              </div>
+              <hr></hr>
+              {% endif %}
+              
+
+              {% if quiz_data.en_A %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="A" value="A" />
+                  <span>A. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_A}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_A}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+              {% if quiz_data.en_B %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="B" value="B" />
+                  <span>B. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_B}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_B}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+              {% if quiz_data.en_C %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="C" value="C" />
+                  <span>C. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_C}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_C}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+
+              {% if quiz_data.en_D %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="D" value="D" />
+                  <span>D. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_D}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_D}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+              {% if quiz_data.en_E %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="E" value="E" />
+                  <span>E. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_E}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_E}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+              {% if quiz_data.en_F %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="F" value="F" />
+                  <span>F. </span>
+                  {% if not request.session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_F}}</span>
+                  {% endif %}
+
+                  {% if not request.session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_F}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+
+            </div>
+            <div
+              class="d-flex flex-row justify-content-between align-items-center p-3 bg-white"
+            >
+              <button
+                class="btn btn-primary d-flex align-items-center btn-danger"
+                type="button"
+              >
+                <i class="fa fa-angle-left mt-1 mr-1"></i>&nbsp;이전</button
+              >
+              <form method="post" >
+              <button
+                class="btn btn-primary border-success align-items-center btn-success"
+                type="submit"
+              >
+                다음<i class="fa fa-angle-right ml-2"></i>
+              </button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  </body>
 </html>

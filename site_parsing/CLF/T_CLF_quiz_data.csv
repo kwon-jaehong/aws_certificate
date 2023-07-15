@@ -1,4 +1,4 @@
-exam_category,exam_type,quiz_id,quiz_title,most_vote,correct,A,B,C,D,E,F,G,H,I
+exam_category,exam_type,quiz_id,en_quiz_title,most_vote,correct,A,B,C,D,E,F,G,H,I
 examtopics,CLF-01,1,A company is planning to run a global marketing application in the AWS Cloud. The application will feature videos that can be viewed by users. The company must ensure that all users can view these videos with low latency.Which AWS service should the company use to meet this requirement?,D,D,AWS Auto Scaling,Amazon Kinesis Video Streams,Elastic Load Balancing,Amazon CloudFront,,,,,
 examtopics,CLF-01,2,Which pillar of the AWS Well-Architected Framework refers to the ability of a system to recover from infrastructure or service disruptions and dynamically acquire computing resources to meet demand?,B,B,Security,Reliability,Performance efficiency,Cost optimization,,,,,
 examtopics,CLF-01,3,Which of the following are benefits of migrating to the AWS Cloud? (Choose two.),AC,AC,Operational resilience,Discounts for products on Amazon.com,Business agility,Business excellence,Increased staff retention,,,,

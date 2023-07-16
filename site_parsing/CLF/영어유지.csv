@@ -94,3 +94,36 @@ WAF,
 Warm standby,
 Wavelength,
 X-Ray,
+IAM role,
+IAM user,
+IAM group,
+Rekognition,
+SageMaker,
+Amplify,
+VPC route tables,
+Macie,
+IAM roles,
+S3 Standard,
+S3 Glacier Flexible Retrieval,
+Shield Advanced,
+Forecast,
+Marketplace,
+S3 Transfer Acceleration,
+S3 Cross-Region Replication,
+S3 Event Notifications,
+Spot Instances, 스팟 인스턴스(Spot Instances)
+Reserved Instances, 예약 인스턴스(Reserved Instance)
+On-Demand Instances,
+reseller programs,
+Support,
+
+
+
+
+
+
+
+
+
+
+

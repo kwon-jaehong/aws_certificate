@@ -35,6 +35,11 @@
 
                 </h1>
                 {% endif %} 
+                
+                {% if quiz_data.c_count %}
+
+                <span> {{quiz_data.c_count}}/{{session.current_quiz_count}} </span>
+                {% endif %} 
 
                 <span>진행상황 ({{session.current_quiz_count}} of 65)</span>
               </div>
@@ -160,25 +165,6 @@
               </div>
               {% endif %}
 
-
-              {% if quiz_data.en_F %}
-              <div class="ans ml-2 ">
-                <label class="checkbox">
-                  <input type="checkbox" name="F" value="True"  {% if quiz_data.F_C %} checked {% endif %}/>
-                  <span>F. </span>
-                  {% if not session.Hide_KO_choice %}
-                  <span>{{quiz_data.ko_F}}</span>
-                  {% endif %}
-
-                  {% if not session.Hide_EN_choice %}
-                  <br>
-                  <span>{{quiz_data.en_F}}</span>
-                  <br>
-                  <br>
-                  {% endif %}
-                </label>
-              </div>
-              {% endif %}
 
 
             </div>

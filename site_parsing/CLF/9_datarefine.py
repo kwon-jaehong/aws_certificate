@@ -76,7 +76,7 @@ df["ko_B"] = df.apply(lambda x : check_str(x["en_B"],word_dict,x["ko_B"]) , axis
 df["ko_C"] = df.apply(lambda x : check_str(x["en_C"],word_dict,x["ko_C"]) , axis = 1 )
 df["ko_D"] = df.apply(lambda x : check_str(x["en_D"],word_dict,x["ko_D"]) , axis = 1 )
 df["ko_E"] = df.apply(lambda x : check_str(x["en_E"],word_dict,x["ko_E"]) , axis = 1 )
-df["ko_F"] = df.apply(lambda x : check_str(x["en_F"],word_dict,x["ko_F"]) , axis = 1 )
+
 
 
 

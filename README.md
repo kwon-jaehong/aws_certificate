@@ -43,38 +43,57 @@ kms 다시
 - html 자체를 저장해놓자
 
 
-
-Exam AWS Certified Cloud Practitioner topic 1 question 986 discussion
-
-EXAM AWS CERTIFIED SOLUTIONS ARCHITECT - ASSOCIATE SAA-C03 TOPIC 1 QUESTION 543 DISCUSSION
+------------------------------------------
+네트워크
 
 
+컴퓨터 물리주소 = mac 주소
+통신 규약 - 프로토콜
+라우터
+인터넷 계층
+포트
+3웨이 핸드쉐이크
+TCP UDP 틀린거 보기
+소켓 - 용용프로그램과 TCP/IP계층을 연결하기 위한 인터페이스
+FTP 파일전송
+QOS
+------------------------------------------
+객체지향
 
+다음 코드는 어떤 방식의 프로그래밍인가? - 절차식, 객체지향 프로그래밍
 
-https://github.com/Ditectrev/AWS-Cloud-Practitioner-CLF-C01-Exam-Questions-Answers
+클래스 설명 문제
 
+클래스에서 퍼블릭, 프라이빗, 프로텍트
 
+상속
 
+디자인 패턴 개념
 
+---------------------------------------------
+운영체제
 
+운영체제 설명
 
+부팅
 
+인터럽트 개념
 
+cpu가 실행되면, 문맥은 어디에 저장될까? 65페이지 PCB 저장
 
+스레드와 멀티프로세스
 
+cpu에서 가장 부하가 많이 걸리는 작업은?
 
+119페이지 스케일 업 아웃
 
+교착상태
 
+페이징
 
+레이드 개념
 
-
-
-
-
-
-
-
-
+--------------------------------------------------------------
 
 
 

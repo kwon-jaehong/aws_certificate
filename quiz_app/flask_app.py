@@ -19,8 +19,8 @@ def start_test():
 
     session.modified=True
     session['solution_history'] = {}
-    session['current_quiz_count'] = 0
-    session['quize_pointer'] = 0
+    session['current_quiz_count'] = 1
+    session['quize_pointer'] = 1
     session['hide_EN_quiz'] = False
     session['hide_EN_choice'] = False
     session['hide_KO_quiz'] = False
@@ -62,7 +62,7 @@ def next():
 @app.route('/previous', methods=['POST'])
 def previous():
     session.modified=True
-    session['current_quiz_count'] -= 1
+    # session['current_quiz_count'] -= 1
     session['quize_pointer'] -= 1
     session['quize_pointer'] = session['quize_pointer'] % len(df)
     
@@ -79,14 +79,24 @@ def previous():
     return render_template('index.html', quiz_data=quiz_data)
 
 
+
+
+
+
+
+
+
+
+
+
 @app.route('/check', methods=['POST'])
 def check():
     session.modified=True
-    dict_list = {"A":0,"B":1,"C":2,"D":3,"E":4,"F":5}
+    # dict_list = {"A":0,"B":1,"C":2,"D":3,"E":4,"F":5}
     quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
     
-    ## 정답이 quiz_data['most_vote']안에 있어야함
     
+    ## 정답이 quiz_data['most_vote']안에 있어야함
     correct_list = list(set(list(quiz_data['most_vote'])))
     
     ch_list = []
@@ -104,6 +114,7 @@ def check():
         ch_list.append('F')
                 
                 
+                
     ## 라디오버튼 체크 유지용
     quiz_data['A_C'] = request.form.get('A', False)
     quiz_data['B_C'] = request.form.get('B', False)
@@ -119,11 +130,14 @@ def check():
     if int(subject)==-1 or int(subject)==0:
         pass
     else:
-        #csv 저장해야됨
+        #서브젝트 csv 저장해야됨
+        quiz_data['subject']= subject
+        df.loc[session['quize_index_list'][session['quize_pointer']],'subject'] = subject
+        df.to_csv('./CLF_quiz_data.csv',index=False)
         pass
     
     
-    
+    # 퍼센트 및 넥스트시 
     
     correct_answer_check = 1
     for item in ch_list:
@@ -136,9 +150,17 @@ def check():
     quiz_data['is_correct'] = correct_answer_check
     
     
-    if session['solution_history'].get(str(session['quize_index_list'][session['quize_pointer']]))==None:
-        session['solution_history'][str(session['quize_index_list'][session['quize_pointer']])] = quiz_data['is_correct']
+    ## 히스토리 요걸로 바꿔야함
+    # df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']
+    
+    if session['solution_history'].get(str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']))==None:
+        session['solution_history'][str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id'])] = quiz_data['is_correct']
         
+    c_count = 0
+    for key,val in session['solution_history'].items():
+        if val==2:
+            c_count +=1
+    quiz_data['c_count'] = c_count
     
     
     return render_template('index.html', quiz_data=quiz_data)

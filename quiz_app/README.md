@@ -15,13 +15,22 @@ https://medium.com/@reul.ghorm/get-familiar-with-bootstrap-components-build-a-si
 4 - 결제 및 요금제
 
 
-틀린문제 262,298,312,467,639,701,714,717,75,781,826,907,946,972,
+--------------
+봐야할 부분
+AWS Well-Architected Framework? 
+서포트 플랜
+717 
+x-ray
 
-
-
-
-
-
+-------------------------------
+고쳐야할 번역
+411 발문
+326 발문
+592 발문
+65 발문
+798 삭제
+458 보기
+926 발문
 
 
 

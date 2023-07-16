@@ -9,6 +9,8 @@ import time
 
 browser = webdriver.Chrome()
 
+# browser = webdriver.Chrome()
+
 lang_code = 'ko'
 
 time_sp = 1
@@ -40,7 +42,7 @@ while i < len(en_df):
                 input = en_df.loc[i,key]
                 search = browser.find_element(By.CLASS_NAME, "er8xn")
                 search.send_keys(input)
-                time.sleep(3)
+                time.sleep(2)
                 
                 output = browser.find_element(By.CLASS_NAME,'HwtZe').text.replace("\n","").strip()
                 if len(output)==0:

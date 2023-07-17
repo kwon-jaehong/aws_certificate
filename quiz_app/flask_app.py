@@ -5,7 +5,9 @@ import random
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
-df = pd.read_csv('./CLF_quiz_data.csv')
+
+df_path = "./UDEMY_CLF_quiz_data.csv"
+df = pd.read_csv(df_path)
 
 # 여기서 하나의 거대한 DF를 만들어야 함
 
@@ -133,7 +135,7 @@ def check():
         #서브젝트 csv 저장해야됨
         quiz_data['subject']= subject
         df.loc[session['quize_index_list'][session['quize_pointer']],'subject'] = subject
-        df.to_csv('./CLF_quiz_data.csv',index=False)
+        df.to_csv(df_path,index=False)
         pass
     
     
@@ -154,7 +156,7 @@ def check():
     # df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']
     
     if session['solution_history'].get(str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']))==None:
-        session['solution_history'][str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id'])] = quiz_data['is_correct']
+        session['solution_history'][str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id'])] = int(quiz_data['is_correct'])
         
     c_count = 0
     for key,val in session['solution_history'].items():

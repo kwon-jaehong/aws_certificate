@@ -23,7 +23,13 @@
               <div
                 class="d-flex flex-row justify-content-between align-items-center mcq"
               >
-                <h4>{{quiz_data.quiz_id}}</h4>
+                <h4>
+                  {% if quiz_data.exam_category=="udemy" %}
+                  {{ ((quiz_data.quiz_id/65)+1)|int }}챕터 - {{(quiz_data.quiz_id % 65)}} 
+                  {% else %}
+                    {{quiz_data.quiz_id}}
+                  {% endif %} 
+                </h4>
                 
                 {% if quiz_data.is_correct %}
                 <h1 class="text-danger">
@@ -223,12 +229,21 @@
             </p> 
             <br>
 
+            
               {% for key, value in session.solution_history.items() %}
 
                 {% if value == 1 %}
-                <p>
-                  {{key}},
-                </p> 
+                
+
+                {% if quiz_data.exam_category=="udemy" %}
+                
+                <p> {{key}}, </p>
+                {# <p>{{ ((key|int/65)+1)|int }}챕터-{{(quiz_data.quiz_id % 65)}},</p> #}
+
+                {% else %}
+                 <p> {{key}}, </p>
+                {% endif %} 
+
                 {% endif %}
 
                {% endfor  %} 

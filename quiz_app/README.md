@@ -6,7 +6,10 @@ https://bootstrapr.io/bs3/multiple-choice.html
 https://medium.com/@reul.ghorm/get-familiar-with-bootstrap-components-build-a-simple-knowledge-quiz-d5908beeb5ba
 
 
+---------------------------
+보기 셔플링 기능 넣자
 
+유데미 중복 문항 검사
 ----------------------------------------------------------------------
 
 1 - 클라우드 개념
@@ -15,15 +18,15 @@ https://medium.com/@reul.ghorm/get-familiar-with-bootstrap-components-build-a-si
 4 - 결제 및 요금제
 
 
---------------
-봐야할 부분
-AWS Well-Architected Framework? 
-서포트 플랜
-717 
-x-ray
+
+
+
+----------------------
+유데미 번역
+323 발문에 세이빙 플랜 선택
 
 -------------------------------
-고쳐야할 번역
+고쳐야할 번역 익그잼
 411 발문
 326 발문
 592 발문

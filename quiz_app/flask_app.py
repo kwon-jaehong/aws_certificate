@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
 
-df_path = "./UDEMY_CLF_quiz_data.csv"
+df_path = "./UDEMY_SAA_quiz_data.csv"
 df = pd.read_csv(df_path)
 
 # 여기서 하나의 거대한 DF를 만들어야 함
@@ -50,6 +50,7 @@ def next():
     request.form.get('D', False)
     request.form.get('E', False)
     request.form.get('F', False)
+    request.form.get('G', False)
     
     
     quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
@@ -74,6 +75,7 @@ def previous():
     request.form.get('D', False)
     request.form.get('E', False)
     request.form.get('F', False)
+    request.form.get('G', False)
     
 
     quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
@@ -114,6 +116,8 @@ def check():
         ch_list.append('E')
     if bool(request.form.get('F', False))==True:
         ch_list.append('F')
+    if bool(request.form.get('F', False))==True:
+        ch_list.append('G')
                 
                 
                 
@@ -124,6 +128,7 @@ def check():
     quiz_data['D_C'] = request.form.get('D', False)
     quiz_data['E_C'] = request.form.get('E', False)
     quiz_data['F_C'] = request.form.get('F', False)
+    quiz_data['G_C'] = request.form.get('G', False)
     
     
     

@@ -173,6 +173,50 @@
 
 
 
+              {% if quiz_data.en_F %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="F" value="True" {% if quiz_data.F_C %} checked {% endif %}/>
+                  <span>F. </span>
+                  {% if not session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_F}}</span>
+                  {% endif %}
+
+                  {% if not session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_F}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+              
+
+              {% if quiz_data.en_G %}
+              <div class="ans ml-2 ">
+                <label class="checkbox">
+                  <input type="checkbox" name="G" value="True" {% if quiz_data.G_C %} checked {% endif %}/>
+                  <span>G. </span>
+                  {% if not session.Hide_KO_choice %}
+                  <span>{{quiz_data.ko_G}}</span>
+                  {% endif %}
+
+                  {% if not session.Hide_EN_choice %}
+                  <br>
+                  <span>{{quiz_data.en_G}}</span>
+                  <br>
+                  <br>
+                  {% endif %}
+                </label>
+              </div>
+              {% endif %}
+
+
+
+
             </div>
 
 

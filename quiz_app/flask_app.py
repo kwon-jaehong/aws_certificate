@@ -27,7 +27,9 @@ def start_test():
     session['hide_EN_choice'] = False
     session['hide_KO_quiz'] = False
     session['hide_KO_choice'] = False
-    session['quize_index_list'] = random.sample(range(0,len(df)),len(df))
+    session['quize_index_list'] = list(range(-1,len(df)))
+    # session['quize_index_list'] = random.sample(range(0,len(df)),len(df))
+    
     quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
 
 

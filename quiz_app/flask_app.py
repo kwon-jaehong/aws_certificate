@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
 
-df_path = "./UDEMY_SAA_quiz_data.csv"
+df_path = "./UDEMY_CLF_quiz_data.csv"
 df = pd.read_csv(df_path)
 
 # 여기서 하나의 거대한 DF를 만들어야 함
@@ -28,7 +28,7 @@ def start_test():
     session['hide_KO_quiz'] = False
     session['hide_KO_choice'] = False
     session['quize_index_list'] = list(range(-1,len(df)))
-    # session['quize_index_list'] = random.sample(range(0,len(df)),len(df))
+    session['quize_index_list'] = random.sample(range(0,len(df)),len(df))
     
     quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
 

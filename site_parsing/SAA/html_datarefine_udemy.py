@@ -14,7 +14,7 @@ udemy_dir = "./ud"
 
 
 for i in tqdm(range(1,7)):
-    with open(os.path.join(udemy_dir,"Practice Exams _ AWS Certified Solutions Architect Associate _ Udemy_"+str(i)+".html"), "r", encoding="utf-8") as file:
+    with open(os.path.join(udemy_dir,"AWS Certified Solutions Architect Associate Practice Exams _ Udemy_"+str(i)+".html"), "r", encoding="utf-8") as file:
         # 파일 내용 읽기
         html_data = file.read()
     # print("6 Practice Exams _ AWS Certified Cloud Practitioner CLF-C01 _ Udemy_"+str(i)+".html")
@@ -52,7 +52,7 @@ for i in tqdm(range(1,7)):
 
 
 for i in tqdm(range(1,7)):
-    with open(os.path.join(udemy_dir,"연습 시험 _ AWS 공인 솔루션 아키텍트 어소시에이트 _ 유데미_"+str(i)+".html"), "r", encoding="utf-8") as file:
+    with open(os.path.join(udemy_dir,"AWS 공인 솔루션스 아키텍트 어소시에이트 연습 시험 _ 유데미_"+str(i)+".html"), "r", encoding="utf-8") as file:
         # 파일 내용 읽기
         html_data = file.read()
 
@@ -72,7 +72,7 @@ for i in tqdm(range(1,7)):
 
 
 df['subject'] = 0
-df.to_csv('./UDEMY_SAA_quiz_data.csv',index=False)
+df.to_csv('./UDEMY_SAA_quiz_data2.csv',index=False)
 
 
 ## 데이터 정제 부부분 넣자

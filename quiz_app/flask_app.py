@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
 
-df_path = "./UDEMY_CLF_quiz_data.csv"
+df_path = "./UDEMY_SAA_quiz_data2.csv"
 df = pd.read_csv(df_path)
 
 # 여기서 하나의 거대한 DF를 만들어야 함

@@ -52,7 +52,7 @@
   - 아래 그림은 EBS스냅샷을 다른곳으로 복사할때 발생하는 일임
   - 스냅샷 이동할때 -> 즉, 키A로 복호화, `키B로 암호화를 함` ( AWS에서 `자동으로 처리`)
 
-![Alt text](../etc/image2/KMS%EC%8A%A4%EB%83%85%EC%83%B7%EC%9D%B4%EB%8F%99.png)
+![Alt text](../../etc/image2/KMS%EC%8A%A4%EB%83%85%EC%83%B7%EC%9D%B4%EB%8F%99.png)
 
 
 
@@ -68,7 +68,7 @@
       - cross-account access 언제사용하나?
         - 계정간 스냅샷을 복사할때 사용
 
-![Alt text](../etc/image2/KMS%EA%B3%84%EC%A0%95%EA%B0%84%EC%8A%A4%EB%83%85%EC%83%B7%EB%B3%B5%EC%82%AC.png)
+![Alt text](../../etc/image2/KMS%EA%B3%84%EC%A0%95%EA%B0%84%EC%8A%A4%EB%83%85%EC%83%B7%EB%B3%B5%EC%82%AC.png)
 
 
 ------------------------------------------------------
@@ -84,7 +84,7 @@
   - 각 복사본 키들은, 각 리전에서 `독립적으로 관리`된다 (복사는 되었더라도 정책을 일일이 관리해줘야한다) `키를 하나라고 생각 해서는 안된다!`
 - 다중 리전키 사용은... 권장하지는 않음
 
-![Alt text](../etc/image2/KMS%EB%A9%80%ED%8B%B0%EB%A6%AC%EC%A0%84%ED%82%A4.png)
+![Alt text](../../etc/image2/KMS%EB%A9%80%ED%8B%B0%EB%A6%AC%EC%A0%84%ED%82%A4.png)
 
 
 
@@ -111,7 +111,7 @@
   - `AMI 속성`에 다른 계정에서 사용할수있게 시작 권한을 수정
   - KMS를 공유하기 위한 IAM역할,정책 생성해서 `KMS 키 공유`
 
-![Alt text](../etc/image2/KMSAMI%EC%95%94%ED%98%B8%ED%99%94%EA%B3%B5%EC%9C%A0.png)
+![Alt text](../../etc/image2/KMSAMI%EC%95%94%ED%98%B8%ED%99%94%EA%B3%B5%EC%9C%A0.png)
 
 ------------------------------
 ## AWS SSM parameter Store 
@@ -122,13 +122,13 @@
 - CloudFormation과 연동해, 스택의 매개변수로도 활용 가능 -> 쿠버네티스 `configmap`와 비슷
 
 - 2가지 티어 있음
-![Alt text](../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%ED%8B%B0%EC%96%B4.png)
+![Alt text](../../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%ED%8B%B0%EC%96%B4.png)
 
 - 어드밴스에서 사용 할 수 있는 `매개변수 정책 이란`?
   - `TTL을 할당 할 수 있음`
   - 여러 조건을 달 수 있음
 
-![Alt text](../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%EC%A0%95%EC%B1%85.png)
+![Alt text](../../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%EC%A0%95%EC%B1%85.png)
 
 -----------------------------
 
@@ -143,7 +143,7 @@
 - `멀티리전` 기능도 있음
   - 복수 리전에 동일한 데이터 존재가능함
 
-![Alt text](../etc/image2/%EC%8B%9C%ED%81%AC%EB%A6%BF%EB%A7%A4%EB%8B%88%EC%A0%80%EB%8B%A4%EC%A4%91%EB%A6%AC%EC%A0%84%ED%82%A4.png)
+![Alt text](../../etc/image2/%EC%8B%9C%ED%81%AC%EB%A6%BF%EB%A7%A4%EB%8B%88%EC%A0%80%EB%8B%A4%EC%A4%91%EB%A6%AC%EC%A0%84%ED%82%A4.png)
 
 ----------------------------------
 ## AWS Certificate Manager (ACM)

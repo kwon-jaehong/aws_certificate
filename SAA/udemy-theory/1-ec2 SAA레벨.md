@@ -55,7 +55,7 @@ private IP (사설 IP )
 
 
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%B0%B0%EC%B9%98.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%B0%B0%EC%B9%98.png)
 
 
   - Spread (스프레드, 분산배치) - 각 인스턴스가 다른 하드웨어에 분산되어 배치됨
@@ -63,7 +63,7 @@ private IP (사설 IP )
     - 동일한 리전의 여러 가용 영역에 적용될 수 있다
     - 따라서, `중요한(크리티컬) 애플리케이션`이 있는경우 이전략을 써야함
 
-![Alt text](../etc/image2/%EC%8A%A4%ED%94%84%EB%A0%88%EB%93%9C%EB%B0%B0%EC%B9%98.png)
+![Alt text](../../etc/image2/%EC%8A%A4%ED%94%84%EB%A0%88%EB%93%9C%EB%B0%B0%EC%B9%98.png)
 
 
 - Partition (분할 배치 그룹) - 분산 배치와 비슷함, `Amazon EC2는 각 그룹을 파티션`이라고 하는 논리 세그먼트로 나눔
@@ -76,14 +76,14 @@ private IP (사설 IP )
 - ec2 인스턴스는 내가 어떤 파티션에 있는지 알 수 있음(메타 데이터 서비스 `옵션`을 이용하면 됨)
 
 
-![Alt text](../etc/image2/%ED%8C%8C%ED%8B%B0%EC%85%98%EB%B0%B0%EC%B9%98.png)
+![Alt text](../../etc/image2/%ED%8C%8C%ED%8B%B0%EC%85%98%EB%B0%B0%EC%B9%98.png)
 
 
 
 - `ec2 배치그룹`을 만드는것이지, ec2 자체를 배포하는것이 아님
 
 
-![Alt text](../etc/image2/ec2%EC%83%9D%EC%84%B1%EC%8B%9C%EB%B0%B0%EC%B9%98%EA%B7%B8%EB%A3%B9.png)
+![Alt text](../../etc/image2/ec2%EC%83%9D%EC%84%B1%EC%8B%9C%EB%B0%B0%EC%B9%98%EA%B7%B8%EB%A3%B9.png)
 
 
 참고: <br>
@@ -123,7 +123,7 @@ https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/placement-groups.html
 - 절전모드 + 종료를 섞어 쓰면, 마치, Ec2 인스턴스를 중지한 적이 없는 것처럼 사용 가능함!!!
 
 
-![Alt text](../etc/image2/%EC%A0%88%EC%A0%84%EB%AA%A8%EB%93%9C.png)
+![Alt text](../../etc/image2/%EC%A0%88%EC%A0%84%EB%AA%A8%EB%93%9C.png)
 
 
 - 사용 케이스
@@ -170,7 +170,7 @@ https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/placement-groups.html
 
 - 즉, '스팟 요청' 삭제 -> 스팟 인스턴스 삭제가 기본 플로우임 
 
-![Alt text](../etc/image2/%EC%8A%A4%ED%8C%9F%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4.png)
+![Alt text](../../etc/image2/%EC%8A%A4%ED%8C%9F%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4.png)
 
 
 

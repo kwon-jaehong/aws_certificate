@@ -32,12 +32,12 @@
   - AWS lambda
   - 오픈서치
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EA%B5%AC%EB%8F%85%ED%95%84%ED%84%B0.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EA%B5%AC%EB%8F%85%ED%95%84%ED%84%B0.png)
 
 - subscription filter는 여러 리전의 로그들을 한곳에 모을 수도 있음
   - `여러 AWS 계정 log 통합도 가능`
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EA%B5%AC%EB%8F%85%ED%95%84%ED%84%B02.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EA%B5%AC%EB%8F%85%ED%95%84%ED%84%B02.png)
 
 
 
@@ -139,7 +139,7 @@
 
 - insights는 `row 데이터를 마음대로 조작 할 수 있다`(SQL같이)
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%EC%99%80%EC%B9%98%EB%A1%9C%EA%B7%B8%EC%9D%B8%EC%82%AC%EC%9D%B4%ED%8A%B8.png)
 
 - CloudWatch insights 종류
   - container
@@ -198,7 +198,7 @@
 
 - 클라우드트레일 + 이벤트브릿지로 위험한 상황을 컨트롤 할 수 있음
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8A%B8%EB%A0%88%EC%9D%BC%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%B8%8C%EB%A6%BF%EC%A7%80.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%8A%B8%EB%A0%88%EC%9D%BC%EC%9D%B4%EB%B2%A4%ED%8A%B8%EB%B8%8C%EB%A6%BF%EC%A7%80.png)
 
 
 -----------------------------------------------
@@ -216,7 +216,7 @@
   - config를 활성화 할때, `규칙을 설정 할수도 있음, 규칙은 고객이 만들수도 있음` -> `규정 준수 여부 척도가 됨`
   - config `rule에 의해 무엇인가 기능적으로 차단은 불가능` -> 고객에게 알림은(이벤트브릿지 -> SNS) 가능
   - `즉, 조건문과 비슷`
-  - 예) ![Alt text](../etc/image2/config%EB%A3%B0.png)
+  - 예) ![Alt text](../../etc/image2/config%EB%A3%B0.png)
 - 만약, 규정 준수 위반을한 리소스가 있으면, `remediation action`(수정조치)을 설정 (`이건 실습 필요!!!!`)
 
 - config remediation(수정)

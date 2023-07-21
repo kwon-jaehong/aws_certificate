@@ -44,7 +44,7 @@ Fast snapshot restore (FSR) - 빠른 스냅샷 복원
 - 졸라 비쌈 
 
 
-![Alt text](../etc/image2/ebs%EC%8A%A4%EB%83%85%EC%83%B7.png)
+![Alt text](../../etc/image2/ebs%EC%8A%A4%EB%83%85%EC%83%B7.png)
 
 <br>
 <br>
@@ -84,7 +84,7 @@ AMI는 ec2 인스턴스에서 어떻게 처리 되나?
 
 
 
-![Alt text](../etc/image2/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%8A%A4%ED%86%A0%EC%96%B4.png)
+![Alt text](../../etc/image2/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%EC%8A%A4%ED%86%A0%EC%96%B4.png)
 
 - 인스턴스 목록이 구지.... 시험에는 안나옴
 
@@ -198,7 +198,7 @@ EBS 볼륨 암복호 예시
 
 
 
-![Alt text](../etc/image2/efs2.png)
+![Alt text](../../etc/image2/efs2.png)
 
 
 - EFS 모드 -> 생성될때, 고를 수 있음
@@ -237,7 +237,7 @@ EFS의 AZ durability (내구성)
   - IA까지 쓰면, `스탠다드보다 90%정도` 쌈
 
 
-![Alt text](../etc/image2/efs.png)
+![Alt text](../../etc/image2/efs.png)
 
 ----------------------------------
 ## EBS vs EFS

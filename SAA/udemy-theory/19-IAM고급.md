@@ -11,7 +11,7 @@
   - `예약형 인스턴스 공유`가 가능함
 - 조직 단위, `OU(organizational unit)`라는 개념이 있음
   - 멤버 계정은 `한 조직(OU)에만 소속됨`
-![Alt text](../etc/image2/%EC%A1%B0%EC%A7%81OU.png)
+![Alt text](../../etc/image2/%EC%A1%B0%EC%A7%81OU.png)
 
 - CloudTrail의 모든 로그를 `중앙 S3계정에 모을 수 있음`
 
@@ -35,7 +35,7 @@
 
 - A 계정은 `Redshift 허용 안됨` -> 이미 prod OU에서 막앗으므로
   
-![Alt text](../etc/image/scp.png)
+![Alt text](../../etc/image/scp.png)
 
 
 <br>
@@ -48,23 +48,23 @@
 - 아래 예시는 `Notinipaddress`이므로,
   - 192.0.2.0/24, 203.0.113.0/24 `대역아니면 AWS 리소스 모두 거절`
 
-![Alt text](../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%98.png)
+![Alt text](../../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%98.png)
 
 - 아래 예시는 문자열비교(stringequals)이므로
   - `유럽-central-1,유럽-west-1 에서 요청된 ec2,rds,다이나모DB 요청은 모두 거절`
 
-![Alt text](../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%982.png)
+![Alt text](../../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%982.png)
 
 
 - 아래 예시는 사용자 계정의 부서가 `Data`만 허용 + Ec2리소스 태그가 dataanalytics이면 ec2를 종료하고, 시작할 수 있는 권한
 
 
-![Alt text](../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%983.png)
+![Alt text](../../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%983.png)
 
 
 - `aws:PrincipalOrgID`(OU임)라는 컨디션을 통해, 리소스 정책 적용 
 
-![Alt text](../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%984.png)
+![Alt text](../../etc/image2/IAM%EC%BB%A8%EB%94%94%EC%85%984.png)
 
 --------------------------------
 ## IAM Role Vs Resource based Policies
@@ -76,7 +76,7 @@
   - 리소스에 엑세스 할 수 있는 `역할을 생성`
 
 
-![Alt text](../etc/image2/iam%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%97%AD%ED%95%A0.png)
+![Alt text](../../etc/image2/iam%EB%A6%AC%EC%86%8C%EC%8A%A4%EC%97%AD%ED%95%A0.png)
 
 - 차이는 다음과 같다
   - 그림 위 케이스는 `IAM역할이 S3버킷에 액세스`
@@ -85,7 +85,7 @@
   - 역할을 상속 받으면, `사용자의 기존 권한을 모두 포기하고`, `해당 역할에 할당된 권한을 상속` -> IAM 역할 외에 아무것도 못함
   - 사용자 기반 접근은 `권한 포기 X`
 - SNS, SQS, Lambda에는 주로 리소스 기반 정책을 사용하는것이 좋다
-![Alt text](../etc/image2/IAM%EC%97%AD%ED%95%A0%EB%A6%AC%EC%86%8C%EC%8A%A4.png)
+![Alt text](../../etc/image2/IAM%EC%97%AD%ED%95%A0%EB%A6%AC%EC%86%8C%EC%8A%A4.png)
 
 -----------------------------------------------
 
@@ -96,12 +96,12 @@
   - 권한 경계는 유저와 역할에만 적용되고, `Groups는 적용 안됨`
   - 예) temp라는 IAM유저가 있고, `AdministratorAccess` 권한을 받음 (수퍼유저), 하지만 `IAM permission boundaries`로 `AmazonS3FullAccess`를 설정하면, `S3 리소스에만 작업 가능`
   - 즉, SCP, permission boundaries, IAM-based의 `교집합 정책만 허용`
-![Alt text](../etc/image2/IAM%EA%B6%8C%ED%95%9C%EA%B5%90%EC%A7%91%ED%95%A9.png)
+![Alt text](../../etc/image2/IAM%EA%B6%8C%ED%95%9C%EA%B5%90%EC%A7%91%ED%95%A9.png)
 
 
 - 아래와 같이 로직으로 리소스에 대한 접근 여부를 판단
 
-![Alt text](../etc/image2/IAM%EC%A0%95%EC%B1%85%EB%A1%9C%EC%A7%81.png)
+![Alt text](../../etc/image2/IAM%EC%A0%95%EC%B1%85%EB%A1%9C%EC%A7%81.png)
 
 1. Deny 항목 검사
 2. SCP 허용 검사
@@ -116,7 +116,7 @@
 
 - 아래 예시는를 적용한 IAM 유저는 `sqs:deletequeue`를 실행 할 수 있나? -> 할 수 없음, 로직은 Deny부터 검사하기 때문에 allow 해줘도 소용 없음
   
-![Alt text](../etc/image2/IAM%EC%A0%95%EC%B1%85%EB%A1%9C%EC%A7%81%EC%98%88%EC%8B%9C.png)
+![Alt text](../../etc/image2/IAM%EC%A0%95%EC%B1%85%EB%A1%9C%EC%A7%81%EC%98%88%EC%8B%9C.png)
 
 
 -----------------------------------------
@@ -139,7 +139,7 @@
     - 임시 자격증명은, 사전에 `코그니토 사용자 풀 서비스`에 사전 정의 되있어야함
     - 클라이언트가 코그니토에 토큰을 보내면, 코그니토는 임시자격 증명과 교환해줌
   
-![Alt text](../etc/image2/%EC%BD%94%EA%B7%B8%EB%8B%88%ED%86%A0.png)
+![Alt text](../../etc/image2/%EC%BD%94%EA%B7%B8%EB%8B%88%ED%86%A0.png)
 
 ----------------------------------------------------
 ## AWS IAM identity center (single-sign-on)
@@ -151,13 +151,13 @@
 - window active directory 연동
 - Identity Center에서 `권한 설정 가능`
 
-![Alt text](../etc/image2/identity%EC%84%BC%ED%84%B0.png)
+![Alt text](../../etc/image2/identity%EC%84%BC%ED%84%B0.png)
 
 
 
 - `마스터 계정에서`, 센터를 통해 특정 OU 권한을 연결/상속 받을 수 있다
 
-![Alt text](../etc/image2/%EC%95%84%EC%9D%B4%EB%8D%B4%ED%8B%B0%ED%8B%B0%EC%84%BC%ED%84%B0.png)
+![Alt text](../../etc/image2/%EC%95%84%EC%9D%B4%EB%8D%B4%ED%8B%B0%ED%8B%B0%EC%84%BC%ED%84%B0.png)
 
 
 -----------------------------------------------
@@ -188,13 +188,13 @@ simple AD
 - aws 관리형 디렉터리, 온프레미스 AD와는 결합 X
 - `AWS에 존재함` (온프라미스 X)
 
-![Alt text](../etc/image/awsad.png)
+![Alt text](../../etc/image/awsad.png)
 
 
 - identity center와 연결해서 사용하려면 아래 그림과 같이 설정
   - AD 프록시는 `지연시간이 길어질 수 있음`
 
-![Alt text](../etc/image2/ad%EC%97%B0%EA%B2%B0.png)
+![Alt text](../../etc/image2/ad%EC%97%B0%EA%B2%B0.png)
 
 
 
@@ -219,7 +219,7 @@ simple AD
       - AWS `config`를 사용, `모든 계정에 내가 설정한 config 배포`
       - 규정을 준수하지 않으면, SNS로 알림
 
-![Alt text](../etc/image2/%EC%BB%A8%ED%8A%B8%EB%A1%A4%ED%83%80%EC%9B%8C%EA%B0%80%EB%93%9C%EB%A0%88%EC%9D%BC.png)
+![Alt text](../../etc/image2/%EC%BB%A8%ED%8A%B8%EB%A1%A4%ED%83%80%EC%9B%8C%EA%B0%80%EB%93%9C%EB%A0%88%EC%9D%BC.png)
 
 
 

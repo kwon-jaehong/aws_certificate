@@ -291,12 +291,38 @@
                 {% endif %}
 
                {% endfor  %} 
-              
-
-              </form>
-
             </div>
 
+            <div
+            class="d-flex flex-row  p-3 bg-white"
+          >
+          
+          <p>
+            맞은문제 :  
+          </p> 
+          <br>
+
+          
+            {% for key, value in session.solution_history.items() %}
+
+              {% if value == 2 %}
+              
+
+              {% if quiz_data.exam_category=="udemy" %}
+              
+              <p> {{key}}, </p>
+              {# <p>{{ ((key|int/65)+1)|int }}챕터-{{(quiz_data.quiz_id % 65)}},</p> #}
+
+              {% else %}
+               <p> {{key}}, </p>
+              {% endif %} 
+
+              {% endif %}
+
+             {% endfor  %} 
+          </div>
+
+          </form>
             
           </div>
         </div>

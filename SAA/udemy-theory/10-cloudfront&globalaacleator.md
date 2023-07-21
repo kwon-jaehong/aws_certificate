@@ -13,7 +13,7 @@
 - 클라우드프론트가 S3버킷에 접근할 수 있게, `버킷정책` 업데이트 해줘야함 
 
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%94%84%EB%A1%A0%ED%8A%B81.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%94%84%EB%A1%A0%ED%8A%B81.png)
 
 
 origins - 원본 제공 방식
@@ -26,7 +26,7 @@ origins - 원본 제공 방식
   - 예시) 애플리케이션 로드 밸런서나, Ec2, S3 정적 웹사이트, any HTTP
   - 커스텀이기에 OAI, OAC같은 `보안 컨트롤은 없음`
 
-![Alt text](../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%94%84%EB%A1%A0%ED%8A%B82.png)
+![Alt text](../../etc/image2/%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%94%84%EB%A1%A0%ED%8A%B82.png)
 
 
 S3 CRR(리전 복제)랑 클라우드프론트랑 뭐가 틀리나?
@@ -83,7 +83,7 @@ Anycast IP
 - 클라이언트에서 가장 가까운 서버랑 연결됨
 
 
-![Alt text](../etc/image2/%EC%95%A0%EB%8B%88%EC%BA%90%EC%8A%A4%ED%8A%B8.png)
+![Alt text](../../etc/image2/%EC%95%A0%EB%8B%88%EC%BA%90%EC%8A%A4%ED%8A%B8.png)
 
 
 
@@ -98,7 +98,7 @@ Anycast IP
   - 연결된 애플리케이션,ALB 등
 - 일종의 `글로벌 ALB + AWS 인터넷 회선`서비스라고 생각
 
-![Alt text](../etc/image2/%EA%B8%80%EB%A1%9C%EB%B2%8C%EC%95%85%EC%84%B8%EB%A0%88%EC%9D%B4%ED%84%B0.png)
+![Alt text](../../etc/image2/%EA%B8%80%EB%A1%9C%EB%B2%8C%EC%95%85%EC%84%B8%EB%A0%88%EC%9D%B4%ED%84%B0.png)
 
 
 

@@ -18,7 +18,7 @@
     - amazon.com , google.com 등
 
 
-![Alt text](../etc/image2/route53ns.png)
+![Alt text](../../etc/image2/route53ns.png)
 ns-252.awsdns-31.com 및 3개의 서버가 -> 스테판.com을 응답해 줄거임
 
 
@@ -101,7 +101,7 @@ DNS 레코드의 유형마다 "value"의 의미와 형식이 다름
 
 
 
-![Alt text](../etc/image2/FQDN.png)
+![Alt text](../../etc/image2/FQDN.png)
 
 
 --------------------------
@@ -132,7 +132,7 @@ DNS 레코드의 유형마다 "value"의 의미와 형식이 다름
 - 어떤 타입을 쓰던지 0.50달러/월
 
 
-![Alt text](../etc/image2/dns%ED%98%B8%EC%8A%A4%ED%8A%B8%EC%A1%B4.png)
+![Alt text](../../etc/image2/dns%ED%98%B8%EC%8A%A4%ED%8A%B8%EC%A1%B4.png)
 
 - 리눅스 dnstools의 (dig와 nslookup을 통해 DNS 경로 추적 가능)
 -------------------------------------------------
@@ -160,7 +160,7 @@ CNAME
     - `EC2의` DNS는 별칭 불가능!
     - 별칭을 사용하면, TTL은 설정 `불가능`, route53에 의해 자동으로 설정됨
 
-![Alt text](../etc/image2/route53alias.png)
+![Alt text](../../etc/image2/route53alias.png)
 
 -----------------------
 ## Route 53 정책
@@ -184,7 +184,7 @@ CNAME
 
 
 
-![Alt text](../etc/image2/dns%EB%8B%A8%EC%88%9C.png)
+![Alt text](../../etc/image2/dns%EB%8B%A8%EC%88%9C.png)
 
 ------------------------------------
 
@@ -200,9 +200,9 @@ CNAME
 
 
 
-![Alt text](../etc/image2/dns%EA%B0%80%EC%A4%91%EC%B9%98.png)
+![Alt text](../../etc/image2/dns%EA%B0%80%EC%A4%91%EC%B9%98.png)
 
-![Alt text](../etc/image2/dns%EA%B0%80%EC%A4%91%EC%B9%982.png)
+![Alt text](../../etc/image2/dns%EA%B0%80%EC%A4%91%EC%B9%982.png)
 
 
 
@@ -215,7 +215,7 @@ CNAME
 - 지연시간에 민감한 웹사이트, 애플리케이션에 사용
 - 레코드 작성할때, `value의 리전을 설정 해줘야함 (서울이나 기타)`
 
-![Alt text](../etc/image2/dns%EB%8C%80%EA%B8%B0%EC%8B%9C%EA%B0%84.png)
+![Alt text](../../etc/image2/dns%EB%8C%80%EA%B8%B0%EC%8B%9C%EA%B0%84.png)
 
 
 
@@ -225,7 +225,7 @@ CNAME
 
 - route53에서 `헬스 체커`를 만들 수 있다.
 
-![Alt text](../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC1.png)
+![Alt text](../../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC1.png)
 
 
 
@@ -236,20 +236,20 @@ CNAME
    - 200코드나 300코드 받아야 통과
    - 텍스트 기반 상태 확인일경우, 리턴값의 처음부터 `5120Bytes`까지 확인
      - (리턴값이 "성공"일경우 성공이라는 문자를 찾는것이 5120바이트라는것 )
-![Alt text](../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC2.png)
+![Alt text](../../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC2.png)
 
 
 2. 계산된 상태 검사
    - `endpoint 상태를 모아서 조건문으로 처리`, 짜잘한거 모아서 하나의 상위 헬스체크로 만듬
    - 조건 연산은 `AND,OR,NOT` 지원
    - 하위 상태 확인 256개(`256의 엔드포인트 체크기`)까지 가능
-![Alt text](../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC3.png)
+![Alt text](../../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC3.png)
 
 3. cloudwatch 경보 상태
    - VPC private 리소스 경보는 route 53에서 할 수 없음
    - `클라우드 와치 알람을 이용해, 헬스체크기와 연동함`
 
-![Alt text](../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC4.png)
+![Alt text](../../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC4.png)
 
  
 
@@ -259,7 +259,7 @@ CNAME
 
 - 헬스체크기를 활용해 장애가 있는 지역에 DNS 쿼리 결과를 안줌
 
-![Alt text](../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC5.png)
+![Alt text](../../etc/image2/dns%ED%97%AC%EC%8A%A4%EC%B2%B4%ED%81%AC5.png)
 
 
 
@@ -289,7 +289,7 @@ Geolocation Routing (지리적 기반 라우팅):
 
 - 지리적 위치 + 가중치 값으로, `특정 지역에 더 많은` 트래픽을 처리하게 위해
 
-![Alt text](../etc/image2/dns%EC%A7%80%EB%A6%AC%EC%A0%81%EC%A0%91%EA%B7%BC.png)
+![Alt text](../../etc/image2/dns%EC%A7%80%EB%A6%AC%EC%A0%81%EC%A0%91%EA%B7%BC.png)
 
 
 ---------------------------------------------
@@ -300,7 +300,7 @@ Geolocation Routing (지리적 기반 라우팅):
 - 사용자의 IP 범위(CIDR)을 정의해서 라우팅함
 
 
-![Alt text](../etc/image2/dnsip%EB%B2%A0%EC%9D%B4%EC%8A%A4.png)
+![Alt text](../../etc/image2/dnsip%EB%B2%A0%EC%9D%B4%EC%8A%A4.png)
 
 
 -------------------------------------

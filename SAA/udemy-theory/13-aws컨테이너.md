@@ -9,7 +9,7 @@ EC2 시작 타입
 - 내가 사용할 Ec2를 미리 프로비저닝 해야됨
 - Ec2에 `ECS 에이전트를 설치해야됨` 
 
-![Alt text](../etc/image2/ecsec2.png)
+![Alt text](../../etc/image2/ecsec2.png)
 
 
 fargate 시작 타입
@@ -26,7 +26,7 @@ ECS IAM role
 - `ECS Task 역할`은 다른것임
   - 컨테이너에 역할을 부여하는 개념
 
-![Alt text](../etc/image2/ecs%EC%97%AD%ED%95%A0.png)
+![Alt text](../../etc/image2/ecs%EC%97%AD%ED%95%A0.png)
 
 
 ECS 데이터 볼륨 (EFS)

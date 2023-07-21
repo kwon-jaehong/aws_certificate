@@ -49,14 +49,14 @@ RDS 스토리지 오토 스케일링
 - 마스터 RDS (읽기/쓰기 가능한)와 읽기 복제본 사이에는 `비동기 복제`가 발생함 
 - 읽기복사본을 -> `RDB DB로 승격 할 수도 있음`
 
-![Alt text](../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B81.png)
+![Alt text](../../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B81.png)
 
 
 읽기 복사 네트워크 트래픽 비용
 - 다른 AZ 비동기 복사는 무료
 - 다른 리전은 유료
 
-![Alt text](../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B82.png)
+![Alt text](../../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B82.png)
 
 
 
@@ -74,7 +74,7 @@ RDS 스토리지 오토 스케일링
 - *`멀티 AZ 클러스터`*  와는 다른 개념임
 - 멀티 AZ는 활성화 상태의 데이터베이스 종류와 상관 없이 `동일한 연결 문자열`을 유지
 
-![Alt text](../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B83.png)
+![Alt text](../../etc/image2/rds%EC%9D%BD%EA%B8%B0%EB%B3%B5%EC%A0%9C%EB%B3%B83.png)
 
 
 
@@ -87,7 +87,7 @@ RDS 스토리지 오토 스케일링
   - DB 내부 구성 설정, 패치 적용, SSH 또는 SSM사용해 인스턴스에 접근 가능
   - 커스텀으로 운영하려면, AWS에서 관리하는 `Automation mode를 꺼두는게 좋음`
 
-![Alt text](../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80.png)
+![Alt text](../../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80.png)
 
 
 ----------------------
@@ -131,7 +131,7 @@ AWS 책임
 - DB복제한다고 해서 성능 이슈는 없음
 
 
-![Alt text](../etc/image2/%EC%98%A4%EB%A1%9C%EB%9D%BC1.png)
+![Alt text](../../etc/image2/%EC%98%A4%EB%A1%9C%EB%9D%BC1.png)
 
 
 
@@ -152,10 +152,10 @@ Peer to Peer
 - `쓰기/읽기 엔드포인트가 존재함`
 - `사용자 지정 엔드포인트`로 DB 사용을 조절 할 수 있음
 
-![Alt text](../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80.png)
+![Alt text](../../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80.png)
 
 
-![Alt text](../etc/image2/%EC%98%A4%EB%A1%9C%EB%9D%BC2.png)
+![Alt text](../../etc/image2/%EC%98%A4%EB%A1%9C%EB%9D%BC2.png)
 
 
 
@@ -166,7 +166,7 @@ Peer to Peer
 
 
 
-![Alt text](../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8.png)
+![Alt text](../../etc/image2/rds%EC%BB%A4%EC%8A%A4%ED%85%80%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8.png)
 
 
 
@@ -188,7 +188,7 @@ Peer to Peer
 - `세이지 메이커, comprehend`
 - 예) 쿼리 치면 -> 답변줌
 
-![Alt text](../etc/image2/rds%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%ED%86%B5%ED%95%A9.png)
+![Alt text](../../etc/image2/rds%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%ED%86%B5%ED%95%A9.png)
 
 
 
@@ -264,7 +264,7 @@ RDS&오로라 복구
 
 
 
-![Alt text](../etc/image2/rds%ED%94%84%EB%A1%9D%EC%8B%9C.png)
+![Alt text](../../etc/image2/rds%ED%94%84%EB%A1%9D%EC%8B%9C.png)
 
 
 ----------------------------
@@ -279,7 +279,7 @@ RDS&오로라 복구
 - 엘라스틱 캐시는 `IAM 인증을 지원하지 않음` 
 
  
-![Alt text](../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C.png)
+![Alt text](../../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C.png)
 
 
 Redis
@@ -312,7 +312,7 @@ Memcached
 
 
 
-![Alt text](../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C2.png)
+![Alt text](../../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C2.png)
 
 
 <br>

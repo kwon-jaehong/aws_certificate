@@ -55,7 +55,7 @@
 - `베스쳔 보안그룹`을 따로 지정해줌
 - 기업의 CIDR 엑세스 허용, `SSH로만 통신 (22포트)`
 
-![Alt text](../etc/image2/%EB%B2%A0%EC%8A%A4%EC%B3%94%ED%98%B8%EC%8A%A4%ED%8A%B8.png)
+![Alt text](../../etc/image2/%EB%B2%A0%EC%8A%A4%EC%B3%94%ED%98%B8%EC%8A%A4%ED%8A%B8.png)
 
 
 ---------------------------------------------
@@ -98,7 +98,7 @@
   - 윈도우는 49152 - 65535
   - 리눅스는 32768 - 60999
 
-![Alt text](../etc/image2/%EC%84%9C%EB%B2%84%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%9E%84%EC%8B%9C%ED%8F%AC%ED%8A%B8.png)
+![Alt text](../../etc/image2/%EC%84%9C%EB%B2%84%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8%EC%9E%84%EC%8B%9C%ED%8F%AC%ED%8A%B8.png)
 
 
 
@@ -168,7 +168,7 @@
 
 - VPC flow 로그를 읽는방법
   - 전송/목적지 IP, port 패킷, 통신 시간, 인터페이스 ID
-![Alt text](../etc/image2/VPC%ED%94%8C%EB%A1%9C%EC%9A%B0%EB%A1%9C%EA%B7%B8.png)
+![Alt text](../../etc/image2/VPC%ED%94%8C%EB%A1%9C%EC%9A%B0%EB%A1%9C%EA%B7%B8.png)
 
 
 ------------------------------------------
@@ -185,7 +185,7 @@
 
 
 
-![Alt text](../etc/image2/site-to-siteVPN.png)
+![Alt text](../../etc/image2/site-to-siteVPN.png)
 
 
 
@@ -194,7 +194,7 @@
 
 
 
-![Alt text](../etc/image2/site-to-siteVPN%EB%9D%BC%EC%9A%B0%ED%8C%85%EC%A0%84%ED%8C%8C.png)
+![Alt text](../../etc/image2/site-to-siteVPN%EB%9D%BC%EC%9A%B0%ED%8C%85%EC%A0%84%ED%8C%8C.png)
 
 
 -------------------------------------------
@@ -204,7 +204,7 @@
 - `제품명이 아님` 걍 site-to-site VPN을 한 VPC에서, 여러개 만들면 됨
 - `데이터 센터끼리 통신도 가능`
 
-![Alt text](../etc/image2/site-to-siteVPN%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%97%88%EB%B8%8C.png)
+![Alt text](../../etc/image2/site-to-siteVPN%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C%ED%97%88%EB%B8%8C.png)
 
 
 
@@ -227,12 +227,12 @@
     - 기업 데이터 센터에서 큰 네트워크 대역폭 (큰 데이터셋)을 필요로 할때 
 
 
-![Alt text](../etc/image2/DX.png)
+![Alt text](../../etc/image2/DX.png)
 
 - Direct Connect Gateway
   - 리전에(다른 리전 포함) `여러 VPC와 다이렉트로 연결`하고 싶을때 사용
 
-![Alt text](../etc/image2/DX%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
+![Alt text](../../etc/image2/DX%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
 
 
@@ -263,7 +263,7 @@
   - 복원력을 높이기 위해, 여러 Direct Connect를 설치하는것이 좋다
   - 복원력을 최대로 올릴려면, Direct Connect 이중화 필수
 
-![Alt text](../etc/image2/DX%EB%B3%B5%EC%9B%90%EB%A0%A5.png)
+![Alt text](../../etc/image2/DX%EB%B3%B5%EC%9B%90%EB%A0%A5.png)
 
 
 --------------------------
@@ -272,7 +272,7 @@
 - Direct Connect 2개 쓰면 좋겠지만, `비용이 많이듬`
 - 그래서 `백업으로 Site to Site VPN`을 연결 아키텍쳐에 적합
 
-![Alt text](../etc/image2/DX+site.png)
+![Alt text](../../etc/image2/DX+site.png)
 
 
 
@@ -304,18 +304,18 @@
     - Transit GateWay를 사용하면, 2터널이 뚫리므로, 2.5Gbps(ECMP)처리 가능
 
 
-    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
+    - ![Alt text](../../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
     - 만약, 2개의 Site-to-Site VPN을 생성하면? -> `터널 4개 생성`
 
-    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
+    - ![Alt text](../../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
     - 터널 추가 밑, 기본 VGW
-    - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B43.png)
+    - ![Alt text](../../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B43.png)
 
     - 하지만... `돈이 비쌈`
   - Direct connect Gateway랑도 연동 가능
 
-  - ![Alt text](../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B44.png)
+  - ![Alt text](../../etc/image2/%ED%8A%B8%EB%9E%9C%EC%A7%93%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B44.png)
 
 
 ------------------------------------------
@@ -327,7 +327,7 @@
 - 사례)
   - 콘텐츠 검사, 위협 모니터링 등
 
-![Alt text](../etc/image2/VPC%ED%8A%B8%EB%9E%98%ED%94%BD%EB%AF%B8%EB%9F%AC%EB%A7%81.png)
+![Alt text](../../etc/image2/VPC%ED%8A%B8%EB%9E%98%ED%94%BD%EB%AF%B8%EB%9F%AC%EB%A7%81.png)
 
 
 
@@ -358,10 +358,10 @@
 
 
 
-![Alt text](../etc/image2/%EC%9D%B4%EA%B7%B8%EB%9E%98%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
+![Alt text](../../etc/image2/%EC%9D%B4%EA%B7%B8%EB%9E%98%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B42.png)
 
 
-![Alt text](../etc/image2/%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
+![Alt text](../../etc/image2/%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
 
 ---------------------------------------
@@ -371,16 +371,16 @@
 - 같은 리전, 다른 AZ 퍼블릭 IP 통신 0.02달러
 - 같은 리전, 다른 AZ 프라이빗 IP 통신 0.01달러
 
-![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A91.png)
+![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A91.png)
 
 
 - `S3와 클라우드 프론트사이에서 데이터를 주고받는건 무료`
 
 
-![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A92.png)
+![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A92.png)
 
 - VPC 엔드포인트 이용해라, GB당, 0.01달러
-![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A93.png)
+![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A93.png)
 
 
 ------------------------------------------
@@ -394,7 +394,7 @@
 - `트래픽 허용,차단, 알림을 설정 할 수 있음`
 
 
-![Alt text](../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B0%A9%ED%99%94%EB%B2%BD.png)
+![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B0%A9%ED%99%94%EB%B2%BD.png)
 
 
 

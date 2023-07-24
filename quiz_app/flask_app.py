@@ -2,6 +2,10 @@ from flask import Flask, render_template, request,session
 import pandas as pd
 import random
 
+
+
+
+
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
@@ -9,7 +13,11 @@ app.secret_key = 'mrjaehong'
 df_path = "./UDEMY_SAA_quiz_data2.csv"
 df = pd.read_csv(df_path)
 
-# 여기서 하나의 거대한 DF를 만들어야 함
+
+delet_list = pd.read_csv('./UDEMY_SAA_quiz_data2_correct.csv')['number'].to_list()
+## 아는 문제 삭제
+df = df[~df['quiz_id'].isin(delet_list)]
+
 
 def quiz_data_refine(p_df_series):
     p_df_series = p_df_series.dropna()
@@ -27,10 +35,14 @@ def start_test():
     session['hide_EN_choice'] = False
     session['hide_KO_quiz'] = False
     session['hide_KO_choice'] = False
-    session['quize_index_list'] = list(range(-1,len(df)))
-    session['quize_index_list'] = random.sample(range(0,len(df)),len(df))
     
-    quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
+    q_list = df['quiz_id'].tolist()
+    
+    random.shuffle(q_list)
+    
+    session['quize_index_list'] = q_list
+    
+    quiz_data= quiz_data_refine(df[[]==])
 
 
     return render_template('index.html',quiz_data=quiz_data)

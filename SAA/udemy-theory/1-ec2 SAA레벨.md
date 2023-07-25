@@ -33,9 +33,19 @@ private IP (사설 IP )
 
 <br><br><br><br>
 
+--------------------------
+## EC2
+
+<br><br>
+
+- `인스턴스 중지` -> `인스턴스 스토어 볼륨의 데이터는 삭제`됩니다
+
+
+<br><br><br><br>
+
 -----------------------
 
-## AWS Elastic IPs
+## AWS Elastic IP
 
 <br><br>
 
@@ -54,12 +64,16 @@ private IP (사설 IP )
 
 - Ec2 인스턴스가 AWS 인프라에 배치되는 방식을 제어할 때 씀
 - Ec2 배치 그룹 전략 3가지
-  - Cluster (클러스터) - `단일 가용 영역` 내에서(AZ) `지연시간이 짧은` 하드웨어 설정
+  - `Cluster (클러스터)` - `단일 가용 영역` 내에서(AZ) `지연시간이 짧은` 하드웨어 설정
     - 같은 랙의 장비의(하드웨어) Ec2의 수를 지정해서 예약하는 것. 
-    - 10Gbps 네트워크 속도를 자랑함
-    - 이 전략은 `높은 성능`을 제공하지만, `위험도 높다`
-    - `빅데이터, 고성능 컴퓨팅(HPC), 낮은 지연시간의 네트워크 성능이 필요할때 씀`
-
+    - `10Gbps` 네트워크 속도를 자랑함
+    - 이 전략은 높은 성능을 제공하지만, 위험도 높다
+    - 빅데이터, 고성능 컴퓨팅(HPC), 낮은 지연시간의 네트워크 성능이 필요할때 씀
+  - 기존 배치 그룹에서 `더 많은 인스턴스를 추가`하려고 시도하거나, `배치 그룹에서 둘 이상의 인스턴스 유형`을 시작하려고 하면 `용량 부족 오류`가 발생할 가능성이 높아집니다. 
+    - 배치 그룹에서 인스턴스를 `중지`했다가 다시 시작해야됨
+  - `인스턴스 수 제한 없음`
+  - https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/cr-cpg.html
+  - https://tutorialsdojo.com/amazon-elastic-compute-cloud-amazon-ec2/?src=udemy
 <br><br>
 
 ![Alt text](../../etc/image2/%ED%81%B4%EB%9F%AC%EC%8A%A4%ED%84%B0%EB%B0%B0%EC%B9%98.png)
@@ -136,6 +150,7 @@ https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/placement-groups.html
 
 - 인스턴스 중지(stop) : 인스턴스가 다시 시작할떄까지, `EBS 내용은 그대로 유지됨`
 - 인스턴스 종료 : EBS 자동 삭제 활성화면 삭제되고, 안걸었으면 그대로 유지
+- 최대 절전 모드에서는 `EC2 인스턴스가 암호화된 EBS 지원 인스턴스`여야 합니다.
 
 <br><br>
 
@@ -158,6 +173,7 @@ https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/placement-groups.html
 
 <br><br>
 
+- Ec2가 절전 모드에 있는 동안 `연결된 EBS 볼륨 및 탄력적 IP 주소에 대해서만 비용을 지불`
 - 현재, Ec2 인스턴스의 Ram 최대 크기는 150GB (별로 안중요)
 - ec2 (`bare metal instance`)는 적용 할 수 없음
 - 리눅스, 윈도우 등의 여러 운영 체제에서 사용 가능

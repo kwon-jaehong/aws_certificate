@@ -14,13 +14,41 @@ df_path = "./UDEMY_SAA_quiz_data2.csv"
 df = pd.read_csv(df_path)
 
 
-delet_list = pd.read_csv('./UDEMY_SAA_quiz_data2_correct.csv')['number'].to_list()
+delet_list = pd.read_csv('./UDEMY_SAA_quiz_data2_correct.csv')['맞춘id'].to_list()
 ## 아는 문제 삭제
 df = df[~df['quiz_id'].isin(delet_list)]
 
+## 답 섞기
+def shuffle_choice(p_df_series):
+    choice_list = []
+    
+    str_list = ['A','B','C','D','E','F','G','H','I']
+    correct_list = list(p_df_series.get('most_vote'))
+    correct_str = ""
+    
+    for i in str_list:
+        if p_df_series.get('en_'+i)!=None:
+            choice_list.append([i,p_df_series.get('en_'+i),p_df_series.get('ko_'+i),i in correct_list])
+    
+    
+    shuffle_choice_list = random.sample(list(range(0,len(choice_list))), len(choice_list))
+    
+    for i,item_index in enumerate(shuffle_choice_list):
+        p_df_series['en_'+str_list[i]] = choice_list[item_index][1]
+        p_df_series['ko_'+str_list[i]] = choice_list[item_index][2]
+        if choice_list[item_index][3] == True:
+            correct_str += str_list[i]
+
+    p_df_series['most_vote'] = correct_str
+    # print(choice_list)
+    return p_df_series
 
 def quiz_data_refine(p_df_series):
     p_df_series = p_df_series.dropna()
+    
+    ## 답 바꾸기
+    p_df_series = shuffle_choice(p_df_series)
+    
     return dict(p_df_series)
 
 
@@ -29,8 +57,8 @@ def start_test():
 
     session.modified=True
     session['solution_history'] = {}
-    session['current_quiz_count'] = 1
-    session['quize_pointer'] = 1
+    session['current_quiz_count'] = 0
+    session['quize_pointer'] = 0
     session['hide_EN_quiz'] = False
     session['hide_EN_choice'] = False
     session['hide_KO_quiz'] = False
@@ -38,11 +66,13 @@ def start_test():
     
     q_list = df['quiz_id'].tolist()
     
+    ## 퀴즈 섞기
     random.shuffle(q_list)
     
     session['quize_index_list'] = q_list
     
-    quiz_data= quiz_data_refine(df[[]==])
+    global quiz_data
+    quiz_data= quiz_data_refine(df[df['quiz_id']==q_list[session['quize_pointer']]].iloc[0])
 
 
     return render_template('index.html',quiz_data=quiz_data)
@@ -66,8 +96,9 @@ def next():
     request.form.get('F', False)
     request.form.get('G', False)
     
-    
-    quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
+    # df[df['quiz_id']==q_list[session['quize_pointer']]].iloc[0]
+    global quiz_data
+    quiz_data= quiz_data_refine(df[df['quiz_id']==session['quize_index_list'][session['quize_pointer']]].iloc[0])
     
 
 
@@ -91,8 +122,8 @@ def previous():
     request.form.get('F', False)
     request.form.get('G', False)
     
-
-    quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
+    global quiz_data
+    quiz_data= quiz_data_refine(df[df['quiz_id']==session['quize_index_list'][session['quize_pointer']]].iloc[0])
 
     return render_template('index.html', quiz_data=quiz_data)
 
@@ -111,7 +142,8 @@ def previous():
 def check():
     session.modified=True
     # dict_list = {"A":0,"B":1,"C":2,"D":3,"E":4,"F":5}
-    quiz_data= quiz_data_refine(df.loc[session['quize_index_list'][session['quize_pointer']]])
+    global quiz_data
+    # quiz_data= quiz_data_refine(df[df['quiz_id']==session['quize_index_list'][session['quize_pointer']]].iloc[0])
     
     
     ## 정답이 quiz_data['most_vote']안에 있어야함
@@ -160,22 +192,21 @@ def check():
     
     # 퍼센트 및 넥스트시 
     
-    correct_answer_check = 1
+    correct_answer_check = 1 # 틀림 1 맞음 2
     for item in ch_list:
         if item in correct_list:
             correct_answer_check = 2
         else:
-            correct_answer_check = 1
+            correct_answer_check = 1 #하나라도 틀리면 틀림
             break
 
     quiz_data['is_correct'] = correct_answer_check
     
     
-    ## 히스토리 요걸로 바꿔야함
-    # df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']
+
     
-    if session['solution_history'].get(str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id']))==None:
-        session['solution_history'][str(df.loc[session['quize_index_list'][session['quize_pointer']],'quiz_id'])] = int(quiz_data['is_correct'])
+    if session['solution_history'].get(str(session['quize_index_list'][session['quize_pointer']]))==None:
+        session['solution_history'][str(session['quize_index_list'][session['quize_pointer']])] = int(quiz_data['is_correct'])
         
     c_count = 0
     for key,val in session['solution_history'].items():

@@ -291,6 +291,7 @@ RDS&오로라 복구
 ----------------------------
 ## AWS Elasticache - 엘라스틱 캐시
 
+<br><br>
 
 - `레디스`를 예로 들수있고, 인메모리 데이터 베이스라, 짧은 지연시간 = 높은 성능을 자랑한다
 - 예전에 hit한 쿼리를 저장하고 있다가, 똑같이 불러와줌 (똑같은 쿼리는 검색안해도 됨)
@@ -303,6 +304,8 @@ RDS&오로라 복구
 ![Alt text](../../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C.png)
 
 
+<br><br>
+
 Redis
 - `읽기 복제본, 고가용성`
 - AOF를 사용해 데이터 내구성 확보, 백업과 복원 기능 있음
@@ -310,37 +313,55 @@ Redis
 - SSL 보안 지원 가능
 - 게임 리더보드
   - 레디스는 기본적으로 데이터가 정렬되어 운영된다
+- `접근시 암호 지원`
+  - `Redis AUTH`를 활성화해서 사용자 인증
+
+<br><br>
 
 Memcached
-- 다중 노드 파티셔닝 사용( sharding - 샤딩 )
+- 다중 노드 파티셔닝 사용( `sharding - 샤딩` )
 - 가용성 X, 복제도 안함, 지속적인 캐시가 아님
-- 노 백업, 노 복원, 멀티 스레드 아키텍쳐임
+- `노 백업, 노 복원, 멀티 스레드 아키텍쳐`임
 - SASL이라는 SSL보다 상위 버젼의 인증을 함
+
+<br><br>
+
+|| Redis | Memcached |
+|------|---|---|
+|접근시 암호화|지원|미지원|
+|다중 스레드 지원|미지원|지원|
+|클러스터 복제|지원|미지원|
+|자동 장애 조치를 위한 다중 AZ 구성|필수|미지원|
+|트랜잭션|지원|미지원|
+|pub/sub 기능|지원|미지원|
+|백업 및 복원|지원|미지원|
+|사용 사례| - 메모리 내 데이터 세트를 정렬하거나 순위를 매겨야 할때 <br> - 키 저장소의 지속성이 필요할때 <br> - pub/sub 기능이 필요할때 <br> - 백업 및 복원 기능이 필요할때|- 여러 코어 또는 스레드가 있는 대규모 노드 <br> - 확장 및 축소할 수 있는 기능이 필요할때 <br>|
+
+
+<br><br>
+
+![Alt text](../../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C2.png)
 
 
 
 엘라스틱 캐시 패턴
-- Lazy Loading
+- `Lazy Loading`
   - 모든 읽기 데이터가 캐시됨 
   - 캐시 히트없을때 발생
-- write through 
+- `write through` 
   - DB에서 데이터를 업데이트할 때마다, 캐시에 데이터를 추가하거나 업데이트
-- Session store
+- `Session store`
   - 인터넷 접속의 세션 저장소로 활용 가능
 
 
 
 
 
+<br><br><br><br>
 
-![Alt text](../../etc/image2/%EC%97%98%EB%9D%BC%EC%8A%A4%ED%8B%B1%EC%BA%90%EC%8B%9C2.png)
+참고 :
+https://tutorialsdojo.com/redis-cluster-mode-enabled-vs-disabled-vs-memcached/?src=udemy
 
-
-<br>
-<br>
-<br>
-
----------------------
 
 
 

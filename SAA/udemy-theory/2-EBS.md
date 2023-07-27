@@ -127,11 +127,13 @@ https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/InstanceStorage.html
 
 - io1/io2 
   - `고성능 SSD`, 적은 시연시간, 대용량 워크로드가 중요할 떄 쓰임 ( `DB에 최고!!!`)
+  - 최소 `100 IOPS`
   - `16000 IOPS`의 이상을 요하는 애플리케이션에 적합 
   - `EBS 멀티 연결 지원 볼륨임`
   - 디스크 크기는 `4GB ~ 16 TB`
-    - gp2와 마찬가지로 저 둘은 `1기가 = X IOPS 증가` 매커니즘을 가짐
-    - 보통 ec2 인스턴스는 `최대 32000 IOPS`, `Nitro Ec2 인스턴스`에서는 `최대 64000 IOPS`까지 가능
+    - gp2와 마찬가지로 저 둘은 1기가 = X IOPS 증가 매커니즘을 가짐
+    - 보통 ec2 인스턴스는 `최대 32000 IOPS`, `Nitro Ec2 인스턴스`에서는 `최대 64,000 IOPS`까지 가능
+    - 프로비저닝된 IOPS의 최대 비율은 `50:1`입니다.
     - `io2는` io1보다 `기가당 IOPS의 수가 더 높음`
   - io2 block Express (4 GB ~ 64TB)
     - 고성능 유형의 볼륨, 지연시간이 밀리초 미만

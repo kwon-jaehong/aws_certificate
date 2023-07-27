@@ -41,6 +41,10 @@ ECS 데이터 볼륨 (EFS)
 ECS Task
 - 쿠버네티스 yaml deploy처럼 컨테이너를 배포하기 위한 기능
 - 애플리케이션 타입이 Service = 계속 실행, Task = 실행완료 후 종료
+- ECS 작업의 작업 정의(Task Definition)에서 `taskRoleArn` 필드를 사용하여 해당 작업이 `사용할 IAM 역할을 지정`할 수 있습니다. 이렇게 함으로써 해당 작업은 지정된 IAM 역할의 권한으로 AWS 리소스에 접근하고 서비스를 사용할 수 있게 됩니다.
+- 예를 들어, ECS 작업에서 Amazon S3 버킷에 파일을 읽거나 쓰기 위해서는 IAM 역할에 S3 버킷에 대한 액세스 권한을 부여해야 합니다. 이렇게 할당된 `IAM 역할의 ARN`을 `taskRoleArn`으로 작업 정의에서 지정하여 해당 ECS 작업이 S3 버킷과 상호작용할 수 있게 됩니다.
+
+
 
 <br><br>
 
@@ -61,7 +65,22 @@ ECS 서비스는 다음과 같은 `메트릭`을 제공한다. `Auto Scaling과 
 - ALBRequestCountPerTarget 
   - Application Load Balancer 대상 그룹의 대상당 `완료된 요청 수`입니다.
 
+<br><br><br>
+
+
+
+
+
+------------------------
+
+## AWS FarGate
+
+- Fargate 작업에는 시나리오의 스토리지 요구 사항을 충족하는 최소 `20GiB의 무료 임시 스토리지가 제공`됩니다.
+- 자원(Ec2 인스턴스)을 프로비저닝 할 필요는 없지만, 자원양은 설정해줘야함
+
+![Alt text](../../etc/image2/%ED%8C%8C%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9E%90%EC%9B%90.png)
 <br><br><br><br>
+
 
 -------------------------------------
 ## AWS App Runner

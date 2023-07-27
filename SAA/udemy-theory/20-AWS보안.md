@@ -114,15 +114,22 @@
 ![Alt text](../../etc/image2/KMSAMI%EC%95%94%ED%98%B8%ED%99%94%EA%B3%B5%EC%9C%A0.png)
 
 ------------------------------
-## AWS SSM parameter Store 
+## AWS SSM(시스템 매니져) Parameter Store 
+
+<br><br>
+
 - `config 및 암호 저장`을 위한 보안 `스토리지`
+- ` AWS Secrets Manager`는 `개인 정보` 저장용, `파라미터 스토어`는 리소스 정보 저장용
 - 서버리스
 - 스토어에 버저닝 기능 있음 ( 과거 데이터 추적 가능 )
 - 이벤트브리지 연동 가능
 - CloudFormation과 연동해, 스택의 매개변수로도 활용 가능 -> 쿠버네티스 `configmap`와 비슷
-
 - 2가지 티어 있음
+- 
+
 ![Alt text](../../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%ED%8B%B0%EC%96%B4.png)
+
+<br><br><br><br>
 
 - 어드밴스에서 사용 할 수 있는 `매개변수 정책 이란`?
   - `TTL을 할당 할 수 있음`
@@ -130,23 +137,35 @@
 
 ![Alt text](../../etc/image2/SSM%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0%EC%8A%A4%ED%86%A0%EC%96%B4%EC%A0%95%EC%B1%85.png)
 
+
+<br><br><br><br>
+
 -----------------------------
 
 ## AWS Secrets Manager
+
+<br><br>
 
 - 암호를 저장하는 최신 서비스, 파라미터 스토어와는 다름
 - `X일마다 강제로 암호 교체`
 - 자동생성은 `Lambda를 연동`해서 생성 가능
 - `RDS`와 통합가능
 - KMS를 통해 암호화됨
-
 - `멀티리전` 기능도 있음
   - 복수 리전에 동일한 데이터 존재가능함
+- `하지만 비용듬`
+
 
 ![Alt text](../../etc/image2/%EC%8B%9C%ED%81%AC%EB%A6%BF%EB%A7%A4%EB%8B%88%EC%A0%80%EB%8B%A4%EC%A4%91%EB%A6%AC%EC%A0%84%ED%82%A4.png)
 
+<br><br><br><br>
+
 ----------------------------------
 ## AWS Certificate Manager (ACM)
+
+<br><br><br>
+
+
 
 - TLS/SSL 인증서를 `생성,관리,배포` 해주는 서비스
 - 퍼블릭/프라이빗 TLS 제공, (퍼블릭 TLS 무료)
@@ -156,6 +175,11 @@
 - `Ec2인스턴스에서는 사용 못함`
 - 리전 서비스임 (글로벌 아님)
 - 엣지 최적화 API Gateway는 배후에서 AWS가 관리하는 사용자 지정 CloudFront 배포를 사용하여 CloudFront 엣지 로케이션을 거쳐 전 세계로 요청을 라우팅하기 때문에 ACM 인증서는 us-east-1 리전에 생성해야 합니다.
+- ACM은 만료 45일 전부터 모든 활성 인증서(공용, 사설 및 가져온 인증서)에 대해 매일 만료 이벤트를 보냅니다. 
+
+
+
+<br><br><br><br>
 
 ---------------------------------------
 ### AWS WAF (웹 애플리케이션 파이어웰)

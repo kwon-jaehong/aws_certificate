@@ -92,8 +92,12 @@ ECS 서비스는 다음과 같은 `메트릭`을 제공한다. `Auto Scaling과 
 - 파게이트로 실행됨
 
 
+--------------------------
+## Amazon EKS Anywhere
 
+- Kubernetes(K8s)를 `사용하여 온프레미스 데이터 센터 또는 로컬 인프라에서 Amazon Elastic Kubernetes Service (Amazon EKS) 클러스터를 배포하고 운영하기 위한 서비스입니다.`
 
+- Amazon EKS Anywhere를 사용하면 사용자는 자체 데이터 센터나 로컬 인프라에서 Kubernetes 환경을 손쉽게 구축하고 관리할 수 있습니다. 이를 통해 클라우드와 온프레미스 환경 간에 애플리케이션을 더욱 쉽게 이동시킬 수 있고, 기존 자원을 활용하여 `하이브리드 클라우드 환경을 구축할 수 있습니다.`
 
 
 

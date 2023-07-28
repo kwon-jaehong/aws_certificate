@@ -352,8 +352,13 @@
 - SAA문제) IPv6가 활성화된 VPC에서 Ec2를 생성했는데, 서브넷에서 Ec2를 실행 할 수 없다고 나오면? -> `Ec2가 Ipv6를 받지 못해서가 아님(Ipv6 주소는 너무 많기 때문에), 원인은 서브넷에 이용가능한 IPv4가 없기 때문임`
 
 
+<br><br><br><br>
+
 -------------------------------------
 ## AWS Egress-only internet GateWay - 송신 전용 게이트웨이
+
+
+<br><br>
 
 - `프라이빗 서브넷에 있는 Ec2 ipv6의 인터넷 아웃바운드` <-> 인터넷이랑 연결
 - Nat Gateway랑 비슷하지만, `Ipv6트래픽만 사용됨`
@@ -367,9 +372,13 @@
 
 ![Alt text](../../etc/image2/%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%8A%A4%EA%B2%8C%EC%9D%B4%ED%8A%B8%EC%9B%A8%EC%9D%B4.png)
 
+<br><br><br><br>
+
 
 ---------------------------------------
 ## AWS 네트워크 비용
+
+<br><br>
 
 - 같은 AZ Ec2가 사설(private IP)로 통신할 시 `무료`
 - 같은 리전, 다른 AZ 퍼블릭 IP 통신 0.02달러
@@ -384,11 +393,15 @@
 ![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A92.png)
 
 - VPC 엔드포인트 이용해라, GB당, 0.01달러
+
 ![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B9%84%EC%9A%A93.png)
 
+<br><br><br><br>
 
 ------------------------------------------
 ## AWS Network Firewall
+
+<br><br>
 
 - VPC를 보호를 위한 방화벽
 - 3계층에서 7계층까지 보호
@@ -400,6 +413,18 @@
 
 ![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B0%A9%ED%99%94%EB%B2%BD.png)
 
+<br><br><br><br>
 
+--------------------------------
+## AWS PrivateLink
 
+<br><br>
+
+- AWS PrivateLink는 Virtual Private Cloud(VPC)와 지원되는 `AWS 서비스`,` 다른 AWS 계정에서 호스팅하는 서비스 및 지원되는 AWS Marketplace 서비스 간에 프라이빗 연결을 설정`
+- 일종의 `VPC 인터페이스 엔드포인트` + `VPC 피어링` 등 상위버젼
+- https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/endpoint-services-overview.html
+
+![Alt text](../../etc/image2/VPC%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97%EB%A7%81%ED%81%AC.png)
+
+<br><br><br><br>
 

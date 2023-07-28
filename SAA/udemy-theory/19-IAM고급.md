@@ -40,8 +40,12 @@
 <br><br>
 
 ---------------------------------------------------
-## IAM conditions 
+## IAM 
 
+<br><br>
+
+- IAM 데이터베이스 인증은 `MySQL` 및 `PostgreSQL에서` 작동
+- 
 <br><br>
 
 - 컨디션은 조건문 같은것임
@@ -144,6 +148,8 @@
 
 <br><br><br><br>
 
+
+
 -----------------------------------------
 ## AWS cognito
 
@@ -191,6 +197,19 @@
 
 <br><br><br><br>
 
+
+https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers_saml.html
+
+<br>
+
+https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers_create_saml.html
+
+<br>
+
+https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html
+
+<br><br><br><br>
+
 -----------------------------------------------
 ## AWS directory service
 
@@ -201,7 +220,13 @@
 ### AWS managed microsoft AD
 - 로컬에서 사용자를 관리하고 멀티팩터 인증(MFA)지원, 온프레미스에 AD가 있다면, AWS와 연결 가능
 
+-  `Microsoft AD FS(Active Directory Federation Service)를 사용하여 SAML 2.0 기반 페더레이션을 설정 가능` (SSO와 연동해서)
+
 <br>
+https://docs.aws.amazon.com/ko_kr/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html
+
+
+<br><br><br>
 
 AWS AD connector 
 - aws에서 보낸 요청을 온프레미스 AD로 리디렉션 하는 프록시 (걍 중계기임)

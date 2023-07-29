@@ -13,7 +13,17 @@
 - 메트릭은 Streams로 -> `키네시스 Data firehose, datadog 등 전송 할 수 있음`
 
 
+
+- `향상된 모니터링 메트릭 RDS 제공 정보`
+  - RDS 프로세스
+  - OS 프로세스
+  - RDS 하위 프로세스
+
+
 <br><br><br><br>
+
+
+
 
 --------------------------
 ## AWS Cloudwatch Logs- 클라우드워치 로그

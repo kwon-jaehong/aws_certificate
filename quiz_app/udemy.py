@@ -1,6 +1,6 @@
 
 
-quiz_code = 73
+quiz_code = 381
 
 print("챕터",int(quiz_code/65)+1," - ",quiz_code%65)
 

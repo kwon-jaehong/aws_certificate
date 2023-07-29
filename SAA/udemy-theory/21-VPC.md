@@ -140,7 +140,7 @@
 
 
 ---------------------------------------
-## VPC endpoint
+## VPC endpoint (VPC PrivateLink)
 - `AWS PrivateLink` 라고도 부름
 - AWS 내부 트래픽처리를 위해 엔드포인트 씀
 - 종류는 2가지 있음
@@ -154,6 +154,13 @@
 - S3, 다이나모는 거의 게이트웨이를 이용하는 것이 좋음
   - 하지만, VPN이나, 온프레미스에서 엑세스해야될 워크로드면 인터페이스 써야함
 
+- 엔드포인트가 생성되면, 정책 연결 해야됨
+
+![Alt text](../../etc/image2/%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B81.png)
+
+![Alt text](../../etc/image2/%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B82.jpg)
+
+<br><br><br><br>
 
 ------------------------------------
 ## VPC Flow Logs

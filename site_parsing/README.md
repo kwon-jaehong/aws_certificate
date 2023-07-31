@@ -3,6 +3,6 @@
 
 
 
-Exam AWS Certified Cloud Practitioner topic 1 question 986 discussion
+
 
 EXAM AWS CERTIFIED SOLUTIONS ARCHITECT - ASSOCIATE SAA-C03 TOPIC 1 QUESTION 543 DISCUSSION

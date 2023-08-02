@@ -218,20 +218,19 @@
 - web `ACL` (웹 엑시스 컨트롤 리스트)에 정의할 수 있음
 - ip 범위나` 특정 주소, http 헤더,보디 내용 필터링, 또한 sql 인젝션이나 XSS` 같은 공격을 막을수잇음
 - geo-match로 `특정 국가 블럭`
-- `이벤트 횟수를 계산해서 ddos 막음` (사용자는 1초당 5개 이상의 이벤트를 발생시킬수 없음 등)
+- 이벤트 횟수를 계산해서 ddos 막음 (사용자는 1초당 5개 이상의 이벤트를 발생시킬수 없음 등)
 
-- 적용 대상
+- `적용 대상`
   - ALB
   - API gateway
   - cloudFront
-  - appsync graphQL API
+  - Appsync (graphQL API)
   - AWS congnito user fool
 - `NLB에 배포 못함 -> 레이어 7이니까`
 - ALB에 적용하려면(ALB는 고정IP가 없음), AWS global accelerator로 연결(글로벌 악셀은 고정IP 생성해서 연결이니까)
 <br>
 <br>
 
-`*웹공격은 무조건 WAF임, 쉴드는 디도스만임*`
 
 <br>
 <br>

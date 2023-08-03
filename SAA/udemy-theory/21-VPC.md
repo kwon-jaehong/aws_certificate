@@ -20,7 +20,7 @@
 
 - VPC에서 수정도 가능 (`CIDR 추가 5개 까지 가능`)
 
-
+- Route 53 프라이빗 호스팅 기능은 `enableDnsHostnames`, `enableDnsSupport` 활성화 해야함
 
 
 --------------------
@@ -416,7 +416,7 @@
 - `여러 계정 or 여러 VPC에 적용 가능`
 - 수천개의 규칙, 수만 IP나 Port를 필터링 가능
 - `트래픽 허용,차단, 알림을 설정 할 수 있음`
-
+- 한 장소에서 여러 AWS 계정 및 리소스에 AW`S `WAF 규칙`, AWS `Shield Advanced 보호`, `VPC 보안 그룹`, AWS Network Firewalls` 및 `Amazon Route 53 Resolver DNS Firewall `규칙을 활성화할 수 있습
 
 ![Alt text](../../etc/image2/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B0%A9%ED%99%94%EB%B2%BD.png)
 

@@ -26,24 +26,25 @@ ns-252.awsdns-31.com 및 3개의 `도메인네임` 서버가 -> 스테판.com을
 Records - 레코드 정보
   - Domain/subdomain Name -> example.com
   - Record Type -> A or AAAA
-    - A -> 호스트네임을 IPv4로 맵핑
+    - `A` -> 호스트네임을 IPv4로 맵핑
       - example.com을 1.2.3.4로 연결
-    - AAAA -> 호스트네임을 IPv6로 맵핑
+    - `AAAA` -> 호스트네임을 IPv6로 맵핑
       - example.com을 qweko2:2312q:ewqijid~~~블라블라 (ipv6형식)으로 맵핑
-    - CNAME -> 호스트네임을 또다른 호스트 네임으로 연결
+    - `CNAME` -> 호스트네임을 또다른 호스트 네임으로 연결
       - 타겟이 되는 도메인 네임은 꼭 A나 AAAA 레코드를 가지고 있어야 함
-    - NS -> 호스팅존의 네임 서버 (DNS 쿼리를 실행할 수 있는 서버임)
+    - `NS` -> 호스팅존의 네임 서버 (DNS 쿼리를 실행할 수 있는 서버임)
       - 트래픽이 도메인으로 라우팅 되는 방식을 제어함 
     - MX
       - MX 레코드는 도메인의 이메일 서버 정보를 지정합니다. 이메일을 보낼 때, 메일 서버는 도메인의 MX 레코드를 참조하여 해당 도메인의 이메일 서버로 메일을 전달합니다.<br><br><br>
 
 
   - value -> 123.456.789.123
-    - A 레코드: "value"는 도메인 이름을 해당하는 IPv4 주소로 매핑하는 IP 주소를 의미합니다. 예를 들어, A 레코드의 "value"는 "example.com" 도메인 이름을 IPv4 주소 192.0.2.10에 매핑하는 값일 수 있습니다.
-    - AAAA 레코드: "value"는 도메인 이름을 해당하는 IPv6 주소로 매핑하는 IPv6 주소를 나타냅니다. 예를 들어, AAAA 레코드의 "value"는 "example.com" 도메인 이름을 IPv6 주소 2001:0db8:85a3:0000:0000:8a2e:0370:7334에 매핑하는 값일 수 있습니다.
-    - CNAME 레코드: "value"는 도메인 이름을 다른 도메인 이름으로 매핑하는 별칭 도메인 이름을 나타냅니다. 예를 들어, CNAME 레코드의 "value"는 "www.example.com"을 "example.com"으로 매핑하는 값일 수 있습니다.
+    - `A` 레코드: "value"는 도메인 이름을 해당하는 IPv4 주소로 매핑하는 IP 주소를 의미합니다. 예를 들어, A 레코드의 "value"는 "example.com" 도메인 이름을 IPv4 주소 192.0.2.10에 매핑하는 값일 수 있습니다.
+    - `AAAA` 레코드: "value"는 도메인 이름을 해당하는 IPv6 주소로 매핑하는 IPv6 주소를 나타냅니다. 예를 들어, AAAA 레코드의 "value"는 "example.com" 도메인 이름을 IPv6 주소 2001:0db8:85a3:0000:0000:8a2e:0370:7334에 매핑하는 값일 수 있습니다.
+    - `CNAME` 레코드: "value"는 도메인 이름을 다른 도메인 이름으로 매핑하는 별칭 도메인 이름을 나타냅니다. 예를 들어, CNAME 레코드의 "value"는 "www.example.com"을 "example.com"으로 매핑하는 값일 수 있습니다.
     - MX 레코드: "value"는 도메인 이름과 관련된 이메일 서버의 우선순위 및 호스트 이름을 포함한 정보를 나타냅니다. 예를 들어, MX 레코드의 "value"는 "example.com" 도메인의 이메일을 처리하기 위한 메일 서버의 정보일 수 있습니다.
-    - TXT 레코드: "value"는 도메인 이름과 관련된 텍스트 정보를 포함합니다. 주로 SPF(Sender Policy Framework) 또는 DKIM(DomainKeys Identified Mail)과 같은 이메일 인증을 위한 텍스트 데이터를 나타냅니다. <br><br><br>
+    - TXT 레코드: "value"는 도메인 이름과 관련된 텍스트 정보를 포함합니다. 주로 SPF(Sender Policy Framework) 또는 DKIM(DomainKeys Identified Mail)과 같은 이메일 인증을 위한 텍스트 데이터를 나타냅니다.
+    - NS 레코드 : 네임서버 역할을 할 CNAME 지정임,  예시값은 ns1.adji.com   <br><br><br>
 
 
   - routing policy(라우팅 정책) -> 쿼리에 어떻게 응답을 해줄까? 하는 정책

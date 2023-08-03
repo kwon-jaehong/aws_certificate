@@ -237,7 +237,7 @@ AWS Simple AD
 - aws 관리형 디렉터리, 온프레미스 AD와는 결합 X
 - `AWS에 존재함` (온프라미스와 연동 X)
 
-![Alt text](../../etc/image/awsad.png)
+![Alt text](../../etc/image2/awsad.png)
 
 <br><br><br><br>
 

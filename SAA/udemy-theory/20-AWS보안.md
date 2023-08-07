@@ -266,6 +266,8 @@
 
 ## AWS FirewallManager
 
+
+
 - `AWS Organizations`에 있는 `모든 계정의 방화벽 관리` 서비스
 - 보안 정책을 설정 할 수 있음
   - `WAF 규칙` (ALB,API 게이트웨이,클라우드 프론트)

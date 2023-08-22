@@ -88,28 +88,55 @@
 
 
 
+- Elastic Beanstalk 확장
+  - 루트에 .ebextensions/ 폴더에 코드를 넣어서 확장
+  - YAML 이나 JSON 형식의 파일이어야 하며, .config로 끝나야함
+  - 아래 그림 `예시` zip을 업데이트하면 빈스택 `환경변수 자동으로 로드해줌`
+
+![Alt text](../etc/image3/ebd_%ED%99%95%EC%9E%A5%EC%9E%90.png)
+
+![Alt text](../etc/image3/ebd_%ED%99%95%EC%9E%A5%EC%9E%902.png)
 
 
 
 
 
+- Elastic Beanstalk은 `CloudFormation`을 기반으로 한다
+  - 위 Elastic Beanstalk확장파일도 CloudFormation기반으로 프로비저닝됨
+- Elastic Beanstalk에서 애플리케이션을 생성하면 CloudFormation의 `Stacks`로 작업내용이 생성된다
 
 
 
 
 
+- Elastic Beanstalk 복제도 가능 
+  - 모든 구성요소를 똑같이 복사한다
 
 
 
+- Elastic Beanstalk 마이그래이션
+  - `리소스의 선택적 삭제는 제공하지 않음`
+  - `로드밸런서`
+    - 빈스택으로 애플리케이션을 생성하면, `ELB는 유형 변경이 불가능`하고, 구성만 바꿀수 있음
+    - 즉, 애플리케이션에서 생성한 ALB -> `NLB 못바꿈`
+    - 바꾸려면, 동일한 새로운 환경을 생성(로드밸런스 빼고), CNAME을 업데이트 해줌
+
+![Alt text](../etc/image3/ebd_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98.png)
 
 
+  - RDS
+    - 빈스택으로 RDS까지 생성한 경우, RDS는 빈스택의 수명주기를 따른다 (빈스택 환경 삭제하면 RDS 다 날라감)
+    - 그래서 빈스택과 RDS를 분리를 해야된다
+    - 1. RDS 스냅샷 만듬
+    - 2. RDS 삭제 방지를 실행
+    - 3. 새로운 동일환 환경 만듬(RDS 빼고)
+    - 4. CNAME이나 라우트53업데이트 해서 트래픽 제어를 바꿈
+    - 5. 기존 빈스텍 삭제
+    - 6. RDS 보호가 걸려있으므로, 수동으로 클라우드 포메이션 삭제해줘야함
 
+![Alt text](../etc/image3/ebd_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%982.png)
 
-
-
-
-
-
+![Alt text](../etc/image3/ebd_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%981.png)
 
 
 

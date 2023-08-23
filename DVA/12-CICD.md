@@ -137,6 +137,30 @@
 - CodeDeploy 구성 요소
   - Application 
     - 유니크한 이름의 컨테이너
+  - Compute Platform
+    - ec2나 온프레미스,람다 등 배포 대상의 플랫폼
+  - Deployment configuration
+    - `배포 성공/실패`에 대비한 `배포 규칙`
+  - Deployment Group 
+    -  배포할 대상 그룹 (`DEV, TEST 등 여러가지 그룹 구성 가능`)
+    -  AWS 리소스 `Tag, ASG` 등 설정가능
+  - Deployment Type
+    - 애플리케이션을 배포그룹에 어떤 방법으로 배포
+      - In-place 배포
+        - `Ec2`와 `온 프레미스` 지원
+        - 롤링과 차이점이라면, `기존 인프라를 그대로 두고`, 소프트웨어만 점진적 & 한꺼번에 업데이트
+        - `롤링은 새로운 인프라에서 점진적 배포하는것임`
+        - https://docs.aws.amazon.com/ko_kr/whitepapers/latest/overview-deployment-options/in-place-deployments.html
+      - 블루그린 배포
+        - Ec2와 `람다, ECS 지원` 
+  - IAM Instance Profil
+    - Ec2에 s3나 github등의 배포 코드에 접근하기위한 권한?
+  - Application Revision (개정)
+    - `어플리케이션 코드 + appspec.yml 파일`
+  - Service Role
+    - CodeDeploy가 Ec2나 ASG, ELB 등 접근 할 수 있는 권한
+  - Target Revision (개정)
+    - 특정 (배포)그룹에게 타겟을 정하는것
 
 
 
@@ -144,13 +168,40 @@
 
 
 
+- appspec.yml 파일 내용
+  - files
+    - 파일 블록, `S3나 github에서` 파일시스템으로 소싱
+    - 파일들의 위치를 지정
+  - hooks
+    - 애플리케이션을 배포하는 모든 단계가 포함
+    - 단계
+      - ApplicationStop 
+        - 애플리케이션이 멈췄을때 실행
+      - DownLoadBundle
+      - beforeInstall
+      - install
+      - Afterinstall
+      - ApplicationStart
+      - validateService (`중요!`) 
+        - `실행중인 서비스가 잘 돌아가는지 확인하는 용도`
+        - 특별한 코드나 지침을 실행하기 위한 블럭
+
+- CodeDeploy 배포전략에 롤백을 활성화 & 배포 실패를 하면, 마지막으로 `성공한 버전을 새롭게 배포한다` (`버젼 복구가 아님`)
+
+- InvalidSignatureException 오류는, AWs 시간과, Ec2 시간이 동기화 안되서 나오는 오류이다
+  - `Ec2 인스턴스의 시간을 AWS 시간으로 동기화 시켜야함`
+- 또한 배포가 실패한 로그는, 에이전트가 깔린 Ec2의 `opt/codedeploy-agent` 폴더에서 `로그가 남는다`
+
+![Alt text](../etc/image3/cicd_%EC%BD%94%EB%93%9C%EB%94%94%ED%94%8C%EB%A1%9C%EC%9D%B4%EC%8B%9C%EA%B0%84.png)
 
 
 
 
 
+---------------------------
+## AWS CodeStar
 
-
+- CodeCommit, CodeBuild,CodeDeploy,CodePipeline,`CloudWatch,CloudFormation` 등을 통합하는 서비스
 
 
 

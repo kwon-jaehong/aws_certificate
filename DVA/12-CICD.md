@@ -123,6 +123,10 @@
 
 ![Alt text](../etc/image3/cicd_vpc%EB%82%B4%EB%B6%80%EB%B9%8C%EB%93%9C.png)
 
+
+- CodeBuild 컨테이너는 실행이 끝나면 삭제됩니다(성공 또는 실패). 실행 중이더라도 SSH로 연결할 수 없습니다.
+
+
 ---------------------
 ## AWS CodeDeploy
 - 코드를 `Ec2, 온프라미스 장비, 람다, ECS 등` 자동 배포
@@ -204,14 +208,85 @@
 - CodeCommit, CodeBuild,CodeDeploy,CodePipeline,`CloudWatch,CloudFormation` 등을 통합하는 서비스
 
 
+---------------------
+## AWS CodeArtifact
+
+- 코드에 종속성을 가진 패키지/파일을 보관하는  시스템
+  - 마빈,npm,yarn,pip 등 패키지를 매니지 먼트 할 수 있음
+- 주로 `Codebuild`와 연동함
+- `VPC 내에 저장소 존재함`
+- 사용자가 인스톨 명령어를 치면, CodeArtifact로 프록시됨
+
+
+![Alt text](../etc/image3/cicd_codeartifact.png)
+
+- 이벤트 브릿지와 연동하여, 여러 서비스와 통합가능
+
+![Alt text](../etc/image3/cicd_codeartifact2.png)
+
+
+- CodeArtifact도 저장소이기 때문에, 저장소에 접근하여 패키지를 다운받으려면 S3처럼 `접근 권한이 필요 하다`
+  - 교차 계정에도 리소스 경로로 접근권한 부여할 수 있음
+
+![Alt text](../etc/image3/cicd_codeartifact3.png)
 
 
 
+- 일종의 저장소 `상속 개념인`, upstream repository를 구성 가능하다.
+  - 상위 저장소 my-repo가 있고, 저장소에서 공통적으로 쓰이는 패키지를 담아둔다 
+  - 최대 10개까지 업스트림 레포를 보유할 수 있음
+  - 상위 레포에 퍼블릭 패키지 저장소랑 연결해놓고, 나머지 하위 저장소에서 복사해서 사용
+
+![Alt text](../etc/image3/cicd_codeartifact4.png)
+
+![Alt text](../etc/image3/cicd_codeartifact5.png)
+
+
+- 하지만 아래 그림처럼 저장소가 구성되어있다면
+  - 1. 먼저, A패키지에 패키지가 캐시됨
+  - 2. 그다음 최상위 레포인 C에 패키지가 캐시됨
+  - 3. 중간 레포인 B는 패키지를 가지지 않음
+
+![Alt text](../etc/image3/cicd_codeartifact6.png)
+
+
+- CodeArtifact 저장소를 도메인 노출을 할 수 있다
+  - 맨처음 저장소를 생성하면, 아래 처럼 도메인 부터 만들어지고, 사용자 지정 저장소가 만들어짐
+  - 처음 저장소를 만들면 `2개의 저장소`가 만들어짐(도메인-업스트림용,사용자 지정)
+
+![Alt text](../etc/image3/cicd_codeartifact7.png)
+
+![Alt text](../etc/image3/cicd_codeartifact8.png)
 
 
 
+---------------------
+
+## AWS CodeGuru
+
+- 머신러닝 기반 서비스, 코드리뷰 + 애플리케이션 성능 모니터링
 
 
+- `CodeGuru 프로파일러는 에이전트를 설치해야 작동`
+  - 에이전트 구성
+    - MaxStackDepth
+      - `매서드 깊이`
+      - 파라미터를 2로 설정하면, 깊이 2까지만 프로파일링함
+    - MemoryUsageLimitPercent
+      - 프로파일러가 사용할수 있는 메모리 양
+    - MinimumTimeForReportingInMilliseconds
+      - 에이전트가 애플리케이션에 대한 보고서 작성 최소 시간 
+    - ReportingIntervallnMilliseconds
+      - 에이전트에 프로파일링 보고서 전송 빈도
+    - SamplingIntervallInmilliseconds
+      - 에이전트가 애플리케이션에 대한 보고서 샘플링 간격
+      - 값을 낮게 설정하면 샘플링 비율이 높아짐
+
+-----------------------------
+## AWS Cloud9
+
+- 클라우드상에서 애플리케이션을 개발할 수 있는 IDE
+- 장비를(Ec2) 프로비저닝 해야됨
 
 
 

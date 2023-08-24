@@ -85,12 +85,21 @@
 
 ## CloudFormation 내장 함수
 
-- Ref
 - GetAtt
-- FindInMap
-- ImportValue
+  - GetAtt를 사용해 `리소스의 속성` 얻음
+
+![Alt text](../etc/image3/cloudformation_%ED%95%A8%EC%88%981.png)
+
 - Join
+  - 값들 사이에 문자 추가해줌
+
+![Alt text](../etc/image3/cloudformation_%ED%95%A8%EC%88%982.png)
+
+
+
 - Sub
+  - 문자열 바꿀때 씀
+
 - 컨디션 조건문 (기타 등)
   - And
   - Equals

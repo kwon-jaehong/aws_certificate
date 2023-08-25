@@ -10,6 +10,8 @@
   - 스택을 삭제하면 `클라우드포메이션에서 프로비저닝된 모든 리소스들이 삭제됨`
   - 스택으로 생성된 `AWS 리소스는 태그가 자동적으로 달림`
 - `AWS 모든 서비스 지원은 안됨`
+- 템플릿은 S3에서 참조됨 -> `클라우드포메이션용 S3 꼭 있어야함`
+
 
 ![Alt text](../etc/image3/cloudformation_%EC%98%A4%ED%86%A0%ED%83%9C%EA%B9%85.png)
 
@@ -59,6 +61,7 @@
 
 
   - ConditionaIs
+    - `!Ref 참조 불가`
     - 아래 그림과 같이, 컨디션을 체크하고 -> true와 false로 볼륨 연결을 제어한다
 
 ![Alt text](../etc/image3/cloudformation_%EC%BB%A8%EB%94%94%EC%85%981.png)
@@ -79,6 +82,12 @@
 
 ![Alt text](../etc/image3/cloudformation_%EB%B3%80%EA%B2%BD%EB%B7%B0.png)
 
+
+
+
+
+- 스택에 대한 정책을 사용해서 `특정 리소스`를 접근 하지 못하게도 가능 (오른쪽 정책 json 참조)
+![Alt text](../etc/image3/cloudformation_%EC%8A%A4%ED%83%9D%EC%85%8B4.png)
 
 
 ----------
@@ -107,21 +116,55 @@
   - Not
   - Or
 
+-----------------------------
+
+## AWS CloudFormation Rollbacks
+
+- `기본값으로` 스택 생성에 실패하면 롤백 작동 (`모든 자원 삭제`)
+  - 롤백을 중지 할 수도 있음
+- 스택이 업데이트된 경우라면? -> `이전 상태로 롤백`
+  - `전체 롤백과, 실패한 자원만 롤백` 2가지 옵션이 있음
+
+
+----------------------------------
+
+## AWS CloudFormation 스택 알림
+
+- 모든 스택 이벤트가 SNS주제로 보내진다
+
+
+------------------
 
 
 
+## AWS CloudFormation StackSet
 
 
+- Cross Stack - 아웃풋으로 참조
+- nested(중첩) 스택 - 스택을 묶음으로 관리
+![Alt text](../etc/image3/cloudformation_%EC%8A%A4%ED%83%9D%EC%85%8B1.png)
 
 
+- StackSet
+  - 단일 CloudFormation 템플릿을 사용하여` AWS 계정 여러 지역에 스택을 만들 수 있는 기능`
+  - 스택 생성 및 실행에 대한 `관리`를 하는것 (권한,역할,스택셋 생성,삭제 등)
+  - 관리자 스택셋을 업데이트하면 -> 연결된 계정,모든 리전의 스택내용이 반영됨
 
+--------------
 
+## AWS CloudFormation drift
 
+- 스택으로 생성된 `자원 구성변경을 감지` 하는것
+  - 내가 만든 스택을 다른 사용자가 구성 변경을 하면? -> 큰일
+  - `다른 사용자가 보안그룹에 포트 999 인바운드 추가 -> 감지됨`
+- `모든 리소스를 감지 할 수 있진 않음`
 
+- 아래 그림에서 Drift status에 수정됨이라고 뜸
 
+![Alt text](../etc/image3/cloudformation_%EC%8A%A4%ED%83%9D%EC%85%8B2.png)
 
-
-
+- 스택 기본값이랑, 실제 설정값이랑도 비교해서 보여줌
+![Alt text](../etc/image3/cloudformation_%EC%8A%A4%ED%83%9D%EC%85%8B3.png)
 
 
 

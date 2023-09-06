@@ -265,6 +265,279 @@
     - `단, Join은 안됨`
 
 
+![Alt text](../etc/image3/dynamo_partiql.png)
+
+
+
+- DynamoDB 조건부 쓰기
+  - 쓰기 조건들
+    - attribute_exists : 속성 맞는거
+    - attribute_not_exists : 속성 안 맞는거
+    - attribute_type : 속성 타입
+    - contains : 문자열 검사
+    - begins_with : 문자열 사이에 있는거
+    - in : (:cat1,:cat2)
+    - between : (100만이하 1만이상)
+    - size : 문자열 사이즈
+
+![Alt text](../etc/image3/dynamo_%EC%A1%B0%EA%B1%B4%EB%B6%80%EC%93%B0%EA%B8%B01.png)
+
+
+
+
+
+
+
+- DynamoDB 조건부 삭제
+  - 삭제 조건들
+    - attribute_exists : 속성 맞는거
+    - attribute_not_exists : 속성에 값이 없는 경우
+
+![Alt text](../etc/image3/dynamo_%EC%A1%B0%EA%B1%B4%EB%B6%80%EC%93%B0%EA%B8%B02.png)
+
+
+
+
+
+
+-----------------------
+
+## AWS DynamoDB 로컬 보조 인덱스 & 글로벌 인덱스
+
+
+- 로컬 보조 인덱스 (Local secondary Index - LSI)
+  - 정렬키를 LSI라고함
+  - 테이블당 `최대 5개` 설정가능
+  - 반드시 `테이블 생성 시점에 정의해야됨, 생성되고 나서는 수정 불가능`
+  - 보조 테이블 개념이 아니기 떄문에, 성능상 문제 없음
+
+
+- 글로벌 보조 인덱스 (Global Secondary Index - GSI)
+  - 따로 이인덱스에 관해서 `RCU와 WCU를 프로비저닝 해줘야함`
+  - 일종의 `인덱스 보조 테이블 새로 생성` 정도로 이해하면 될듯
+  - `테이블 생성 후에도 추가나 생성이 가능`
+  - 이 보조 테이블에 쓰로틀링 걸리면, `메인 테이블도 쓰로틀링 걸림`
+
+![Alt text](../etc/image3/dynamo_GSI1.png)
+
+
+
+
+- 낙관적 잠금 - (Optimistic Locking)
+  - 항목이 업데이트/삭제 되기전, `변경되지 않게 하는 기법`
+  - 조건부 쓰기의 `기술적 테크닉`
+
+![Alt text](../etc/image3/dynamo_%EC%9E%A0%EA%B8%881.png)
+
+----------------------------
+
+## AWS DynamoDB Accelerator (DAX)
+
+- 완전 관리형, 고가용성, 인메모리 캐시
+- 엘라스틱 캐시와 반대로, `애플리케이션단에서 코드 수정 안해도됨`
+- DAX는 `프로비저닝을 해야됨`, `최대 10개 노드` 보유 가능, 읽기작업에 최적화 되는 방식
+  - 최소 3개 노드, 멀티 AZ설정이 권장사항
+- `TTL은 5분정도(기본값)`
+
+![Alt text](../etc/image3/dynamo_dax1.png)
+
+
+
+- 앨라스틱 캐시 VS DAX
+  - DAX
+    - 간단한 쿼리 유형
+    - 개별적으로 객체 접근, 쿼리, 스캔 할때 사용
+  - 앨라스틱 캐시
+    - 애플리케이션단에서 쿼리 집계 (SUM)할때 미리 저장
+
+![Alt text](../etc/image3/dynamo_dax2.png)
+
+
+-----------------------------
+
+## AWS DynamoDB Streams
+
+- 스트림 테이블에 메인테이블의 항목 업데이트,삽입,삭제가 기록됨
+- 데이터 보존기간은 `최대 24시간` 
+- 샤드로 구성되고, 키네시스 데이터 스트림과 유사함
+  - 하지만, 프로비저닝 안해도됨 -> AWS가 알아서 함
+- 스트림 활성화하면, `테이블의 모든 데이터/항목 적용임 -> 특정 데이터/항목 소급적용 안됨!`
+- 스트림 데이터 보낼 수 있는곳
+  - 람다
+  - 키네시스 데이터 스트림
+  - KCL 어플리케이션(키네시스 클라이언트 라이브러리)
+
+
+- 스트림 활성화 보기 옵션 (아래 그림 참조)
+  - KEYS_ONLY
+  - NEW_IMAGE
+  - OLD_IMAGE
+  - NEW_AND_OLD_IMAGES
+
+
+![Alt text](../etc/image3/dynamo_%EC%8A%A4%ED%8A%B8%EB%A6%BC1.png)
+
+
+---------------------------------
+
+## AWS DynamoDB TTL
+
+- 항목의 보존 기간
+  - 자료는 바로 삭제가 아니라, `만료후 48시간 후`에 삭제됨
+- `항목의 TTL이 지나 -> 삭제될때, WCU가 소비되지 않음`
+- `유닉스 타임 스템프를 자료형`으로 TTL을 작성해야됨
+  - 예) 163111854
+- 작동방식 -> 다이나모 DB가 TTL로 지정된 테이블 속성값을 계속 보고 있음
+- 삭제되면, `스트림에 있으므로 복원도 가능`
+
+
+![Alt text](../etc/image3/dynamo_ttl.png)
+
+
+----------------------------------
+
+## AWS DynamoDB CLI
+
+- `--projection-expression` : 한개 이상의 속성을 지정해서 가져옴
+- `--filter-expression` : 반환된 항목을 필터링함 (클라이언트측)
+- `--page-size` : 기본값 1000, 항목을 나눠서 호출 (API 타임아웃을 방지)
+  - 10만개 항목에 대해, 페이지 사이즈 100으로 호출하면, API가 1000번 돌며 데이터 반환
+- `--max-items` : 최대 항목수
+  - `NextToken,starting-token`과 같이쓰임, 토큰으로 다음 데이터에 대해 접근 가능, 일종의 페이지랑 비슷
+
+
+
+-------------------------------------
+
+## AWS DynamoDB 트랜잭션
+
+- 하나의 테이블에 여러작업 가능함
+- 쓰기와 읽기에 `트랜잭션 모드` 적용 가능
+
+  - 백그라운드에서 트랜잭션을 준비, 커밋해야 되므로
+- 사용예
+  - 금융 거래와 주문관리
+  - 멀티플레이어 게임
+
+
+![Alt text](../etc/image3/dynamo_%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%981.png)
+
+
+- 두가지 오퍼레이터 
+  - 25개 항목 또는 4MB 데이터
+    - TransactGetItems
+      - 읽기, Get아이템 + 트랜잭선
+    - TransactWriteItems
+      - 삭제,입력,업데이트 + 트랜잭션
+
+
+
+
+
+- 쓰기와 읽기 `용량단위를 2배씩 소모함`
+
+![Alt text](../etc/image3/dynamo_%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%982.png)
+
+
+---------------------------
+
+## AWS DynamoDB 세션 상태 캐쉬
+
+- 세션데이터를 저장할때도 쓸수있음
+
+- vs 앨라스틱 캐시
+  - 엘라스틱캐시는 `인메모리`, 다이나모DB는 서버리스
+- 주로 데이터 접근, 데이터 위치에 따라 문제가 출제됨
+
+![Alt text](../etc/image3/dynamo_%EC%84%B8%EC%85%98.png)
+
+
+
+------------------
+## AWS DynamoDB 파티셔닝 전략
+
+- 핫 파티션이 나지않게, `파티션키에 접두사/접미사를 붙여서` 잘 분배한다
+
+![Alt text](../etc/image3/dynamo_%ED%8C%8C%ED%8B%B0%EC%85%98%EC%A0%84%EB%9E%B5.png)
+
+
+
+--------------------
+
+## AWS DynamoDB 작업
+
+- 테이블 클린업
+  - 1. scan + 딜리트 아이템
+    - 느리고, 비쌈
+  - 2. 테이블 삭제 + 다시 만들기
+    - 빠르고 쌈
+
+- 테이블 복제
+  - 1. `AWS 데이터 파이프라인`
+  - 2. 테이블 백업 및 새로운 테이블에 복원
+  - 3. scan + 풋아이템 or 배치 쓰기
+    - 비싸고 느림
+
+![Alt text](../etc/image3/dynamo_%EC%9E%91%EC%97%85.png)
+
+
+
+
+---------------------------------------
+
+## AWS DynamoDB 기타
+
+- 글로벌 테이블이 있음
+  - 단, 스트림을 활성화 시켜야함
+- DynamoDB Local
+  - 개발용, 인터넷 없이 접근가능
+
+
+
+- 코그니토 & 3자 보안을 통해 접근할때, LeadingKeys를 이용해, 본인의 항목에 대해 데이터 접근 가능 (`fine-grained Access`)
+
+![Alt text](../etc/image3/dynamo_%EC%97%91%EC%84%B8%EC%8A%A4.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -488,15 +488,178 @@
 
 ## AWS APIGateWay - CORS
 
+
 - API게이트웨이서 CORS (cross origin resource sharing)를 사용하려면, `먼저 CORS 활성화를 해야된다`
 
-
-- header에 다음과 같은 내용이 포함 되어야 한다.
+- header에 다음과 같은 내용이 포함 된다
   - Access-Control-Allow-Methods
   - Access-Control-Allow-Headers
   - Access-Control-Allow-Origin
 
-- 
+
+![Alt text](../etc/image3/api_cors1.png)
+
+
+
+
+- 실습은 S3 정적 웹페이지에서 -> API게이트웨이 텍스트를 긁어왔음
+
+
+
+![Alt text](../etc/image3/api_cors2.png)
+
+
+
+
+
+
+------------------------------------------
+
+## AWS APIGateWay 인증 및 권한 부여
+
+1. IAM을 통한 인증 & 권한 부여
+   - `IAM 권한 및 정책으로` API게이트웨이 콜
+     - IAM 자격 증명은, 헤더에 있는 `sig v4` 기능을 활용합니다
+     - `authentication(인증)은 IAM` , `authorization(권한부여)는 IAM 정책`
+     - 아래그림은 클라이언트에서 먼저 API 게이트웨이로 인증 -> API 게이트웨이는 IAM 정책을 체크하고 맞으면 람다 호출
+
+   ![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C1.png)
+
+
+
+
+   - API게이트웨이 리소스 정책을 통한 `교차 계정 엑세스`
+     - 아래그림은 API게이트웨이 교차계정 엑세스 정책 예시
+
+   ![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C2.png)
+
+
+
+
+
+
+
+2. Cognito 이용
+   - 코그니토는 `사용자의 수명주기를 관리` (토큰 관리, 수명주기, 자동교체 등)
+   - API 게이트웨이는 코그니토를 통해, 사용자의 신분을 검사함
+   - 인증은 `Cognito User Pools`, 권한부여는 `API게이트웨이 매소드`
+   - 아래 그림 기준으로, 클라이언트는 코그니토에 인증 및 `토큰을 리턴`받고, 토큰을 API 게이트웨이로 전송, `API 게이트웨이는 코그니토와 통신해서 토큰 유효성 검사` -> 통과하면 백엔드 호출
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C3.png)
+
+
+
+
+
+
+
+3. 람다 Authorizer(권한 부여자) - `커스텀 권한부여를 위함`
+   - 가장 유연한 방식
+
+   - 인증 방식
+     - `베어러 토큰(JWT같은 인증방식)`을 이용해 권한을 부여함
+     - 특정 파라미터 값을 기반으로 인증
+  - 인증에 성공하면, `람다는 유저에게 IAM 정책을 반환하고, 정책은 캐시됨`
+  - 인증은 외부? `커스텀` , 권한부여는 `람다`
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C4.png)
+
+
+
+
+- 실습 
+  - 권한 부여자 설정모습
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C8.png)
+
+
+  - 리소스 정책 예시
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C5.png)
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C6.png)
+
+![Alt text](../etc/image3/api_%EC%9D%B8%EC%A6%9D%EA%B6%8C%ED%95%9C7.png)
+
+
+---------------------------------
+
+## AWS APIGateWay HTTP, REST, WebSocket 유형
+
+
+- HTTP 유형
+  - 저렴함
+  - 전부 프록시로 통합됨 (람다 프록시, HTTP 프록시)
+  - OIDC & Oauth2.0 인증, CORS 지원
+  - `사용량 계획 및 API키` 사용못함
+
+- REST 유형
+  - 다 됨
+
+![Alt text](../etc/image3/api_%EC%9C%A0%ED%98%951.png)
+
+
+
+
+
+
+- WebSorcket 유형
+  - 브라우저와 서버의 양방향 상호통신 유형
+  - `클라이언트가 요청하지 않아도, 서버가 클라이언트에게 정보를 보냄`
+  - `상태 유지 OR 실시간` 애플리케이션 유형
+  - URL은 `wss://유니크-id.execute-api.리전.amazonaws.com/[스테이지 이름]`
+  - 클라이언트와 API게이트웨이가 통신을 할 수 있는 이유는 => `커넥션 URL을 콜백으로 계속 호출`
+
+![Alt text](../etc/image3/api_%EC%9B%B9%EC%86%8C%EC%BC%931.png)
+![Alt text](../etc/image3/api_%EC%9B%B9%EC%86%8C%EC%BC%932.png)
+
+
+
+
+
+
+
+
+- 커넥션 URL 오퍼레이션
+  - `POST` = 메세지를 보냄, `GET` = 최신 연결상태를 가져옴, `DELETE` = 커넥션 끊음
+
+![Alt text](../etc/image3/api_%EC%9B%B9%EC%86%8C%EC%BC%933.png)
+
+
+
+
+
+
+
+
+- 웹소켓 라우팅
+  - json 데이터를 기반으로 특정 벡엔드로 라우팅 가능함
+
+![Alt text](../etc/image3/api_%EC%9B%B9%EC%86%8C%EC%BC%934.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DVA/16-Lambda.md",
+                "file": "옵시디언 설치 및 GitHub 연동.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DVA/16-Lambda.md",
+                "file": "옵시디언 설치 및 GitHub 연동.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DVA/16-Lambda.md",
+                "file": "옵시디언 설치 및 GitHub 연동.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DVA/16-Lambda.md"
+                "file": "옵시디언 설치 및 GitHub 연동.md"
               }
             }
           }
@@ -148,8 +148,8 @@
   },
   "active": "d46e96e88c1629dc",
   "lastOpenFiles": [
-    "옵시디언 설치 및 GitHub 연동.md",
     "DVA/16-Lambda.md",
+    "옵시디언 설치 및 GitHub 연동.md",
     "DVA/9-CloudFront.md",
     "DVA/2-ec2.md",
     "README.md"

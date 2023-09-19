@@ -10,11 +10,11 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.secret_key = 'mrjaehong'
 
-df_path = "./UDEMY_SAA_quiz_data.csv"
+df_path = "./UDEMY_DVA_quiz_data.csv"
 df = pd.read_csv(df_path)
 
 
-delet_list = pd.read_csv('./UDEMY_SAA_quiz_data_correct.csv')['맞춘id'].to_list()
+delet_list = pd.read_csv('./UDEMY_DVA_quiz_data_correct.csv')['맞춘id'].to_list()
 ## 아는 문제 삭제
 df = df[~df['quiz_id'].isin(delet_list)]
 
